@@ -42,7 +42,7 @@ class Auth extends Controller
 
 	public function register()
 	{
-
+		return $this->fetch();
 	}
 
 	public function doRegister()
