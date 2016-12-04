@@ -1,0 +1,238 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>后台管理系统</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link rel="stylesheet" href="css/jquery.fancybox.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="style-toggler">
+	<img src="img/icons/fugue/color.png" alt="" class='tip' title="Toggle style-switcher" data-placement="right">
+</div>					
+<div class="style-switcher">
+	<h3>Style-switcher</h3>
+	<ul>
+		<li>
+			<a href="#" class='style'>Default</a>
+		</li>
+		<li>
+			<a href="#" class='blue'>Blue</a>
+		</li>
+		<li>
+			<a href="#" class='green'>Green</a>
+		</li>
+		<li>
+			<a href="#" class='red'>Red</a>
+		</li>
+	</ul>
+</div>
+<div class="topbar">
+	<div class="container-fluid">
+		<a href="dashboard.html" class='company'>后台管理系统</a>
+		<form action="#">
+			<input type="text" value="搜索">
+		</form>
+		<ul class='mini'>
+			<li>
+				<a href="#">
+					<img src="img/icons/fugue/book-question.png" alt="">
+					Support tickets
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="img/icons/fugue/document-task.png" alt="">
+					Pending orders
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="img/icons/fugue/balloons-white.png" alt="">
+					消息
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="img/icons/fugue/gear.png" alt="">
+					设置
+				</a>
+			</li>
+			<li>
+				<a href="index.html">
+					<img src="img/icons/fugue/control-power.png" alt="">
+					退出
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="breadcrumbs">
+	<div class="container-fluid">
+		<ul class="bread pull-left">
+			<li>
+				<a href="dashboard.html"><i class="icon-home icon-white"></i></a>
+			</li>
+			<li>
+				<a href="dashboard.html">
+					数据表
+				</a>
+			</li>
+		</ul>
+
+	</div>
+</div>
+<div class="main">
+	<div class="navi">
+		<ul class='main-nav'>
+			<li class='active'>
+				<a href="dashboard.html" class='light'>
+					<div class="ico"><i class="icon-home icon-white"></i></div>
+					数据表
+				</a>
+			</li>
+			<li>
+				<a href="#" class='light'>
+					<div class="ico"><i class="icon-list icon-white"></i></div>
+					Data Tables
+				</a>
+			</li>
+			<li>
+				<a href="#" class='light toggle-collapsed'>
+					<div class="ico"><i class="icon-th-large icon-white"></i></div>
+					个人用户管理
+					<img src="img/toggle-subnav-down.png" alt="">
+				</a>
+				<ul class='collapsed-nav closed'>
+					<li>
+						<a href="#">
+							Data Tables
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Plain Tables
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Media Tables
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class='light toggle-collapsed'>
+					<div class="ico"><i class="icon-tasks icon-white"></i></div>
+					企业用户管理
+					<img src="img/toggle-subnav-down.png" alt="">
+				</a>
+				<ul class='collapsed-nav closed'>
+					<li>
+						<a href="#">
+							Buttons & Icons
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Sliders & Progress-Bars
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Tooltips, Alerts & Notification
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Tabs, Pills & Accordion
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class='light'>
+					<div class="ico"><i class="icon-signal icon-white"></i></div>
+					Statistics
+				</a>
+			</li>
+			<li>
+				<a href="#" class='light toggle-collapsed'>
+					<div class="ico"><i class="icon-exclamation-sign icon-white"></i></div>
+					Error Pages
+					<img src="img/toggle-subnav-down.png" alt="">
+				</a>
+				<ul class='collapsed-nav closed'>
+					<li>
+						<a href="#">
+							403
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							404
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							500
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class='light toggle-collapsed'>
+					<div class="ico"><i class="icon-book icon-white"></i></div>
+					Sample Pages
+					<img src="img/toggle-subnav-down.png" alt="">
+				</a>
+				<ul class='collapsed-nav closed'>
+					<li>
+						<a href="#">
+							Gallery
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Messages
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							User Profile
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Login
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Search results
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>	
+{__CONTENT__}
+<script src="js/jquery.js"></script>
+<script src="js/less.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.peity.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.color.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
