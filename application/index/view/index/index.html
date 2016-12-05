@@ -28,7 +28,7 @@
 				<a rel="nofollow" href="//hr.lagou.com/dashboard/" class="lg_os" data-lg-tj-id="5600" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_qiyeban">进入企业版</a>
 			</div>
 
-			{if empty(session('username'))}
+			{if condition="$Think.session.username eq ''"}
 			<ul class="lg_tbar_r">
 				<li>
 					<a href="{:url('index/auth/login')}" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
@@ -37,7 +37,7 @@
 					<a href="{:url('index/auth/register')}" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">注册</a>
 				</li>
 			</ul>
-			{else}
+			{else /}
 			<ul class="lg_tbar_r">
 				<li>
 					<a class="bl" href="" data-lg-tj-id="5700" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_resume">我的简历</a>
@@ -50,7 +50,7 @@
 					<a class="bl" href="" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹</a>
 				</li>
 				<li class="user_dropdown" data-lg-tj-track-code="index_user">
-					<span class="unick bl">刘志强</span>
+					<span class="unick bl">{:session('username')}</span>
 					<em id="noticeDot_name" class="noticeDot dn"></em>
 					<i></i>
 					<ul>
