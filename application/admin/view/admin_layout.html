@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="__ADMIN_STATIC__/css/bootstrap.css">
 <link rel="stylesheet" href="__ADMIN_STATIC__/css/bootstrap-responsive.css">
 <link rel="stylesheet" href="__ADMIN_STATIC__/css/jquery.fancybox.css">
+<link rel="stylesheet" href="__ADMIN_STATIC__/css/uniform.default.css">
 <link rel="stylesheet" href="__ADMIN_STATIC__/css/style.css">
 </head>
 <body>	
@@ -45,7 +46,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="index.html">
+				<a href="{:url('admin/index/login')}">
 					<img src="__ADMIN_STATIC__/img/icons/fugue/control-power.png" alt="">
 					退出
 				</a>
@@ -86,19 +87,19 @@
 			<li>
 				<a href="#" class='light'>
 					<div class="ico"><i class="icon-th-large icon-white"></i></div>
-					qwe
+					职位管理
 				</a>
 			</li>
 			<li>
 				<a href="#" class='light'>
 					<div class="ico"><i class="icon-tasks icon-white"></i></div>
-					asd
+					城市管理
 				</a>
 			</li>
 			<li>
-				<a href="#" class='light'>
+				<a href="{:url('admin/index/link')}" class='light'>
 					<div class="ico"><i class="icon-signal icon-white"></i></div>
-					Statistics
+					友情链接
 				</a>
 			</li>
 			<li>
@@ -118,13 +119,10 @@
 </div>				
 {__CONTENT__}
 <script src="__ADMIN_STATIC__/js/jquery.js"></script>
-<script src="__ADMIN_STATIC__/js/less.js"></script>
 <script src="__ADMIN_STATIC__/js/bootstrap.min.js"></script>
-<script src="__ADMIN_STATIC__/js/jquery.peity.js"></script>
-<script src="__ADMIN_STATIC__/js/jquery.fancybox.js"></script>
-<script src="__ADMIN_STATIC__/js/jquery.flot.js"></script>
-<script src="__ADMIN_STATIC__/js/jquery.color.js"></script>
-<script src="__ADMIN_STATIC__/js/jquery.flot.resize.js"></script>
+<script src="__ADMIN_STATIC__/js/jquery.uniform.min.js"></script>
+<script src="__ADMIN_STATIC__/js/jquery.dataTables.min.js"></script>
+<script src="__ADMIN_STATIC__/js/jquery.dataTables.bootstrap.js"></script>
 <script src="__ADMIN_STATIC__/js/custom.js"></script>
 </body>
 </html>
