@@ -32,21 +32,31 @@ class Auth extends Controller
 
 	public function doLogin(Request $request)
 	{
-
-		$data = [
-			'username'=>$request->param('username'),
-			'password'=>md5($request->param('password')),
-		];
-		$sel =User::get(['username'=> $data['username']]);
+		$name = $request->param('username');
+		/*$data = [
+			'password'=>md5($request->param('password'))
+		];*/
+		$pwd = md5($request->param('password'));
+		$sel = User::get(['username'=> $name]);
 		//dump($sel['username']);die();
 		if($sel) {
-			if($data['password'] != $sel['password']) {
+			if($pwd != $sel['password']) {
 				$this->error('密码错误');
 			}
+			session('username',$sel['username']);
 		} else {
-			$this->error('用户名不存在');
+			$sel1 = Company::get(['cname'=> $name]);
+			if($sel1) {
+				if($pwd != $sel1['password']) {
+					$this->error('密码错误');
+				}
+			session('username',$sel1['cname']);	
+			} else {
+				$this->error('用户名不存在');
+			}
+			
 		}
-		session('username',$sel['username']);
+		
 		//dump(session('username'));die();
 		$this->redirect('Index/index/index');
 	}
