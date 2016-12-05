@@ -33,12 +33,9 @@ class Auth extends Controller
 	public function doLogin(Request $request)
 	{
 		$name = $request->param('username');
-		/*$data = [
-			'password'=>md5($request->param('password'))
-		];*/
 		$pwd = md5($request->param('password'));
 		$sel = User::get(['username'=> $name]);
-		//dump($sel['username']);die();
+		
 		if($sel) {
 			if($pwd != $sel['password']) {
 				$this->error('密码错误');
