@@ -20,6 +20,32 @@
 <link rel="Shortcut Icon" href="//www.lgstatic.com/passport/static/common/static/favicon_faed927.ico">
 
  <link rel="stylesheet" type="text/css" href="__SITE__/static/css/main.html_aio_5ee120e.css" />
+ <script type="text/javascript">
+ window.onload = function()
+ {
+ 	var oCode = document.getElementById('code');
+ 	var oRefrash = document.getElementById('refrash');
+ 	oRefrash.onclick = function()
+ 	{
+ 		oCode.src = '{:captcha_src()}?rand='+ Math.random();
+ 	}
+ 	var oFind = document.getElementById('find');
+ 	var oRequire = document.getElementById('require');
+ 	var oHidden = document.getElementById('hidden');
+ 	oFind.onclick = function()
+ 	{
+ 		oFind.style.border = '1px solid green';
+ 		oRequire.style.border = '';
+ 		oHidden.value = 0;
+ 	}
+ 	oRequire.onclick = function()
+ 	{
+ 		oFind.style.border = '';
+ 		oRequire.style.border = '1px solid green';
+ 		oHidden.value = 1;
+ 	}
+ }
+ </script>
 </head>
 <body>
 
@@ -41,21 +67,22 @@
 				</div>
 				<div class="input_item clearfix">
 					<input type="text" class="input input_white fl" style="width:130px; display:block;" name="verify" placeholder="请证明你不是机器人" >
-					<img src="{:captcha_src()}" alt="captcha" />
-					<a rel="nofollow" href="javascript:;" class="reflash"></a>
+					<img src="{:captcha_src()}" alt="captcha" id="code" />
+					<a rel="nofollow" href="javascript:;" class="reflash" id="refrash"></a>
 				</div>
 				<div class="input_item clearfix">
 					<input type="password" class="input input_white" id="password" name="password" placeholder="请输入密码" ><span></span>
 				</div>
-				
 				<div class="input_item clearfix" data-propertyname="type" data-controltype="Switch">
-					<input type="button"  class="btn btn_outline btn_lg" value="找工作" data-myvalue="0" data-lg-tj-id="1960" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
-					<input type="button"  class="btn btn_outline btn_lg last_child" value="招人" data-myvalue="1" data-lg-tj-id="1970" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
+					<input type="button"  class="btn btn_outline btn_lg" value="找工作" id="find" name="find">
+
+					<input type="button"  class="btn btn_outline btn_lg last_child" value="招人" id="require" name="require">
+					<input type="hidden" name="hidden" value="" id="hidden" />
 				</div>
 				<div class="input_item clearfix" style="margin-top:16px;" data-propertyname="protocol" data-controltype="CheckBox">
 					<label for="checkbox">
 			            <input type="checkbox" value="" id="checkbox" class="checkbox" data-myvalue="agred" data-text="我已阅读并同意" >
-			            <a rel="nofollow" href='http://www.lagou.com/privacy.html' target='_blank' style='color:#00b38a' data-lg-tj-id="18L0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">《拉勾用户协议》</a>
+			            <a rel="nofollow" href='http://www.lagou.com/privacy.html' target='_blank' style='color:#00b38a' >《拉勾用户协议》</a>
 			        </label>
 				</div>
 				<div class="input_item clearfix">
@@ -71,12 +98,12 @@
 	</div>
 	<div class="right_area fl">
 		<h5>已有拉勾帐号:</h5>
-		<a href="{:url('index/auth/login')}" class="login_now" data-lg-tj-id="18N0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">直接登录</a>
+		<a href="{:url('index/auth/login')}" class="login_now">直接登录</a>
 		<h5>使用以下帐号直接登录:</h5>
 		<ul class="vender_login clearfix">
-			<li><a rel="nofollow" href="/oauth20/auth_sinaWeiboProvider.html" title="使用新浪微博帐号登录" class="vender_icon icon_sina" target="_blank" data-lg-tj-id="1910" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"></a></li>
-			<li><a rel="nofollow" href="/oauth20/auth_qqProvider.html" title="使用腾讯QQ帐号登录" class="vender_icon icon_tencent" target="_blank" data-lg-tj-id="1920" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"></a></li>
-			<li class="last_child"><a rel="nofollow" href="/oauth20/auth_weixinProvider.html" class="vender_icon icon_wechat" title="使用微信帐号登录" target="_blank" data-lg-tj-id="1930" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"></a></li>
+			<li><a rel="nofollow" href="/oauth20/auth_sinaWeiboProvider.html" title="使用新浪微博帐号登录" class="vender_icon icon_sina" target="_blank"></a></li>
+			<li><a rel="nofollow" href="/oauth20/auth_qqProvider.html" title="使用腾讯QQ帐号登录" class="vender_icon icon_tencent" target="_blank" ></a></li>
+			<li class="last_child"><a rel="nofollow" href="/oauth20/auth_weixinProvider.html" class="vender_icon icon_wechat" title="使用微信帐号登录" target="_blank" ></a></li>
 		</ul>
 		<div class="qrcode">
 			<img src="__SITE__/static/picture/qrcode_0ec6bff.jpg" alt="二维码">
@@ -87,16 +114,7 @@
 <!-- 页面主体END -->
 <footer>
 	<h4 class="slogan">— 专注互联网职业机会 —</h4>
-</footer><!-- jquery lib -->
-<!--拉勾UI框架 -->
-<!-- analytics js file --><!-- plat analytics js file -->
-<script type="text/javascript" src="__SITE__/static/js/vendor_c7a7c93.js"></script>
-<script type="text/javascript" src="__SITE__/static/js/static_22d06fa.js"></script>
-<script type="text/javascript" src="__SITE__/static/js/main.html_aio_4367755.js"></script>
-<script type="text/javascript">
-    //login page
-    require(['pc/page/register/main']);
-</script>
-<script type="text/javascript" src="__SITE__/static/js/oss.js"></script>
+</footer>
+
 </body>
 </html>

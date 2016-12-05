@@ -9,6 +9,7 @@ use think\Controller;
 use think\Request;
 use think\Db;
 use app\index\model\User;
+use app\index\model\Company;
 class Auth extends Controller
 {
 
@@ -36,8 +37,8 @@ class Auth extends Controller
 			'username'=>$request->param('username'),
 			'password'=>md5($request->param('password')),
 		];
-		$sel =User::get(['username'=> $data['username']])->toArray();
-		//dump($sel);die();
+		$sel =User::get(['username'=> $data['username']]);
+		//dump($sel['username']);die();
 		if($sel) {
 			if($data['password'] != $sel['password']) {
 				$this->error('密码错误');
@@ -45,12 +46,15 @@ class Auth extends Controller
 		} else {
 			$this->error('用户名不存在');
 		}
+		session('username',$sel['username']);
+		//dump(session('username'));die();
 		$this->redirect('Index/index/index');
 	}
 
 	public function logout()
 	{
 		session(null);
+		$this->redirect('index/index/index');
 	}
 
 	public function register()
@@ -60,27 +64,58 @@ class Auth extends Controller
 
 	public function doRegister(Request $request)
 	{
-		$data = [
-			'username'=>$request->param('username'),
-			'password'=>md5($request->param('password')),
-			'create_time'=>time()
-		];
+		$name = $request->param('username');
+		$pwd = $request->param('password');
+		$time = time();
+	
 		$code = $request->param('verify');
+		$hidden = $request->param('hidden');
+
+		if(strlen($name) < 6 || empty($name) || strlen($name) > 18) {
+			$this->error('没你这么玩的');
+		} 
 		if(!captcha_check($code)){
 			$this->error('验证码错误');
 		};
-		if(strlen($data['username']) < 6) {
-			$this->error('没你这么玩的');
-		} 
-		if(strlen($data['password']) < 6) {
+		if(strlen($pwd) < 6 || strlen($pwd) > 18) {
 			$this->error('密码必须是6-18位的字符');
 		}
-		$in = User::create($data);
-		if($in) {
+
+		$data = [
+			'password'=>md5($pwd),
+			'create_time'=>$time
+		];
+		
+
+		if($hidden) {
+			$data['cname'] = $name;
+			$insert = Company::create($data);
+		} else {
+			$data['username'] = $name;
+			$insert = User::create($data);
+		}
+
+		if($insert) {
 			$this->redirect('Index/auth/login');
 		}
 		//dump($request->param('username'));
 		//$this->redirect('Index/index/index');
+	}
+	/**
+	 * 检验用户名是否被注册
+	 * @param  Request $request [description]
+	 * @return [type]           [description]
+	 */
+	public function checkName(Request $request)
+	{
+
+		$sel = User::get(['username'=> $request->param('username')]);
+		if($sel) {
+			echo json_encode(array('status' => 1, 'msg' => '用户名已被注册'));
+		} else {
+			echo json_encode(array('status' => 0));
+		}
+		//echo json_encode($sel);
 	}
 
 	public function checkLogin()
