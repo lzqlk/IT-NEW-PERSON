@@ -16,37 +16,25 @@
 <body>	
 <div class="topbar">
 	<div class="container-fluid">
-		<a href="dashboard.html" class='company'>后台管理系统</a>
+		<a href="__SITE__/admin/index/index" class='company'>后台管理系统</a>
 		<form action="#">
 			<input type="text" value="搜索">
 		</form>
 		<ul class='mini'>
 			<li>
 				<a href="#">
-					<img src="__ADMIN_STATIC__/img/icons/fugue/book-question.png" alt="">
-					Support tickets
+					<img src="__ADMIN_STATIC__/img/icons/essen/16/user.png" alt="">
+					你好,管理员：{:session('username')}
 				</a>
 			</li>
 			<li>
-				<a href="#">
-					<img src="__ADMIN_STATIC__/img/icons/fugue/document-task.png" alt="">
-					Pending orders
+				<a href="index/index/index">
+					<img src="__ADMIN_STATIC__/img/icons/essen/16/home.png" alt="">
+					网站首页
 				</a>
 			</li>
 			<li>
-				<a href="#">
-					<img src="__ADMIN_STATIC__/img/icons/fugue/balloons-white.png" alt="">
-					消息
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<img src="__ADMIN_STATIC__/img/icons/fugue/gear.png" alt="">
-					设置
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/index/login')}">
+				<a href="__SITE__/admin/index/login">
 					<img src="__ADMIN_STATIC__/img/icons/fugue/control-power.png" alt="">
 					退出
 				</a>
@@ -57,66 +45,12 @@
 <div class="breadcrumbs">
 	<div class="container-fluid">
 		<ul class="bread pull-left">
-			<li>
-				<a href=""><i class="icon-home icon-white"></i></a>
-			</li>
-			<li>
-				<a href="">
-					数据表
-				</a>
-			</li>
+			<li></li>
+			<li></li>
 		</ul>
 
 	</div>
 </div>
-<div class="main">
-	<div class="navi">
-		<ul class='main-nav'>
-			<li class='active'>
-				<a href="dashboard.html" class='light'>
-					<div class="ico"><i class="icon-home icon-white"></i></div>
-					个人用户列表
-				</a>
-			</li>
-			<li>
-				<a href="#" class='light'>
-					<div class="ico"><i class="icon-list icon-white"></i></div>
-					企业用户列表
-				</a>
-			</li>
-			<li>
-				<a href="#" class='light'>
-					<div class="ico"><i class="icon-th-large icon-white"></i></div>
-					职位管理
-				</a>
-			</li>
-			<li>
-				<a href="#" class='light'>
-					<div class="ico"><i class="icon-tasks icon-white"></i></div>
-					城市管理
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/index/link')}" class='light'>
-					<div class="ico"><i class="icon-signal icon-white"></i></div>
-					友情链接
-				</a>
-			</li>
-			<li>
-				<a href="#" class='light'>
-					<div class="ico"><i class="icon-exclamation-sign icon-white"></i></div>
-					Error Pages
-				</a>
-			</li>
-			<li>
-				<a href="#" class='light'>
-					<div class="ico"><i class="icon-book icon-white"></i></div>
-					Sample Pages
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>				
 {__CONTENT__}
 <script src="__ADMIN_STATIC__/js/jquery.js"></script>
 <script src="__ADMIN_STATIC__/js/bootstrap.min.js"></script>

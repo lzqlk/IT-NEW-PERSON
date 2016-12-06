@@ -1,19 +1,67 @@
+<div class="main">
+	<div class="navi">
+		<ul class='main-nav'>
+			<li class='active'>
+				<a href="__SITE__/admin/index/index" class='light'>
+					<div class="ico"><i class="icon-home icon-white"></i></div>
+					个人用户列表
+				</a>
+			</li>
+			<li>
+				<a href="#" class='light'>
+					<div class="ico"><i class="icon-list icon-white"></i></div>
+					企业用户列表
+				</a>
+			</li>
+			<li>
+				<a href="#" class='light'>
+					<div class="ico"><i class="icon-th-large icon-white"></i></div>
+					职位管理
+				</a>
+			</li>
+			<li>
+				<a href="#" class='light'>
+					<div class="ico"><i class="icon-tasks icon-white"></i></div>
+					城市管理
+				</a>
+			</li>
+			<li>
+				<a href="__SITE__/admin/link/link" class='light'>
+					<div class="ico"><i class="icon-signal icon-white"></i></div>
+					友情链接
+				</a>
+			</li>
+			<li>
+				<a href="#" class='light'>
+					<div class="ico"><i class="icon-exclamation-sign icon-white"></i></div>
+					Error Pages
+				</a>
+			</li>
+			<li>
+				<a href="#" class='light'>
+					<div class="ico"><i class="icon-book icon-white"></i></div>
+					Sample Pages
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>				
 <div class="container-fluid">
 	<div class="content">
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="box">
 					<div class="box-head tabs">
-						<h3>Messages</h3>
+						<h3>个人用户管理</h3>
 						<ul class="nav nav-tabs">
 							<li class='active'>
-								<a href="#inbox" data-toggle="tab">Inbox</a>
+								<a href="#inbox" data-toggle="tab">编辑用户</a>
 							</li>
 							<li>
-								<a href="#sent" data-toggle="tab">Sent messages</a>
+								<a href="#sent" data-toggle="tab">已删除·</a>
 							</li>
 							<li>
-								<a href="#trash" data-toggle="tab">Deleted messages</a>
+								<a href="#trash" data-toggle="tab">黑名单</a>
 							</li>
 						</ul>
 					</div>
@@ -32,6 +80,8 @@
 											<th>用户ID</th>
 											<th>用户名</th>
 											<th>注册时间</th>
+											<th>吖吖</th>
+											<th>额额</th>
 											<th>操作</th>
 										</tr>
 									</thead>
@@ -48,15 +98,11 @@
 											<td>
 												{$val.create_time}
 											</td>
+											<td></td>
+											<td></td>
 											<td class='actions'>
 												<div class="btn-group">
-													<a href="#" title="Read message" class="btn btn-mini tip">
-														修改
-													</a>
-													<a href="#" title="Reply" class="btn btn-mini tip">
-														编辑
-													</a>
-													<a href="#" title="Delete" class="btn btn-mini tip deleteRow">
+													<a href="__SITE__/admin/user/delete/uid/{$val.uid}" title="Delete" class="btn btn-mini tip">
 														删除
 													</a>
 												</div>
@@ -68,18 +114,7 @@
 								<div class="force-padding">
 									<div class="btn-toolbar">
 										<div class="btn-group">
-											<button class="btn">Mark as read</button>
-											<button class="btn dropdown-toggle" data-toggle="dropdown">
-												<span class="caret"></span>
-											</button>
-											<ul class="dropdown-menu">
-												<li>
-													<a href="#">Reply</a>
-												</li>
-												<li>
-													<a href="#">Delete</a>
-												</li>
-											</ul>
+											<button class="btn">删除</button>
 										</div>
 									</div>
 								</div>
@@ -88,77 +123,50 @@
 								<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
 									<thead>
 										<tr>
-											<th class=''>
+											<td class=''>
 												<input type="checkbox" class='sel_all'>
-											</th>
-											<th>Subject</th>
-											<th>Sender</th>
-											<th>Date</th>
-											<th>Actions</th>
+											</td>
+											<th>用户ID</th>
+											<th>用户名</th>
+											<th>注册时间</th>
+											<th>操作</th>
+											<th>吖吖</th>
+											<th>额额</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
+									{foreach $soft as $value}
+										<tr class='table-unread'>
 											<td class='table-checkbox'>
 												<input type="checkbox" class='selectable-checkbox'>
 											</td>
-											<td>sit in et laboris consectetur aliquip aute minim. </td>
+											<td>{$value.uid}</td>
 											<td>
-												<a href="#" class='pover' data-title="username" data-content="some user information">Laboris</a>
+												<a href="#" class='pover' data-title="username" data-content="some user information">{$value.username}</a>
 											</td>
 											<td>
-												Jul 20, 2012
+												{$value.create_time}
 											</td>
-											<td class='actions_two'>
+											<td></td>
+											<td></td>
+											<td class='actions'>
 												<div class="btn-group">
-													<a href="#" title="Read message" class="btn btn-mini tip">
-														<img src="img/icons/fugue/mail-open.png" alt="">
+													<a href="__SITE__/admin/user/renew/uid/{$value.uid}" title="Renew" class="btn btn-mini tip">
+														恢复
 													</a>
-													<a href="#" title="Delete" class="btn btn-mini tip deleteRow">
-														<img src="img/icons/fugue/mail--minus.png" alt="">
+													<a href="__SITE__/admin/user/reldelete/uid/{$value.uid}" title="Delete" class="btn btn-mini tip">
+														删除
 													</a>
 												</div>
 											</td>
 										</tr>
-										<tr>
-											<td class='table-checkbox'>
-												<input type="checkbox" class='selectable-checkbox'>
-											</td>
-											<td>Duis dolore magna</td>
-											<td>
-												<a href="#" class='pover' data-title="username" data-content="some user information">Dolore</a>
-											</td>
-											<td>
-												Jul 19, 2012
-											</td>
-											<td class='actions_two'>
-												<div class="btn-group">
-													<a href="#" title="Read message" class="btn btn-mini tip">
-														<img src="img/icons/fugue/mail-open.png" alt="">
-													</a>
-													<a href="#" title="Delete" class="btn btn-mini tip deleteRow">
-														<img src="img/icons/fugue/mail--minus.png" alt="">
-													</a>
-												</div>
-											</td>
-										</tr>
+									{/foreach}
 									</tbody>
 								</table>
 								<div class="force-padding">
 									<div class="btn-toolbar">
 										<div class="btn-group">
-											<button class="btn">Mark as read</button>
-											<button class="btn dropdown-toggle" data-toggle="dropdown">
-												<span class="caret"></span>
-											</button>
-											<ul class="dropdown-menu">
-												<li>
-													<a href="#">Reply</a>
-												</li>
-												<li>
-													<a href="#">Delete</a>
-												</li>
-											</ul>
+											<button class="btn">删除</button>
 										</div>
 									</div>
 								</div>
@@ -167,9 +175,9 @@
 								<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
 									<thead>
 										<tr>
-											<th class=''>
+											<td class=''>
 												<input type="checkbox" class='sel_all'>
-											</th>
+											</td>
 											<th>Subject</th>
 											<th>Sender</th>
 											<th>Date</th>
