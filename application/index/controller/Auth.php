@@ -37,24 +37,28 @@ class Auth extends Controller
 		$sel = User::get(['username'=> $name]);
 		
 		if($sel) {
+			//验证求职者
 			if($pwd != $sel['password']) {
 				$this->error('密码错误');
 			}
 			session('username',$sel['username']);
+			session('uid',$sel['uid']);
+			session('photo',$sel['photo']);
 		} else {
+			//验证企业
 			$sel1 = Company::get(['cname'=> $name]);
 			if($sel1) {
 				if($pwd != $sel1['password']) {
 					$this->error('密码错误');
 				}
 			session('username',$sel1['cname']);	
+
 			} else {
 				$this->error('用户名不存在');
 			}
 			
 		}
 		
-		//dump(session('username'));die();
 		$this->redirect('Index/index/index');
 	}
 
@@ -77,7 +81,15 @@ class Auth extends Controller
 	
 		$code = $request->param('verify');
 		$hidden = $request->param('hidden');
-
+		$sel = User::get(['username'=> $name]);
+		if($sel) {
+			$this->error('用户名已存在');
+		} else {
+			$sel1 = Company::get(['cname'=> $name]);
+			if($sel1) {
+				$this->error('用户名已存在');
+			}
+		}
 		if(strlen($name) < 6 || empty($name) || strlen($name) > 18) {
 			$this->error('没你这么玩的');
 		} 
@@ -105,8 +117,7 @@ class Auth extends Controller
 		if($insert) {
 			$this->redirect('Index/auth/login');
 		}
-		//dump($request->param('username'));
-		//$this->redirect('Index/index/index');
+		
 	}
 	/**
 	 * 检验用户名是否被注册
@@ -117,7 +128,8 @@ class Auth extends Controller
 	{
 
 		$sel = User::get(['username'=> $request->param('username')]);
-		if($sel) {
+		$sel1 = Company::get(['cname'=> $request->param('username')]);
+		if($sel || $sel1) {
 			echo json_encode(array('status' => 1, 'msg' => '用户名已被注册'));
 		} else {
 			echo json_encode(array('status' => 0));
@@ -127,7 +139,7 @@ class Auth extends Controller
 
 	public function checkLogin()
 	{
-		return session('uid');
+		return session('username');
 	}
 
 }

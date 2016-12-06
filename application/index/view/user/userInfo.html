@@ -1,0 +1,86 @@
+<div class="user_bindSidebar">
+	<dl class="user_sideBarmenu" id="user_sideBarmenu">
+		<dt>
+			<h3>帐号设置</h3>
+		</dt>
+		<dd>
+			<a href="https://account.lagou.com/account/cuser/userInfo.html" class="hover" data-lg-tj-id="18g0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">个人信息</a>
+		</dd>
+
+		<dd>
+			<a href="https://www.lagou.com/user/resumePrivacy.html" data-lg-tj-id="18i0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">机会+</a>
+		</dd>
+		<dd>
+			<a href="https://account.lagou.com/account/updatePwd.html" data-lg-tj-id="18j0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">修改密码</a>
+		</dd>
+	</dl>
+</div>
+
+<div class="user_userinfo_content">
+	<dl class="c_section">
+		<dt id="autofiletitle">
+			<h1>
+				<em></em>
+				个人信息
+			</h1>
+		</dt>
+		<dd>
+			<div class="userinfo_tips">
+				此信息用于站内的沟通、社区等功能，不会同步修改简历
+			</div>
+			<div class="userinfo_edit" id="userinfoEdit">
+				<form action="{:url('index/user/update_info')}" enctype="multipart/form-data" method="post">
+					<div class="avatar">
+					{if $info['photo']}
+						<img class="avatar_img" src="{$info['photo']}">
+					{else /}
+						<img class="avatar_img" src="__STATIC__/images/default_headpic.png">
+					{/if}
+					</div>
+					<input type="file" name="photo" style="margin-left:200px;">
+					<div class="username input_box">
+						<label class="label_input_box" for="userinfoEditUserName">昵称</label>
+						<input id="userinfoEditUserName" name="username" placeholder="昵称" value="{$info['username']}" maxlength="15" data-maxlength="15" type="text">
+					</div>
+					<div class="userinfo_sex input_box">
+						<span class="label_input_box">性别</span>
+						<input class="magic-radio" id="userinfoEditSexMale" name="sex" value="0" checked="checked" type="radio">
+						<label for="userinfoEditSexMale">男</label>
+						<input class="magic-radio" id="userinfoEditSexFemale" name="sex" value="1" type="radio">
+						<label for="userinfoEditSexFemale">女</label>
+					</div>
+					<div class="userinfo_job input_box">
+						<label class="label_input_box" for="userinfoEditPositionName">职业</label>
+						<input id="userinfoEditPositionName" name="profession" placeholder="职业" value="{$info['profession']}" maxlength="70" data-maxlength="70" type="text">
+					</div>
+					<div class="userinfo_intro input_box">
+						<label class="label_input_box" for="userinfoEditIntroduce">个人介绍</label>
+						<textarea id="userinfoEditIntroduce" name="self" placeholder="个人介绍" maxlength="30" data-maxlength="30">{$info['self']}</textarea>
+					</div>
+					<div class="toolbar">
+						<input class="btn userinfo_save" type="submit" value="保存" id="btn"/>
+					</div>
+				</form>
+			</div>
+		</dd>
+	</dl>
+</div>
+</div>
+<!-- 页面主体END -->
+
+<!-- footer -->
+<a id="backtop" title="回到顶部" rel="nofollow" style="display: inline;"></a>
+<!-- feedback -->
+<!--
+    @require "common/widgets/footer_c/modules/feedback/feedback.less"
+-->
+
+<div id="product-fk">
+	<div id="feedback-icon">
+		<div class="fb-icon"></div>
+		<span>我要反馈</span>
+	</div>
+</div>
+<div id="big">
+	<div id="small">保存成功</div>
+</div>
