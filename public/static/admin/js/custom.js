@@ -235,7 +235,7 @@ $(document).ready(function() {
 	// ------ DO NOT CHANGE ------- //
 	$('.deleteRow').click(function(e){
 		e.preventDefault();
-		$(this).parents('tr').fadeOut();
+		$(this).parents('tr').hide();
 	});
 
 	$(".animateRow").click(function(e){

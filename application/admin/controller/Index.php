@@ -7,8 +7,10 @@ class Index extends Controller
 {
 	public function index()
 	{
-		$list = User::paginate(10);
+		$list = User::select();
+		$soft = User::onlyTrashed()->select();
 		$this->assign('list',$list);
+		$this->assign('soft',$soft);
 		return $this->fetch();
 	}
 
@@ -25,6 +27,7 @@ class Index extends Controller
 	
 		if ($select) {
 			if ($select['password'] == $password) {
+				session('username', $username);
 				$this->redirect('admin/index/index');
 			} else {
 				$this->error('密码错误');
@@ -32,7 +35,10 @@ class Index extends Controller
 		} else {
 			$this->error('你不是管理员');
 		}
+	}
 
-		session('username', $username);
+	public function link()
+	{
+		return $this->fetch();
 	}
 }
