@@ -3,7 +3,7 @@ namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\Link;
 use think\Db;
-class Link extends Controller
+class Link extends Auth
 {
 	public function link()
 	{
@@ -35,6 +35,12 @@ class Link extends Controller
 	public function renew(Link $link)
 	{
 		Db::name('link')->where('lid', input('param.lid'))->update(['delete_time' => NULL]);
+		$this->redirect('admin/link/link');
+	}
+
+	public function reldelete()
+	{
+		Db::name('link')->where('lid', input('param.lid'))->delete();
 		$this->redirect('admin/link/link');
 	}
 }
