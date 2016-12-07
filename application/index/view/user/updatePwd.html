@@ -103,7 +103,7 @@
 			</div>
 			<ul class="lg_tnav_wrap">
 				<li>
-					<a href="//www.lagou.com/" class="current" data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
+					<a href="http://www.itnewperson.com" class="current" data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
 				</li>
 				<li>
 					<a href="//www.lagou.com/gongsi/"  data-lg-tj-id="5j00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
@@ -139,64 +139,56 @@
 	</dl>
 </div>
 
-<div class="user_userinfo_content">
+<div class="user_modifyContent">
 	<dl class="c_section">
 		<dt id="autofiletitle">
 			<h1>
 				<em></em>
-				个人信息
+				修改密码
 			</h1>
 		</dt>
 		<dd>
-			<div class="userinfo_tips">
-				此信息用于站内的沟通、社区等功能，不会同步修改简历
-			</div>
-			<div class="userinfo_edit" id="userinfoEdit">
-				<form action="{:url('index/user/update_info')}" enctype="multipart/form-data" method="post">
-					<div class="avatar">
-						{if $info['photo']}
-						<img class="avatar_img" src="{$info['photo']}">
-						{else /}
-						<img class="avatar_img" src="__STATIC__/images/default_headpic.png">
-						{/if}
-					</div>
-					<input type="file" name="photo" style="margin-left:200px;">
-					<div class="username input_box">
-						<label class="label_input_box" for="userinfoEditUserName">昵称</label>
-						<input id="userinfoEditUserName" name="username" placeholder="昵称" value="{$info['username']}" maxlength="15" data-maxlength="15" type="text">
-					</div>
-					<div class="userinfo_sex input_box">
-						<span class="label_input_box">性别</span>
-						<input class="magic-radio" id="userinfoEditSexMale" name="sex" value="0" checked="checked" type="radio">
-						<label for="userinfoEditSexMale">男</label>
-						<input class="magic-radio" id="userinfoEditSexFemale" name="sex" value="1" type="radio">
-						<label for="userinfoEditSexFemale">女</label>
-					</div>
-					<div class="userinfo_job input_box">
-						<label class="label_input_box" for="userinfoEditPhoneNumber">手机</label>
-						<input id="userinfoEditPhoneNumber" name="phone_num" placeholder="手机号" value="{$info['phone_num']}" maxlength="70" data-maxlength="70" type="text" class="phone"><span style="margin-left:100px;"></span>
-					</div>
-					<div class="userinfo_job input_box">
-						<label class="label_input_box" for="userinfoEditEmail">邮箱</label>
-						<input id="userinfoEditEmail" name="email" placeholder="联系邮箱" value="{$info['email']}" maxlength="70" data-maxlength="70" type="text" class="email"><span style="margin-left:100px;"></span>
-					</div>
-					<div class="userinfo_job input_box">
-						<label class="label_input_box" for="userinfoEditPositionName">职业</label>
-						<input id="userinfoEditPositionName" name="profession" placeholder="职业" value="{$info['profession']}" maxlength="70" data-maxlength="70" type="text">
-					</div>
-					<div class="userinfo_intro input_box">
-						<label class="label_input_box" for="userinfoEditIntroduce">个人介绍</label>
-						<textarea id="userinfoEditIntroduce" name="self" placeholder="个人介绍" maxlength="30" data-maxlength="30">{$info['self']}</textarea>
-					</div>
-					<div class="toolbar">
-						<input class="btn userinfo_save" type="submit" value="保存" id="btn"/>
-					</div>
-				</form>
-			</div>
+			<form action="{:url('index/user/update_pwd')}" method="post">
+				<table class="savePassword">
+					<tbody>
+						<tr>
+							<td>登录帐号</td>
+							<td class="c7">
+								{$info['username']}
+							</td>
+						</tr>
+						<tr>
+							<td class="label">当前密码</td>
+							<td>
+								<input name="oldpassword" id="oldpassword" type="password">
+								<span></span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label">新密码</td>
+							<td>
+								<input name="newpassword" id="newpassword" type="password">
+								<span></span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label">确认密码</td>
+							<td>
+								<input name="comfirmpassword" id="comfirmpassword" maxlength="16" autocomplete="off" type="password">
+								<span></span>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td><input value="保 存" type="submit"></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
 		</dd>
 	</dl>
 </div>
-</div>
+
 <!-- 页面主体END -->
 
 <!-- footer -->
