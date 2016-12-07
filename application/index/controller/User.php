@@ -21,20 +21,20 @@ class User extends Auth
 	public function update_info(Request $request)
 	{
 		
-			$file = request()->file('photo');
-			if($file) {
-				$photo = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
-				
-				if($photo){
-					$photo1 = '__SITE__/uploads/'.$photo->getSaveName();
-					/*echo $info->getFilename();die();*/
-				} else {
-					$this->error($file->getError());
-				}
+		$file = request()->file('photo');
+		
+		if($file) {
+			$photo = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+
+			if($photo){
+				$photo1 = '__SITE__/uploads/'.$photo->getSaveName();
 			} else {
-				$photo1 = session('photo');
+				$this->error($file->getError());
 			}
-			
+		} else {
+			$photo1 = session('photo');
+		}
+
 		$user = new User;
 
 		$user->save([
