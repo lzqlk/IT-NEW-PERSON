@@ -1067,7 +1067,7 @@
 }
 html,
 body {
-  background: url('../img/bg2.png') repeat;
+  background: #00b38a url('../img/bg2.png') repeat;
   height: 100%;
 }
 .style-toggler {
@@ -2343,7 +2343,7 @@ b.error {
   border-bottom: 1px solid #bbb;
 }
 .login_body {
-  background: url(../img/bg2.png) repeat;
+  background: url('../img/bg2.png'); background-repeat:repeat;
 }
 .login_body .wrap {
   width: 400px;
