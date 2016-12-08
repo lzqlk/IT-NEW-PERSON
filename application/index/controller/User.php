@@ -4,8 +4,10 @@ use app\index\controller\Auth;
 use think\Request;
 use app\index\model\User;
 use app\index\model\Company;
+use app\index\model\Resume;
 class User extends Auth
 {
+	//用户信息页
 	public function userInfo()
 	{
 		$info = User::get(session('uid'))->toArray();
@@ -82,6 +84,7 @@ class User extends Auth
 		$this->success('保存成功');
 	}
 
+	//修改密码页
 	public function updatePwd()
 	{
 		$info = User::get(session('uid'))->toArray();
@@ -90,6 +93,7 @@ class User extends Auth
 		return $this->fetch();
 	}
 
+	//修改密码
 	public function update_pwd(Request $request)
 	{
 		$user = new User;
@@ -111,7 +115,7 @@ class User extends Auth
 			],['uid'=>session('uid')]);
 		$this->success('修改成功,请重新登录','index/auth/login', '', 1);
 	}
-
+	//处理ajax请求，实现局部刷新
 	public function checkPwd(Request $request)
 	{
 
@@ -140,4 +144,145 @@ class User extends Auth
 		}
 		//echo json_encode($sel);
 	}*/
+
+	//创建简历第一步
+	public function resume()
+	{
+		$info = User::get(session('uid'))->toArray();
+		//dump($info);die();
+		$this->assign('info',$info);
+		return $this->fetch();
+	}
+
+	//获取输入数据，插入数据库
+	public function doresume(Request $request)
+	{
+		//dump($request->param());die();
+		$uid = session('uid');
+		$realname = $request->param('realname');
+		$edu = $request->param('topDegree');
+		$worklife = $request->param('wokrYear');
+		$phone = $request->param('phone_num');
+		$email = $request->param('email');
+		$city = $request->param('workCity');
+		if(!$realname) {
+			$this->error('姓名不能为空');
+		}
+		$data = [
+			'uid'=>$uid,
+			'realname'=>$realname,
+			'education'=>$edu,
+			'worklife'=>$worklife,
+			'phone_num'=>$phone,
+			'email'=>$email,
+			'city'=>$city,
+			'create_time'=>time()
+		];
+
+		$insert = Resume::create($data);
+		$sel = Resume::get(['uid'=> $uid]);
+		if($insert) {
+			session('rid',$sel['rid']);
+			$this->redirect('index/user/experience');
+		}
+	}
+
+	//创建简历第二步，填写工作经验
+	public function experience()
+	{
+		$info = User::get(session('uid'))->toArray();
+		//dump($info);die();
+		$this->assign('info',$info);
+		return $this->fetch();
+	}
+
+	//链接数据库并更新
+	public function doExperience(Request $request)
+	{
+		$resume = new Resume;
+		//dump($request->param());die();
+		$resume->save([
+			'c_name'=>$request->param('companyName'),
+			'position'=>$request->param('yourPosition'),
+			'start_time'=>$request->param('startTime'),
+			'end_time'=>$request->param('endTime')
+			],['rid'=>session('rid')]);
+
+		if($resume) {
+			$this->redirect('index/user/education');
+		}
+
+	}
+
+	//创建简历第三步，填写教育经历
+	public function education()
+	{
+		$info = User::get(session('uid'))->toArray();
+		//dump($info);die();
+		$this->assign('info',$info);
+		return $this->fetch();
+	}
+
+	//链接数据库并更新
+	public function doEducation(Request $request)
+	{
+		$resume = new Resume;
+		//dump($request->param());die();
+		$resume->save([
+			'school'=>$request->param('schoolName'),
+			'major'=>$request->param('yourMajor'),
+			'education'=>$request->param('degree'),
+			'school_end'=>$request->param('schoolEnd')
+			],['rid'=>session('rid')]);
+
+		if($resume) {
+			$this->redirect('index/user/introduce');
+		}
+	}
+
+	//创建简历第四步,一句话介绍自己
+	public function introduce()
+	{
+
+		$info = User::get(session('uid'))->toArray();
+		$info1 = Resume::get(session('rid'))->toArray();
+		//dump($info1);die();
+		$this->assign('info',$info);
+		$this->assign('info1',$info1);
+		return $this->fetch();
+	}
+
+	//连接数据库并更新
+	public function doIntroduce(Request $request)
+	{
+		$resume = new Resume;
+		$user = new User;
+		$self = $request->param('self');
+		if($self == '') {
+			$this->error('先介绍你自己');
+		}
+		$resume->save([
+			'introduce'=>$self
+			],['rid'=>session('rid')]);
+		$user->save([
+			'resume'=>1
+			],['uid'=>session('uid')]
+			);
+		session('resume',1);
+		if($resume) {
+			$this->redirect('index/user/myResume');
+		}
+	}
+
+	//显示我的简历页
+	public function myResume()
+	{
+
+		$info = User::get(session('uid'))->toArray();
+		$info1 = Resume::get(session('rid'))->toArray();
+		//dump($info1);die();
+		$this->assign('info',$info);
+		$this->assign('info1',$info1);
+		return $this->fetch();
+	}
 }
