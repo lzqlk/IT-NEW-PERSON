@@ -1,62 +1,74 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>后台管理系统</title>
-<meta name="description" content="">
+	<meta charset="utf-8">
+	<title>后台管理系统</title>
+	<meta name="description" content="">
 
-<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width">
 
-<link rel="stylesheet" href="__ADMIN_STATIC__/css/bootstrap.css">
-<link rel="stylesheet" href="__ADMIN_STATIC__/css/bootstrap-responsive.css">
-<link rel="stylesheet" href="__ADMIN_STATIC__/css/jquery.fancybox.css">
-<link rel="stylesheet" href="__ADMIN_STATIC__/css/uniform.default.css">
-<link rel="stylesheet" href="__ADMIN_STATIC__/css/style.css">
-</head>
-<body>	
-<div class="topbar">
-	<div class="container-fluid">
-		<a href="__SITE__/admin/index/index" class='company'>后台管理系统</a>
-		<form action="#">
-			<input type="text" value="搜索">
-		</form>
-		<ul class='mini'>
-			<li>
-				<a href="#">
-					<img src="__ADMIN_STATIC__/img/icons/essen/16/user.png" alt="">
-					你好,管理员：{:session('username')}
-				</a>
-			</li>
-			<li>
-				<a href="__SITE__/index/index/index">
-					<img src="__ADMIN_STATIC__/img/icons/essen/16/home.png" alt="">
-					网站首页
-				</a>
-			</li>
-			<li>
-				<a href="__SITE__/index/index/index">
-					<img src="__ADMIN_STATIC__/img/icons/fugue/control-power.png" alt="">
-					退出
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="breadcrumbs">
-	<div class="container-fluid">
-		<ul class="bread pull-left">
-			<li></li>
-			<li></li>
-		</ul>
+	<link rel="stylesheet" href="__ADMIN_STATIC__/css/bootstrap.css">
+	<link rel="stylesheet" href="__ADMIN_STATIC__/css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="__ADMIN_STATIC__/css/jquery.fancybox.css">
+	<link rel="stylesheet" href="__ADMIN_STATIC__/css/uniform.default.css">
+	<link rel="stylesheet" href="__ADMIN_STATIC__/css/style.css">
 
-	</div>
-</div>
-{__CONTENT__}
-<script src="__ADMIN_STATIC__/js/jquery.js"></script>
-<script src="__ADMIN_STATIC__/js/bootstrap.min.js"></script>
-<script src="__ADMIN_STATIC__/js/jquery.uniform.min.js"></script>
-<script src="__ADMIN_STATIC__/js/jquery.dataTables.min.js"></script>
-<script src="__ADMIN_STATIC__/js/jquery.dataTables.bootstrap.js"></script>
-<script src="__ADMIN_STATIC__/js/custom.js"></script>
-</body>
-</html>
+	<script>
+			//* hide all elements & show preloader
+			document.documentElement.className += 'js';
+		</script>
+	</head>
+	<body>	
+		<div class="topbar">
+			<div class="container-fluid">
+				<a href="{:url('admin/index/index')}" class='company'>后台管理系统</a>
+				<ul class='mini'>
+					<li>
+						<a href="#">
+							<img src="__ADMIN_STATIC__/img/icons/essen/16/user.png" alt="">
+							你好,管理员：{:session('username')}
+						</a>
+					</li>
+					<li>
+						<a href="{:url('index/index/index')}">
+							<img src="__ADMIN_STATIC__/img/icons/essen/16/home.png" alt="">
+							网站首页
+						</a>
+					</li>
+					<li>
+						<a href="{:url('index/index/index')}">
+							<img src="__ADMIN_STATIC__/img/icons/fugue/control-power.png" alt="">
+							退出
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		{__CONTENT__}
+		<script src="__ADMIN_STATIC__/js/jquery.js"></script>
+
+		<script src="__ADMIN_STATIC__/js/jquery.min-11.3.js"></script>
+		<script src="__ADMIN_STATIC__/js/bootstrap.min.js"></script>
+
+		<script src="__ADMIN_STATIC__/js/jquery.uniform.min.js"></script>
+		<script src="__ADMIN_STATIC__/js/jquery.dataTables.min.js"></script>
+		<script src="__ADMIN_STATIC__/js/jquery.dataTables.bootstrap.js"></script>
+		<!-- js cookie plugin -->
+		<!-- hidden elements width/height -->
+		<!-- smart resize event -->
+		<script src="__ADMIN_STATIC__/js/jquery.debouncedresize.min.js"></script>
+		<script src="__ADMIN_STATIC__/js/jquery.actual.min.js"></script>
+		<script src="__ADMIN_STATIC__/js/jquery.cookie.min.js"></script>
+		<!-- main bootstrap js -->
+		<!-- tooltips -->
+		<script src="__ADMIN_STATIC__/js/antiscroll.js"></script>
+		<script src="__ADMIN_STATIC__/js/gebo_common.js"></script>
+
+		<script src="__ADMIN_STATIC__/js/jquery.list.min.js"></script>
+		<!-- floating list header functions -->
+		<script src="__ADMIN_STATIC__/js/gebo_floating_header.js"></script>
+
+		<script src="__ADMIN_STATIC__/js/custom.js"></script>
+
+	</body>
+	</html>
