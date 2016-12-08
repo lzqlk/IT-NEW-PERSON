@@ -1889,10 +1889,6 @@ table .span24 {
   background-position: -408px 0;
 }
 
-.icon-cog {
-  background-position: -432px 0;
-}
-
 .icon-trash {
   background-position: -456px 0;
 }
@@ -4101,13 +4097,25 @@ input[type="submit"].btn.btn-mini {
   color: #999999;
   cursor: default;
 }
+.pagination .active span{
+  float: left;
+  padding: 0 14px;
+  line-height: 34px;
+  border: 1px solid #ddd;
+  border-left-width: 0;
+}
 
 .pagination .disabled span,
 .pagination .disabled a,
 .pagination .disabled a:hover {
-  color: #999999;
+  /* color: #999999;
   cursor: default;
-  background-color: transparent;
+  background-color: transparent; */
+  float: left;
+  padding: 0 14px;
+  line-height: 34px;
+  border: 1px solid #ddd;
+  border-left-width: 0;
 }
 
 .pagination li:first-child a {

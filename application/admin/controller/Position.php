@@ -8,4 +8,9 @@ class Position extends Auth
 	{
 		return $this->fetch();
 	}
+
+	public function industry()
+	{
+		return $this->fetch();
+	}
 }
