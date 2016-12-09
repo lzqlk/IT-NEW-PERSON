@@ -6,8 +6,8 @@ class Index extends Auth
 {
 	public function index()
 	{
-		$list = User::paginate(2);
-		$soft = User::onlyTrashed()->paginate(2);
+		$list = User::paginate(10);
+		$soft = User::onlyTrashed()->paginate(10);
 		$this->assign('list',$list);
 		$this->assign('soft',$soft);
 		return $this->fetch();
