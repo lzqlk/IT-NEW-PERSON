@@ -49,83 +49,56 @@
 <div class="container-fluid">          
    <div class="main_content">
     <div class="row-fluid">
-        <div class="span6">
-            <h3 class="heading">ScroolTo Example</h3>
+         <div class="span6">
+            <h3 class="heading">行业分类</h3>
+            <br />
             <div id="countries">
+                {volist name='big' id='bigval'}
                 <dl>
-                    <dt>技术</dt>
-                    <dd>后端开发</dd>
-                    <dd>移动开发</dd>
-                    <dd>前端开发</dd>
-                    <dd>Algeria</dd>
-                    <dd>American Samoa</dd>
-                    <dd>Andorra</dd>
-                    <dd>Angola</dd>
+                    <dt>{$bigval.name}</dt>
+                    {volist name='small' id='smallval'}
+                    {if condition="$smallval['parentid'] eq $bigval['iid']"}
+                    <dd>
+                        <input type="text" value="{$smallval.name}">
+                    </dd>
+                    {/if}
+                    {/volist}
                 </dl>
-                <dl>
-                    <dt>产品</dt>
-                    <dd>产品经理</dd>
-                    <dd>高端设计师</dd>
-                    <dd>产品设计师</dd>
-                    <dd>Barbados</dd>
-                    <dd>Bassas da India</dd>
-                    <dd>Belarus</dd>
-                    <dd>Belgium</dd>
-                    <dd>Belize</dd>
-                    <dd>Benin</dd>
-                </dl>
+                {/volist}
             </div>
         </div>
         <div class="span6">
             <div class="box">
                 <div class="box-head">
-                    <h3>More basic elements</h3>
+                    <h3>添加版块</h3>
                 </div>
+                <br />
+                <div><h4>提示:不选择版块时默认为添加大版块</h4></div>
+                 <br />
                 <div class="box-content">
-                    <form action="#" class="form-horizontal">
+                    <form action="{:url('admin/position/addcate')}" class="form-horizontal">
                         <fieldset>
-                            <div class="control-group error">
-                                <label for="error" class="control-label">Error</label>
-                                <div class="controls">
-                                    <input type="text" name="error" id="error" class='input-square'>
-                                    <span class="help-inline">Woops, error!</span>
-                                </div>
-                            </div>
-                            <div class="control-group warning">
-                                <label for="warning" class="control-label">Warning</label>
-                                <div class="controls">
-                                    <input type="text" name="warning" id="warning" class='input-square'>
-                                    <span class="help-inline">Hm, just a warning - nothing critical!</span>
-                                </div>
-                            </div>
                             <div class="control-group success">
-                                <label for="success" class="control-label">Success</label>
+                                <label for="success" class="control-label">版块名称</label>
                                 <div class="controls">
-                                    <input type="text" name="success" id="success" class='input-square'>
-                                    <span class="help-inline">Yay! Correct.</span>
+                                    <input type="text" name="cate" id="success" class='input-square'>
+                                    <span class="help-inline"></span>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label for="select" class="control-label">Selects</label>
+                                <label for="select" class="control-label">选择版块</label>
                                 <div class="controls">
                                     <select name="select" id="select">
-                                        <option value="1">--不选择--</option>
-                                        <option value="2">技术</option>
-                                        <option value="3">产品</option>
-                                        <option value="4">设计</option>
-                                        <option value="5">运营</option>
+                                        <option value="0">--不选择--</option>
+                                        {volist name='big' id='val'}
+                                        <option value="{$val.iid}">{$val.name}</option>
+                                        {/volist}
                                     </select>
                                 </div>
                             </div>
-                            <div class="control-group">
-                                <label for="textcounter" class="control-label">Textarea with counter</label>
-                                <div class="controls">
-                                    <textarea name="textcounter" id="textcounter" class='input-square span9 counter' data-max="150" rows='2'></textarea>
-                                </div>
-                            </div>
                             <div class="form-actions">
-                                <button class="btn btn-primary" type="submit">Send</button>
-                                <input type="reset" class='btn btn-danger' value="reset">
+                                <button class="btn btn-primary" type="submit">添加</button>
+                                <input type="reset" class='btn btn-danger' value="重置">
                             </div>
                         </fieldset>
                     </form>
