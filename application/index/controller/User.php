@@ -280,9 +280,11 @@ class User extends Auth
 
 		$info = User::get(session('uid'))->toArray();
 		$info1 = Resume::where('uid',session('uid'))->find();
+		$update_time = date('Y-m-d H:m',$info1['update_time']);
 		//dump($info1);die();
 		$this->assign('info',$info);
 		$this->assign('info1',$info1);
+		$this->assign('update_time',$update_time);
 		return $this->fetch();
 	}
 }

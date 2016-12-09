@@ -12,17 +12,22 @@
         .system-message .jump a{ color: red; }
         .system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px; text-align: center }
         .system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display: none; }
+        .images{width:150px;height:150px;margin:0 auto;}
     </style>
 </head>
 <body>
     <div class="system-message">
         <?php switch ($code) {?>
             <?php case 1:?>
-            <h1>:)</h1>
+            <div class="images">
+            <img src="__SITE__/static/images/suc.gif"  style="margin-top:25px;margin-left:25px;"/>
+            </div>
             <p class="success"><?php echo(strip_tags($msg));?></p>
             <?php break;?>
             <?php case 0:?>
-            <h1>:(</h1>
+            <div class="images">
+            <img src="__SITE__/static/images/error.gif"/>
+            </div>
             <p class="error"><?php echo(strip_tags($msg));?></p>
             <?php break;?>
         <?php } ?>

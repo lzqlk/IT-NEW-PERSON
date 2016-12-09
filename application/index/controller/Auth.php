@@ -49,10 +49,13 @@ class Auth extends Controller
 			//验证企业
 			$sel1 = Company::get(['cname'=> $name]);
 			if($sel1) {
-				if($pwd != $sel1['password']) {
+				if($pwd == $sel1['password']) {
+					session('username',$sel1['cname']);
+					$this->redirect('index/company/verify');
+				} else {
 					$this->error('密码错误');
 				}
-			session('username',$sel1['cname']);	
+			
 
 			} else {
 				$this->error('用户名不存在');
