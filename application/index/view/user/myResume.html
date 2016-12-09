@@ -78,10 +78,7 @@
 
 	<!-- header -->
 	<!--C端头部通栏广告位-->
-	<div id="top_bannerC" style="height: 80px;">
-		
-		<a rel="nofollow" href="https://activity.lagou.com/topic/employer.html" style="height: 80px; background: url(https://www.lgstatic.com/i/image/M00/7B/31/CgqKkVhBcVKABN8BAAGwEvXseX4536.JPG) center center no-repeat; background-color:" target="_blank" data-lg-tj-id="bd00" data-lg-tj-no="idnull" data-lg-tj-cid="1341" class=""></a>
-	</div>
+	
 
 
 	<!--验证注册邮箱-->
@@ -98,68 +95,64 @@
 		<div class="inner">
 
 			<div class="lg_tbar_l">
-				<a rel="nofollow" href="https://www.lagou.com/app/download.html" class="lg_app" data-lg-tj-id="5500" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
-				<a rel="nofollow" href="https://hr.lagou.com/dashboard/" class="lg_os" data-lg-tj-id="5600" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_qiyeban">进入企业版</a>
+				<a rel="nofollow" href="//www.lagou.com/app/download.html" class="lg_app" data-lg-tj-id="5500" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
+				<a rel="nofollow" href="//hr.lagou.com/dashboard/" class="lg_os" data-lg-tj-id="5600" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_qiyeban">进入企业版</a>
 			</div>
 
-			
+			{if condition="$Think.session.username eq ''"}
 			<ul class="lg_tbar_r">
-				<!-- if has unread message, add class unreaded -->
-				<li class="msg_dropdown" data-lg-tj-track-code="index_message">
-					<a class="msg_group" href="javascript:%20void%200;" data-lg-tj-id="5h00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">
-						消息
-						<em class="msg_amount hide" id="headMsgAmount"></em>
-					</a>
-					<div class="lg_msg_popup">
-						<div class="lg_msg_pu_body" id="lgPopupMsgBody"><div class="no_body"><p class="lg_msg_avatar no_msg_i">暂时没有新的消息~</p></div></div>
-						<div class="lg_msg_pu_footer">
-							<a href="https://www.lagou.com/message/settingsdetail.html" target="_blank" class="lg_msg_setting fl"><i class="lg_msg_avatar setting_i" data-lg-tj-id="18B0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"></i>&nbsp;</a>
-							<a href="https://www.lagou.com/message/msgdetail.html" class="lg_msg_more fr" data-lg-tj-id="18A0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">查看更多</a>
-						</div>
-					</div>
+				<li>
+					<a href="{:url('index/auth/login')}" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
 				</li>
 				<li>
-					<a href="https://www.lagou.com/resume/myresume.html" class="bl" data-lg-tj-id="5700" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_resume">我的简历</a>
+					<a href="{:url('index/auth/register')}" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">注册</a>
+				</li>
+			</ul>
+			{else /}
+			<ul class="lg_tbar_r">
+				<li>
+				{if session('resume')}
+					<a class="bl" href="{:url('index/user/myResume')}" >我的简历</a>
+				{else /}
+					<a class="bl" href="{:url('index/user/resume')}" >我的简历</a>
+				{/if}
 				</li>
 				<li>
-					<a href="https://www.lagou.com/mycenter/delivery.html" class="bl" id="deliveryLink" data-lg-tj-id="5800" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_deliver" data-lg-tj-track-type="1">投递箱</a>
-					<em class="noticeDot dn" id="noticeDot_delivery"></em>
+					<a id="deliveryLink" class="bl" href="" data-lg-tj-id="5800" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_deliver" data-lg-tj-track-type="1">投递箱</a>
+					<em id="noticeDot_delivery" class="noticeDot dn"></em>
 				</li>
 				<li>
-					<a href="https://www.lagou.com/mycenter/collections.html" class="bl" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹</a>
+					<a class="bl" href="" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹</a>
 				</li>
 				<li class="user_dropdown" data-lg-tj-track-code="index_user">
-					<span class="unick bl">刘志强</span>
-					<em class="noticeDot dn" id="noticeDot_name"></em>
+					<span class="unick bl">{:session('username')}</span>
+					<em id="noticeDot_name" class="noticeDot dn"></em>
 					<i></i>
 					<ul>
 						<li>
-							<a href="https://www.lagou.com/s/subscribe.html" data-lg-tj-id="5a00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的订阅</a>
+							<a href="" data-lg-tj-id="5a00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的订阅</a>
 						</li>
 						<li>
-							<a href="https://www.lagou.com/mycenter/invitation.html" id="invitationLink" data-lg-tj-id="5b00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-gatj-msg="header_c,职位邀请,number">职位邀请</a>
-							<em class="noticeDot dn" id="noticeDot_invitation"></em>
+							<a id="invitationLink" href="" data-lg-tj-id="5b00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-gatj-msg="header_c,职位邀请,number">职位邀请</a>
+							<em id="noticeDot_invitation" class="noticeDot dn"></em>
 						</li>
-
 						<li>
-							<a href="https://account.lagou.com/account/cuser/userInfo.html" data-lg-tj-id="5c00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">帐号设置</a>
+							<a href="{:url('index/user/userInfo')}">帐号设置</a>
 						</li>
-
 						<li>
-							<a href="https://hr.lagou.com/dashboard/" data-lg-tj-id="5d00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">去企业版</a>
+							<a href="" data-lg-tj-id="5d00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">去企业版</a>
 						</li>
-
 						<li>
-							<a href="https://www.lagou.com/frontLogout.do" data-lg-tj-id="5e00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
+						<a href="{:url('index/auth/logout')}" data-lg-tj-id="5e00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
 						</li>
 					</ul>
 				</li>
 			</ul>
-
+			{/if}
 			
 		</div>
 
-	</div><!--end #lg_tbar-->
+	</div>
 
 
 	<!--C端头部白色导航-->

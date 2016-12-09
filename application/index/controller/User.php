@@ -279,7 +279,7 @@ class User extends Auth
 	{
 
 		$info = User::get(session('uid'))->toArray();
-		$info1 = Resume::get(session('rid'))->toArray();
+		$info1 = Resume::where('uid',session('uid'))->find();
 		//dump($info1);die();
 		$this->assign('info',$info);
 		$this->assign('info1',$info1);

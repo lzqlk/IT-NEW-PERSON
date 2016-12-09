@@ -51,7 +51,11 @@
 			{else /}
 			<ul class="lg_tbar_r">
 				<li>
-					<a class="bl" href="{:url('index/user/resume')}">我的简历</a>
+				{if session('resume')}
+					<a class="bl" href="{:url('index/user/myResume')}" >我的简历</a>
+				{else /}
+					<a class="bl" href="{:url('index/user/resume')}" >我的简历</a>
+				{/if}
 				</li>
 				<li>
 					<a id="deliveryLink" class="bl" href="" data-lg-tj-id="5800" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_deliver" data-lg-tj-track-type="1">投递箱</a>

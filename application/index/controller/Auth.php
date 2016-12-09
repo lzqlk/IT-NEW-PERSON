@@ -44,6 +44,7 @@ class Auth extends Controller
 			session('username',$sel['username']);
 			session('uid',$sel['uid']);
 			session('photo',$sel['photo']);
+			session('resume',$sel['resume']);
 		} else {
 			//验证企业
 			$sel1 = Company::get(['cname'=> $name]);
@@ -58,8 +59,10 @@ class Auth extends Controller
 			}
 			
 		}
-		
-		$this->redirect('Index/index/index');
+		if(session('photo')) {
+			$this->redirect('index/index/index');
+		}
+		$this->success('登录成功，请完善个人信息','Index/user/userinfo');
 	}
 
 	public function logout()
