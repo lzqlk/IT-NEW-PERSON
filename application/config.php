@@ -257,4 +257,11 @@ return [
         // 验证成功后是否重置
         'reset' => true
         ],
+    //邮箱配置
+    'MAIL_HOST' => 'smtp.exmail.qq.com', //发送的服务器
+    'MAIL_USER' => 'liu123@loveforyoung.cn', //发送的账号
+    'MAIL_PASS' => 'waSD1234', //发送的密码
+    'MAIL_PORT' => '25', //发送的端口
+    'MAIL_FROM' => 'liu123@loveforyoung.cn' //设置发件人
+
 ];
