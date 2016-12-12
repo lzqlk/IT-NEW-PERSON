@@ -23,18 +23,12 @@ class Position extends Auth
 
 	public function setHot()
 	{
-		dump(input('param'));
-		/*if (input('param.id')) {
-			$hot = Position::where('pid', input('param.id'))->update(['is_hot' => 0]);
+		if (input('param.btn')) {
+			$hot = 1;
 		} else {
-			$hot = Position::where('pid', input('param.id'))->update(['is_hot' => 1]);
+			$hot = 0;
 		}
-		
-		if ($hot) {
-			echo json_encode(array('status' => 1));
-		} else {
-			echo json_encode(array('status' => 0));
-		}*/
+		Position::where('pid', input('param.id'))->update(['is_hot' => $hot]);
 	}
 
 	public function industry()
