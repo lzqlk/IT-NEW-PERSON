@@ -27,7 +27,7 @@
 					<li>
 						<a href="#">
 							<img src="__ADMIN_STATIC__/img/icons/essen/16/user.png" alt="">
-							你好,管理员：{:session('username')}
+							欢迎超级管理员：{:session('username')}
 						</a>
 					</li>
 					<li>
@@ -40,6 +40,54 @@
 						<a href="{:url('index/index/index')}">
 							<img src="__ADMIN_STATIC__/img/icons/fugue/control-power.png" alt="">
 							退出
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div class="navi">
+				<ul class='main-nav'>
+					<li>
+						<a href="{:url('admin/index/index')}" class='light'>
+							<div class="ico"><i class="icon-home icon-white"></i></div>
+							个人用户列表
+						</a>
+					</li>
+					<li>
+						<a href="{:url('admin/company/company')}" class='light'>
+							<div class="ico"><i class="icon-list icon-white"></i></div>
+							企业用户列表
+						</a>
+					</li>
+					<li>
+						<a href="{:url('admin/position/industry')}" class='light'>
+							<div class="ico"><i class="icon-exclamation-sign icon-white"></i></div>
+							行业管理
+						</a>
+					</li>
+					<li>
+						<a href="{:url('admin/position/position')}" class='light'>
+							<div class="ico"><i class="icon-th-large icon-white"></i></div>
+							职位管理
+						</a>
+					</li>
+					<li>
+						<a href="{:url('admin/city/city')}" class='light'>
+							<div class="ico"><i class="icon-tasks icon-white"></i></div>
+							城市管理
+						</a>
+					</li>
+					<li>
+						<a href="{:url('admin/link/link')}" class='light'>
+							<div class="ico"><i class="icon-signal icon-white"></i></div>
+							友情链接
+						</a>
+					</li>
+					<li>
+						<a href="#" class='light'>
+							<div class="ico"><i class="icon-book icon-white"></i></div>
+							Sample Pages
 						</a>
 					</li>
 				</ul>

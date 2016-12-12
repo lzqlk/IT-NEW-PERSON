@@ -1,163 +1,65 @@
-<div class="main">
-	<div class="navi">
-		<ul class='main-nav'>
-			<li>
-				<a href="{:url('admin/index/index')}" class='light'>
-					<div class="ico"><i class="icon-home icon-white"></i></div>
-					个人用户列表
-				</a>
-			</li>
-			<li class='active'>
-				<a href="{:url('admin/company/company')}" class='light'>
-					<div class="ico"><i class="icon-list icon-white"></i></div>
-					企业用户列表
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/position/position')}" class='light'>
-					<div class="ico"><i class="icon-th-large icon-white"></i></div>
-					职位管理
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/city/city')}" class='light'>
-					<div class="ico"><i class="icon-tasks icon-white"></i></div>
-					城市管理
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/link/link')}" class='light'>
-					<div class="ico"><i class="icon-signal icon-white"></i></div>
-					友情链接
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/position/industry')}" class='light'>
-					<div class="ico"><i class="icon-exclamation-sign icon-white"></i></div>
-					行业管理
-				</a>
-			</li>
-			<li>
-				<a href="#" class='light'>
-					<div class="ico"><i class="icon-book icon-white"></i></div>
-					Sample Pages
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>			
 <div class="container-fluid">
 	<div class="content">
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="box">
 					<div class="box-head tabs">
-						<h3>企业用户管理</h3>
+						<h3>企业管理</h3>
 						<ul class="nav nav-tabs">
 							<li class='active'>
-								<a href="#inbox" data-toggle="tab">编辑用户</a>
+								<a href="#inbox" data-toggle="tab">用户管理</a>
 							</li>
 							<li>
-								<a href="#sent" data-toggle="tab">已删除·</a>
+								<a href="#trash" data-toggle="tab">职位列表</a>
 							</li>
 							<li>
-								<a href="#trash" data-toggle="tab">黑名单</a>
+								<a href="#sent" data-toggle="tab">回收站</a>
 							</li>
 						</ul>
 					</div>
 					<div class="box-content box-nomargin">
-						<div class="alert alert-info">
-							<strong>注意!</strong> As you can see, the checkbox column can't be sorted! It's disabled via <code>data</code> attribute. By the way... even popovers work well in dataTables!
-						</div>
 						<div class="tab-content">
 							<div class="tab-pane active table-with-action" id="inbox">
-								<table class='table table-has-pover table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
-									<thead>
-										<tr>
-											<th class=''>
-												<input type="checkbox" class='sel_all'>
-											</th>
-											<th>用户ID</th>
-											<th>用户名</th>
-											<th>注册时间</th>
-											<th>吖吖</th>
-											<th>额额</th>
-											<th>操作</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class='table-unread'>
-											<td class='table-checkbox'>
-												<input type="checkbox" class='selectable-checkbox'>
-											</td>
-											<td></td>
-											<td>
-												<a href="#" class='pover' data-title="username" data-content="some user information"></a>
-											</td>
-											<td>
-												
-											</td>
-											<td></td>
-											<td></td>
-											<td class='actions'>
-												<div class="btn-group">
-													<a href="" title="Delete" class="btn btn-mini tip">
-														删除
-													</a>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								<div class="force-padding">
-									<div class="btn-toolbar">
-										<div class="btn-group">
-											<button class="btn">删除</button>
-										</div>
-									</div>
+								<div class="alert alert-info">
+									<strong>企业用户管理</strong> 
 								</div>
-							</div>
-							<div class="tab-pane table-with-action" id="sent">
-								<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
-									<thead>
-										<tr>
-											<td class=''>
-												<input type="checkbox" class='sel_all'>
-											</td>
-											<th>用户ID</th>
-											<th>用户名</th>
-											<th>注册时间</th>
-											<th>操作</th>
-											<th>吖吖</th>
-											<th>额额</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class='table-unread'>
-											<td class='table-checkbox'>
-												<input type="checkbox" class='selectable-checkbox'>
-											</td>
-											<td></td>
-											<td>
-												<a href="#" class='pover' data-title="username" data-content="some user information"></a>
-											</td>
-											<td>
-												
-											</td>
-											<td></td>
-											<td></td>
-											<td class='actions'>
-												<div class="btn-group">
-													<a href="" title="Renew" class="btn btn-mini tip">
-														恢复
-													</a>
-													<a href="" title="Delete" class="btn btn-mini tip">
-														删除
-													</a>
-												</div>
-											</td>
-										</tr>
-									</tbody>
+								<table class='table table-has-pover table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
+									<tr>
+										<th class='' style="text-align:center">
+											<input type="checkbox" class='sel_all'>
+										</th>
+										<th>用户名</th>
+										<th>email</th>
+										<th>手机/电话</th>
+										<th>企业信息</th>
+										<th>注册时间</th>
+										<th>更新时间</th>
+										<th>操作</th>
+									</tr>
+									{volist name='list' id='val'}
+									<tr class='table-unread'>
+										<td class='table-checkbox'>
+											<input type="checkbox" class='selectable-checkbox'>
+										</td>
+										<td></td>
+										<td>
+											{$val.cemail}
+										</td>
+										<td>
+											{$val.call_num}
+										</td>
+										<td>{$val.cname}</td>
+										<td>{$val.create_time|date="Y-m-d",###}</td>
+										<td>{$val.update_time|date="Y-m-d",###}</td>
+										<td class='actions'>
+											<div class="btn-group">
+												<a href="" title="Delete" class="btn btn-mini tip">
+													删除
+												</a>
+											</div>
+										</td>
+									</tr>
+									{/volist}
 								</table>
 								<div class="force-padding">
 									<div class="btn-toolbar">
@@ -168,50 +70,160 @@
 								</div>
 							</div>
 							<div class="tab-pane table-with-action" id="trash">
+								<div class="alert alert-info">
+									<strong>职位列表</strong> 
+								</div>
 								<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
-									<thead>
-										<tr>
-											<td class=''>
-												<input type="checkbox" class='sel_all'>
-											</td>
-											<th>用户ID</th>
-											<th>用户名</th>
-											<th>注册时间</th>
-											<th>吖吖</th>
-											<th>额额</th>
-											<th>操作</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td class='table-checkbox'>
-												<input type="checkbox" class='selectable-checkbox'>
-											</td>
-											<td>Lorem</td>
-											<td>
-												<a href="#" class='pover' data-title="username" data-content="some user information">Username</a>
-											</td>
-											<td>
-												
-											</td>
-											<td></td>
-											<td></td>
-											<td class='actions'>
-												<div class="btn-group">
-													<a href="#" title="Read message" class="btn btn-mini tip">恢复
-													</a>
-													<a href="#" title="Delete" class="btn btn-mini tip deleteRow">删除
-													</a>
-												</div>
-											</td>
-										</tr>
-									</tbody>
+									<tr>
+										<th class=''>
+											<input type="checkbox" class='sel_all'>
+										</th>
+										<th>职位名称</th>
+										<th>发布公司</th>
+										<th>审核状态</th>
+										<th>创建时间</th>
+										<th>到期时间</th>
+										<th>更新时间</th>
+										<th>点击次数</th>
+										<th>收到简历</th>
+										<th>操作</th>
+									</tr>
+									<tr>
+										<td class='table-checkbox'>
+											<input type="checkbox" class='selectable-checkbox'>
+										</td>
+										<td>Lorem</td>
+										<td>
+											<a href="#" class='pover' data-title="username" data-content="some user information">Username</a>
+										</td>
+										<td>
+
+										</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td class='actions'>
+											<div class="btn-group">
+												<a href="#" title="Read message" class="btn btn-mini tip">恢复
+												</a>
+												<a href="#" title="Delete" class="btn btn-mini tip deleteRow">删除
+												</a>
+											</div>
+										</td>
+									</tr>
+								</table>
+								<div class="force-padding">
+									<div class="btn-toolbar">
+										<div class="btn-group">
+											<button class="btn">审核</button>
+											<button class="btn">删除</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane table-with-action" id="sent">
+								<div class="alert alert-info">
+									<strong>企业用户回收站</strong>
+								</div>
+								<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
+									<tr>
+										<th class='' style="text-align:center">
+											<input type="checkbox" class='sel_all'>
+										</th>
+										<th>用户名</th>
+										<th>email</th>
+										<th>手机/电话</th>
+										<th>企业信息</th>
+										<th>注册时间</th>
+										<th>更新时间</th>
+										<th>操作</th>
+									</tr>
+									{volist name='soft' id='sval'}
+									<tr>
+										<td class='table-checkbox'>
+											<input type="checkbox" class='selectable-checkbox'>
+										</td>
+										<td></td>
+										<td>
+											{$sval.cemail}
+										</td>
+										<td>
+											{$sval.call_num}
+										</td>
+										<td>{$sval.cname}</td>
+										<td>{$val.create_time|date="Y-m-d",###}</td>
+										<td>{$val.delete_time|date="Y-m-d",###}</td>
+										<td class='actions'>
+											<div class="btn-group">
+												<a href="" title="Renew" class="btn btn-mini tip">
+													恢复
+												</a>
+												<a href="" title="Delete" class="btn btn-mini tip">
+													删除
+												</a>
+											</div>
+										</td>
+									</tr>
+									{/volist}
 								</table>
 								<div class="force-padding">
 									<div class="btn-toolbar">
 										<div class="btn-group">
 											<button class="btn">删除</button>
-										</button>
+										</div>
+									</div>
+								</div>
+								<div class="alert alert-info" style="border-top:1px solid #a6a6a6">
+									<strong>职位回收站</strong>
+								</div>
+								<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
+									<tr>
+										<th class='' style="text-align:center">
+											<input type="checkbox" class='sel_all'>
+										</th>
+										<th>用户名</th>
+										<th>email</th>
+										<th>手机/电话</th>
+										<th>企业信息</th>
+										<th>注册时间</th>
+										<th>更新时间</th>
+										<th>操作</th>
+									</tr>
+									{volist name='soft' id='sval'}
+									<tr>
+										<td class='table-checkbox'>
+											<input type="checkbox" class='selectable-checkbox'>
+										</td>
+										<td></td>
+										<td>
+											{$sval.cemail}
+										</td>
+										<td>
+											{$sval.call_num}
+										</td>
+										<td>{$sval.cname}</td>
+										<td>{$val.create_time|date="Y-m-d",###}</td>
+										<td>{$val.delete_time|date="Y-m-d",###}</td>
+										<td class='actions'>
+											<div class="btn-group">
+												<a href="" title="Renew" class="btn btn-mini tip">
+													恢复
+												</a>
+												<a href="" title="Delete" class="btn btn-mini tip">
+													删除
+												</a>
+											</div>
+										</td>
+									</tr>
+									{/volist}
+								</table>
+								<div class="force-padding">
+									<div class="btn-toolbar">
+										<div class="btn-group">
+											<button class="btn">删除</button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -220,7 +232,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</div>	
+	</div>	
 </div>
 </div>

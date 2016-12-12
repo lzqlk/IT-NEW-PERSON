@@ -1,51 +1,3 @@
-<div class="main">
-	<div class="navi">
-		<ul class='main-nav'>
-			<li>
-				<a href="{:url('admin/index/index')}" class='light'>
-					<div class="ico"><i class="icon-home icon-white"></i></div>
-					个人用户列表
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/company/company')}" class='light'>
-					<div class="ico"><i class="icon-list icon-white"></i></div>
-					企业用户列表
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/position/position')}" class='light'>
-					<div class="ico"><i class="icon-th-large icon-white"></i></div>
-					职位管理
-				</a>
-			</li>
-			<li class='active'>
-				<a href="{:url('admin/city/city')}" class='light'>
-					<div class="ico"><i class="icon-tasks icon-white"></i></div>
-					城市管理
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/link/link')}" class='light'>
-					<div class="ico"><i class="icon-signal icon-white"></i></div>
-					友情链接
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/position/industry')}" class='light'>
-					<div class="ico"><i class="icon-exclamation-sign icon-white"></i></div>
-					行业管理
-				</a>
-			</li>
-			<li>
-				<a href="#" class='light'>
-					<div class="ico"><i class="icon-book icon-white"></i></div>
-					Sample Pages
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>					
 <div class="container-fluid">
 	<div class="content">
 		<div class="row-fluid">
@@ -67,47 +19,34 @@
 					</div>
 					<div class="box-content box-nomargin">
 						<div class="alert alert-info">
-							<strong>注意!</strong> As you can see, the checkbox column can't be sorted! It's disabled via <code>data</code> attribute. By the way... even popovers work well in dataTables!
 						</div>
 						<div class="tab-content">
 							<div class="tab-pane active table-with-action" id="inbox">
 								<table class='table table-has-pover table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
-									<thead>
-										<tr>
-											<th class=''>
-												<input type="checkbox" class='sel_all'>
-											</th>
-											<th>用户ID</th>
-											<th>用户名</th>
-											<th>注册时间</th>
-											<th>吖吖</th>
-											<th>额额</th>
-											<th>操作</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class='table-unread'>
-											<td class='table-checkbox'>
-												<input type="checkbox" class='selectable-checkbox'>
-											</td>
-											<td></td>
-											<td>
-												<a href="#" class='pover' data-title="username" data-content="some user information"></a>
-											</td>
-											<td>
-												
-											</td>
-											<td></td>
-											<td></td>
-											<td class='actions'>
-												<div class="btn-group">
-													<a href="" title="Delete" class="btn btn-mini tip">
-														删除
-													</a>
-												</div>
-											</td>
-										</tr>
-									</tbody>
+									<tr>
+										<th class=''>
+											<input type="checkbox" class='sel_all'>
+										</th>
+										<th>显示顺序</th>
+										<th>城市名称</th>
+										<th>操作</th>
+									</tr>
+									<tr class='table-unread'>
+										<td class='table-checkbox'>
+											<input type="checkbox" class='selectable-checkbox'>
+										</td>
+										<td></td>
+										<td>
+											<a href="#" class='pover' data-title="username" data-content="some user information"></a>
+										</td>
+										<td class='actions'>
+											<div class="btn-group">
+												<a href="" title="Delete" class="btn btn-mini tip">
+													删除
+												</a>
+											</div>
+										</td>
+									</tr>
 								</table>
 								<div class="force-padding">
 									<div class="btn-toolbar">
@@ -116,48 +55,112 @@
 										</div>
 									</div>
 								</div>
+								<div class="box-head">
+									<h3>
+										<img src="__ADMIN_STATIC__/img/icons/essen/16/plus.png" alt="">
+
+										添加城市
+									</h3>
+								</div>
+								<div class="box-content">
+									<div class="alert alert-info alert-block">
+										<a class="close" data-dismiss="alert" href="#">×</a>
+										<h4 class="alert-heading">提示!</h4>
+									</div>
+									<form action="{:url('admin/link/add')}" class="form-horizontal">
+										<fieldset>
+											<div class="control-group">
+												<label for="mini" class="control-label">显示顺序</label>
+												<div class="controls">
+													<input type="text" name="show_order" id="mini" class='input-mini input-square'>
+												</div>
+											</div>
+											<div class="control-group">
+												<label for="grid2" class="control-label">城市名称</label>
+												<div class="controls">
+													<input type="text" name="web_name" id="grid2" class='span2 input-square'>
+												</div>
+											</div>
+											<div class="control-group">
+												<label for="grid2" class="control-label">拼音首字母</label>
+												<div class="controls">
+				                                    <select name="select" id="select">
+				                                        <option value="0">--不选择--</option>
+				                                        <option value="">A</option>
+				                                        <option value="">B</option>
+				                                        <option value="">C</option>
+				                                        <option value="">D</option>
+				                                        <option value="">E</option>
+				                                        <option value="">F</option>
+				                                        <option value="">G</option>
+				                                        <option value="">H</option>
+				                                        <option value="">I</option>
+				                                        <option value="">J</option>
+				                                        <option value="">K</option>
+				                                        <option value="">L</option>
+				                                        <option value="">M</option>
+				                                        <option value="">N</option>
+				                                        <option value="">O</option>
+				                                        <option value="">P</option>
+				                                        <option value="">Q</option>
+				                                        <option value="">R</option>
+				                                        <option value="">S</option>
+				                                        <option value="">T</option>
+				                                        <option value="">U</option>
+				                                        <option value="">V</option>
+				                                        <option value="">W</option>
+				                                        <option value="">X</option>
+				                                        <option value="">Y</option>
+				                                        <option value="">Z</option>
+				                                    </select>
+			                                    </div>
+			                                </div>
+											<div class="control-group">
+												<div class="controls">
+													<button class="btn btn-success">添加</button>
+												</div>
+											</div>
+										</fieldset>
+									</form>
+								</div>
 							</div>
 							<div class="tab-pane table-with-action" id="sent">
 								<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
-									<thead>
-										<tr>
-											<td class=''>
-												<input type="checkbox" class='sel_all'>
-											</td>
-											<th>用户ID</th>
-											<th>用户名</th>
-											<th>注册时间</th>
-											<th>操作</th>
-											<th>吖吖</th>
-											<th>额额</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class='table-unread'>
-											<td class='table-checkbox'>
-												<input type="checkbox" class='selectable-checkbox'>
-											</td>
-											<td></td>
-											<td>
-												<a href="#" class='pover' data-title="username" data-content="some user information"></a>
-											</td>
-											<td>
-												
-											</td>
-											<td></td>
-											<td></td>
-											<td class='actions'>
-												<div class="btn-group">
-													<a href="" title="Renew" class="btn btn-mini tip">
-														恢复
-													</a>
-													<a href="" title="Delete" class="btn btn-mini tip">
-														删除
-													</a>
-												</div>
-											</td>
-										</tr>
-									</tbody>
+									<tr>
+										<td class=''>
+											<input type="checkbox" class='sel_all'>
+										</td>
+										<th>用户ID</th>
+										<th>用户名</th>
+										<th>注册时间</th>
+										<th>操作</th>
+										<th>吖吖</th>
+										<th>额额</th>
+									</tr>
+									<tr class='table-unread'>
+										<td class='table-checkbox'>
+											<input type="checkbox" class='selectable-checkbox'>
+										</td>
+										<td></td>
+										<td>
+											<a href="#" class='pover' data-title="username" data-content="some user information"></a>
+										</td>
+										<td>
+
+										</td>
+										<td></td>
+										<td></td>
+										<td class='actions'>
+											<div class="btn-group">
+												<a href="" title="Renew" class="btn btn-mini tip">
+													恢复
+												</a>
+												<a href="" title="Delete" class="btn btn-mini tip">
+													删除
+												</a>
+											</div>
+										</td>
+									</tr>
 								</table>
 								<div class="force-padding">
 									<div class="btn-toolbar">
@@ -169,49 +172,44 @@
 							</div>
 							<div class="tab-pane table-with-action" id="trash">
 								<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
-									<thead>
-										<tr>
-											<td class=''>
-												<input type="checkbox" class='sel_all'>
-											</td>
-											<th>用户ID</th>
-											<th>用户名</th>
-											<th>注册时间</th>
-											<th>吖吖</th>
-											<th>额额</th>
-											<th>操作</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td class='table-checkbox'>
-												<input type="checkbox" class='selectable-checkbox'>
-											</td>
-											<td>Lorem</td>
-											<td>
-												<a href="#" class='pover' data-title="username" data-content="some user information">Username</a>
-											</td>
-											<td>
-												
-											</td>
-											<td></td>
-											<td></td>
-											<td class='actions'>
-												<div class="btn-group">
-													<a href="#" title="Read message" class="btn btn-mini tip">恢复
-													</a>
-													<a href="#" title="Delete" class="btn btn-mini tip deleteRow">删除
-													</a>
-												</div>
-											</td>
-										</tr>
-									</tbody>
+									<tr>
+										<td class=''>
+											<input type="checkbox" class='sel_all'>
+										</td>
+										<th>用户ID</th>
+										<th>用户名</th>
+										<th>注册时间</th>
+										<th>吖吖</th>
+										<th>额额</th>
+										<th>操作</th>
+									</tr>
+									<tr>
+										<td class='table-checkbox'>
+											<input type="checkbox" class='selectable-checkbox'>
+										</td>
+										<td>Lorem</td>
+										<td>
+											<a href="#" class='pover' data-title="username" data-content="some user information">Username</a>
+										</td>
+										<td>
+
+										</td>
+										<td></td>
+										<td></td>
+										<td class='actions'>
+											<div class="btn-group">
+												<a href="#" title="Read message" class="btn btn-mini tip">恢复
+												</a>
+												<a href="#" title="Delete" class="btn btn-mini tip deleteRow">删除
+												</a>
+											</div>
+										</td>
+									</tr>
 								</table>
 								<div class="force-padding">
 									<div class="btn-toolbar">
 										<div class="btn-group">
 											<button class="btn">删除</button>
-											</button>
 										</div>
 									</div>
 								</div>

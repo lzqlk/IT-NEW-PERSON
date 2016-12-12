@@ -1,99 +1,59 @@
-<div class="main">
-	<div class="navi">
-		<ul class='main-nav'>
-			<li class='active'>
-				<a href="{:url('admin/index/index')}" class='light'>
-					<div class="ico"><i class="icon-home icon-white"></i></div>
-					个人用户列表
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/company/company')}" class='light'>
-					<div class="ico"><i class="icon-list icon-white"></i></div>
-					企业用户列表
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/position/position')}" class='light'>
-					<div class="ico"><i class="icon-th-large icon-white"></i></div>
-					职位管理
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/city/city')}" class='light'>
-					<div class="ico"><i class="icon-tasks icon-white"></i></div>
-					城市管理
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/link/link')}" class='light'>
-					<div class="ico"><i class="icon-signal icon-white"></i></div>
-					友情链接
-				</a>
-			</li>
-			<li>
-				<a href="{:url('admin/position/industry')}" class='light'>
-					<div class="ico"><i class="icon-exclamation-sign icon-white"></i></div>
-					行业管理
-				</a>
-			</li>
-			<li>
-				<a href="#" class='light'>
-					<div class="ico"><i class="icon-book icon-white"></i></div>
-					Sample Pages
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>				
 <div class="container-fluid">
 	<div class="content">
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="box">
 					<div class="box-head tabs">
-						<h3>个人用户管理</h3>
+						<h3>个人管理</h3>
 						<ul class="nav nav-tabs">
 							<li class='active'>
-								<a href="#inbox" data-toggle="tab">编辑用户</a>
+								<a href="#inbox" data-toggle="tab">用户管理</a>
 							</li>
 							<li>
-								<a href="#sent" data-toggle="tab">黑名单</a>
+								<a href="#trash" data-toggle="tab">简历列表</a>
+							</li>
+							<li>
+								<a href="#sent" data-toggle="tab">回收站</a>
 							</li>
 						</ul>
 					</div>
 					<div class="box-content box-nomargin">
-						<div class="alert alert-info">
-							<strong>注意!</strong> As you can see, the checkbox column can't be sorted! It's disabled via <code>data</code> attribute. By the way... even popovers work well in dataTables!
-						</div>
 						<div class="tab-content">
 							<div class="tab-pane active table-with-action" id="inbox">
+								<div class="alert alert-info">
+									<strong>注册用户管理</strong> 
+								</div>
 								<form action="{:url('admin/user/delete')}" method="post">
-								<table class="table table-has-pover table-striped table-bordered dataTable dataTable-nosort" data-nosort="0">				<tr>
+									<table class="table table-has-pover table-striped table-bordered dataTable dataTable-nosort" data-nosort="0">	
+										<tr>
 											<th class=''>
 												<input type="checkbox" class='sel_all'>
 											</th>
-											<th>用户ID</th>
 											<th>用户名</th>
+											<th>email</th>
+											<th>手机</th>
 											<th>注册时间</th>
-											<th>吖吖</th>
-											<th>额额</th>
+											<th>更新时间</th>
+											<th>创建简历</th>
 											<th>操作</th>
 										</tr>
-									{volist name='list' id='val'}
+										{volist name='list' id='val'}
 										<tr class='table-unread'>
 											<td class='table-checkbox'>
 												<input type="checkbox" class='selectable-checkbox' value="{$val.uid}" name="uid[]">
 											</td>
-											<td>{$val.uid}</td>
 											<td>
 												<a href="#" class='pover' data-title="username" data-content="some user information">{$val.username}</a>
 											</td>
-											<td>
-												{$val.create_time}
-											</td>
-											<td></td>
-											<td></td>
+											<td>{$val.email}</td>
+											<td>{$val.phone_num}</td>
+											<td>{$val.create_time|date="Y-m-d",###}</td>
+											<td>{$val.update_time|date="Y-m-d",###}</td>
+											{if condition="$val['resume'] eq 1"}
+											<td>是</td>
+											{else /}
+											<td>否</td>
+											{/if}
 											<td class='actions'>
 												<div class="btn-group">
 													<a href="{:url('admin/user/delete?uid='.$val['uid'])}" title="Delete" class="btn btn-mini tip">
@@ -102,47 +62,154 @@
 												</div>
 											</td>
 										</tr>
+										{/volist}
+									</table>
+									<div class="force-padding">
+										<div class="btn-toolbar">
+											<div class="btn-group">
+												<button class="btn">加入黑名单</button>
+											</div>
+										</div>
+									</div>
+								</form>
+								<div class="force-padding">{$list->render()}</div>
+							</div>
+							<div class="tab-pane table-with-action" id="trash">
+								<div class="alert alert-info">
+									<strong>简历列表</strong>
+								</div>
+								<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
+									<tr>
+										<th class=''>
+											<input type="checkbox" class='sel_all'>
+										</th>
+										<th>真实姓名</th>
+										<th>email</th>
+										<th>手机</th>
+										<th>审核状态</th>
+										<th>公开</th>
+										<th>照片</th>
+										<th>创建时间</th>
+										<th>更新时间</th>
+										<th>操作</th>
+									</tr>
+									{volist name='resume' id='rval'}
+									<tr>
+										<td class='table-checkbox'>
+											<input type="checkbox" class='selectable-checkbox'>
+										</td>
+										<td>{$rval.realname}</td>
+										<td>{$rval.email}</td>
+										<td>{$rval.phone_num}</td>
+										{if condition="$rval['is_disabled'] eq 1"}
+										<td>通过</td>
+										{else /}
+										<td>未通过</td>
+										{/if}
+										{if condition="$rval['is_public'] eq 1"}
+										<td>公开</td>
+										{else /}
+										<td>不公开</td>
+										{/if}
+										<td></td>
+										<td>{$rval.create_time|date="Y-m-d",###}</td>
+										<td>{$rval.update_time|date="Y-m-d",###}</td>
+										<td class='actions'>
+											<div class="btn-group">
+												<a href="#" title="Delete" class="btn btn-mini tip deleteRow">删除
+												</a>
+											</div>
+										</td>
+									</tr>
 									{/volist}
 								</table>
 								<div class="force-padding">
 									<div class="btn-toolbar">
 										<div class="btn-group">
-											<button class="btn">加入黑名单</button>
+											<button class="btn">审核通过</button>
+											<button class="btn">删除</button>
 										</div>
 									</div>
 								</div>
-								</form>
-								<div class="force-padding">{$list->render()}</div>
 							</div>
 							<div class="tab-pane table-with-action" id="sent">
+								<div class="alert alert-info">
+									<strong>用户回收站</strong>
+								</div>
 								<form action="{:url('admin/user/action')}" method="post">
-								<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
-									<thead>
+									<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
 										<tr>
-											<th class=''>
+											<th class='table-unread'>
 												<input type="checkbox" class='sel_all'>
 											</th>
-											<th>用户ID</th>
 											<th>用户名</th>
+											<th>email</th>
+											<th>手机</th>
 											<th>注册时间</th>
+											<th>删除时间</th>
 											<th>操作</th>
-											<th>吖吖</th>
-											<th>额额</th>
 										</tr>
-									</thead>
-									<tbody>
-									{volist name='soft' id='value'}
+										{volist name='soft' id='value'}
 										<tr class='table-unread'>
 											<td class='table-checkbox'>
 												<input type="checkbox" class='selectable-checkbox' name="uid[]" value="{$value.uid}">
 											</td>
-											<td>{$value.uid}</td>
 											<td>
-												<a href="#" class='pover' data-title="username" data-content="some user information">{$value.username}</a>
+												{$value.username}
+											</td>
+											<td>{$value.email}</td>
+											<td>{$value.phone_num}</td>
+											<td>{$value.create_time|date="Y-m-d",###}</td>
+											<td>{$value.delete_time|date="Y-m-d",###}</td>
+											<td class='actions'>
+												<div class="btn-group">
+													<a href="{:url('admin/user/renew?uid='.$value['uid'])}" title="Renew" class="btn btn-mini tip">
+														恢复
+													</a>
+													<a href="{:url('admin/user/reldelete?uid='.$value['uid'])}" title="Delete" class="btn btn-mini tip">
+														删除
+													</a>
+												</div>
+											</td>
+										</tr>
+										{/volist}
+									</table>
+									<div class="force-padding">
+										<div class="btn-toolbar">
+											<div class="btn-group">
+												<button class="btn" value="0" name="btn">恢复</button>
+											</div>
+											<div class="btn-group">
+												<button class="btn" value="1" name="btn">删除</button>
+											</div>
+										</div>
+									</div>
+								</form>
+								<div class="force-padding">{$soft->render()}</div>
+								<div class="alert alert-info" style="border-top:1px solid #a6a6a6">
+									<strong>简历回收站</strong>
+								</div>
+								<form action="{:url('admin/user/action')}" method="post">
+									<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
+										<tr>
+											<th class='table-unread'>
+												<input type="checkbox" class='sel_all'>
+											</th>
+											<th>用户名</th>
+											<th>email</th>
+											<th>手机</th>
+											<th>注册时间</th>
+											<th>删除时间</th>
+											<th>操作</th>
+										</tr>
+										<tr class='table-unread'>
+											<td class='table-checkbox'>
+												<input type="checkbox" class='selectable-checkbox' name="uid[]" value="{$value.uid}">
 											</td>
 											<td>
-												{$value.create_time}
 											</td>
+											<td></td>
+											<td></td>
 											<td></td>
 											<td></td>
 											<td class='actions'>
@@ -156,19 +223,17 @@
 												</div>
 											</td>
 										</tr>
-									{/volist}
-									</tbody>
-								</table>
-								<div class="force-padding">
-									<div class="btn-toolbar">
-										<div class="btn-group">
-											<button class="btn" value="0" name="btn">恢复</button>
-										</div>
-										<div class="btn-group">
-											<button class="btn" value="1" name="btn">删除</button>
+									</table>
+									<div class="force-padding">
+										<div class="btn-toolbar">
+											<div class="btn-group">
+												<button class="btn" value="0" name="btn">恢复</button>
+											</div>
+											<div class="btn-group">
+												<button class="btn" value="1" name="btn">删除</button>
+											</div>
 										</div>
 									</div>
-								</div>
 								</form>
 								<div class="force-padding">{$soft->render()}</div>
 							</div>
@@ -176,6 +241,5 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>	
-</div>
+		</div>	
+	</div>
