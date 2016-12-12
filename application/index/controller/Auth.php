@@ -45,27 +45,35 @@ class Auth extends Controller
 			session('uid',$sel['uid']);
 			session('photo',$sel['photo']);
 			session('resume',$sel['resume']);
+			if(session('photo')) {
+				$this->redirect('index/index/index');
+			}
+			$this->success('登录成功，请完善个人信息','Index/user/userinfo');
 		} else {
 			//验证企业
 			$sel1 = Company::get(['cname'=> $name]);
 			if($sel1) {
 				if($pwd == $sel1['password']) {
 					session('username',$sel1['cname']);
-					$this->redirect('index/company/verify');
+					session('cid',$sel1['cid']);
+					session('logo', $sel1['logo']);
+					if(session('logo')) {
+						$this->redirect('index/company/release');
+					} else {
+						$this->redirect('index/company/verify');
+					}
+					
 				} else {
 					$this->error('密码错误');
 				}
-			
+
 
 			} else {
 				$this->error('用户名不存在');
 			}
 			
 		}
-		if(session('photo')) {
-			$this->redirect('index/index/index');
-		}
-		$this->success('登录成功，请完善个人信息','Index/user/userinfo');
+		
 	}
 
 	public function logout()

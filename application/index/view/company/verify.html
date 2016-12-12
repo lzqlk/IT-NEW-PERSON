@@ -129,14 +129,16 @@ $(function() {
 			</div>
 			
 			<ul class="lg_tbar_r">
+            {if session('logo')}
 				<li>
 					<a href="//hr.lagou.com/corpPosition/create.html" data-lg-tj-id="5n00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" target="_blank">发布新职位</a>
 				</li>
 				<li>
 					<a href="http://www.lagou.com/c/myhome.html" class="bl" data-lg-tj-id="5o00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" target="_blank">公司主页</a>
 				</li>
+            {/if}
 				<li class="user_dropdown">
-					<span class="unick bl">liu123</span>
+					<span class="unick bl">{:session('username')}</span>
 					<em class="noticeDot dn" id="noticeDot"></em>
 					<i></i>
 					<ul>
@@ -150,7 +152,7 @@ $(function() {
 							<a href="http://www.lagou.com/" data-lg-tj-id="5r00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">拉勾首页</a>
 						</li>
 						<li>
-							<a href="/frontLogout.do" data-lg-tj-id="5s00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
+							<a href="{:url('index/auth/logout')}" data-lg-tj-id="5s00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
 						</li>
 					</ul>
 				</li>
@@ -159,7 +161,7 @@ $(function() {
 		</div>
 
 	</div><!--end #lg_tbar-->
-
+        {if session('logo')}
 
 		<!--B端头部白色导航-->
 			<div id="lg_tnav">
@@ -195,7 +197,7 @@ $(function() {
 							</ul>
 			<a href="https://easy.lagou.com/homepage.htm?from=lagou_title&force_switch=1" class="mds_link" data-lg-tj-id="Ex00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">简招</a>
 		</div>
-
+        {/if}
 	</div><!--end #lg_tnav-->
 
 
@@ -209,7 +211,7 @@ $(function() {
     </div>
 
 
-    <form class="content_container no_label" action="doVerify" method="post">
+    <form class="content_container no_label" action="{:url('index/company/doVerify')}" method="post">
         <ul>
             <li class="required">
                 <input type="text" name="call_num" placeholder="请输入你的手机号或座机号码"/ id="btn1">
@@ -218,6 +220,7 @@ $(function() {
 
             </li>
             <li class="required">
+                
                 <input type="text" name="cemail" placeholder="请输入你的公司邮箱" id="btn2"/>
                 <span></span>
                 <span class="tip">（该邮箱将作为接收简历邮箱，审核通过后不可更改）</span>

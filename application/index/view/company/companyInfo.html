@@ -1,0 +1,218 @@
+{__NOLAYOUT__}
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- meta -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit">
+	<meta property="qc:admins" content="23635710066417756375" />
+	<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+	<meta charset="UTF-8">
+
+	<meta content="互联网招聘,找工作,招聘网,人才网" name="keywords">
+
+	<meta content="拉勾网是最权威的互联网行业招聘网站,提供全国真实的互联网招聘信息,工资不面议当面谈,找工作,招聘网,寻人才就来拉勾网,互联网行业找工作首选拉勾网" name="description">
+
+	<title>拉勾网-最专业的互联网招聘平台_找工作_招聘_人才网_求职</title>
+
+	<link rel="Shortcut Icon" href="//www.lgstatic.com/www/static/common/static/favicon_faed927.ico">
+	<script type="text/javascript" src="__SITE__/static/js/jquery-1.11.3.js"></script>
+
+	<script type="text/javascript" src="__SITE__/static/js/userInfo.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="__SITE__/static/css/widgets_72ff0d6.css" />
+	
+	<link rel="stylesheet" type="text/css" href="__SITE__/static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="__SITE__/static/css/layout_bb1bf2c.css" />
+</head>
+<body>
+
+<div id="lg_header">
+
+	<!--C端头部黑色导航-->
+	<div id="lg_tbar">
+
+		<div class="inner">
+
+			<div class="lg_tbar_l">
+				<a rel="nofollow" href="//www.lagou.com/app/download.html" class="lg_app" data-lg-tj-id="5500" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
+				<a rel="nofollow" href="{:url('index/auth/login')}" class="lg_os">进入企业版</a>
+			</div>
+
+			{if condition="$Think.session.username eq ''"}
+			<ul class="lg_tbar_r">
+				<li>
+					<a href="{:url('index/auth/login')}" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
+				</li>
+				<li>
+					<a href="{:url('index/auth/register')}" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">注册</a>
+				</li>
+			</ul>
+			{else /}
+			<ul class="lg_tbar_r">
+				
+					<a id="deliveryLink" class="bl" href="{:url('index/company/release')}">发布新职位</a>
+					<em id="noticeDot_delivery" class="noticeDot dn"></em>
+				</li>
+				<li>
+					<a class="bl" href="" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">公司主页</a>
+				</li>
+				<li class="user_dropdown" data-lg-tj-track-code="index_user">
+					<span class="unick bl">{:session('username')}</span>
+					<em id="noticeDot_name" class="noticeDot dn"></em>
+					<i></i>
+					<ul>
+						<li>
+							<a href="http://www.lagou.com/hr/info.html" data-lg-tj-id="5p00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">招聘设置</a>
+						</li>
+						<li>
+							<a href="http://account.lagou.com/account/accountBind.html" rel="nofollow" data-lg-tj-id="5q00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">帐号设置</a>
+						</li>
+						<li>
+							<a href="http://www.lagou.com/" data-lg-tj-id="5r00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">拉勾首页</a>
+						</li>
+						<li>
+							<a href="{:url('index/auth/logout')}" data-lg-tj-id="5s00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			{/if}
+			
+		</div>
+
+	</div><!--end #lg_tbar-->
+
+
+	<!--C端头部白色导航-->
+	<div id="lg_tnav">
+
+		<div class="inner">
+			<div class="lg_tnav_l">
+				<a href="http://www.itnewperson.com" class="lg_logo" data-lg-tj-id="5h00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
+					<h1>拉勾网</h1>
+				</a>
+				<div class="suggestCity"><strong>全国站</strong><em id="changeCity_btn">[切换城市]</em></div>
+			</div>
+			<ul class="lg_tnav_wrap">
+				<li>
+					<a href="//www.lagou.com/" class="current" data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
+				</li>
+				<li>
+					<a href="//www.lagou.com/gongsi/"  data-lg-tj-id="5j00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
+				</li>
+				<li>
+					<a rel="nofollow" href="//pai.lagou.com/index.html"  data-lg-tj-id="5k00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank" data-lg-tj-track-code="index_yipai">一拍</a>
+				</li>
+				<li>
+					<a rel="nofollow" href="//yanzhi.lagou.com/"  data-lg-tj-id="ic00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_yanzhi">言职</a>
+				</li>
+				<li>
+					<a rel="nofollow" href="https://pro.lagou.com"  target="_blank" data-lg-tj-id="1NI0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">大鲲</a>
+				</li>
+			</ul>
+
+		</div>
+
+	</div><!--end #lg_tnav-->
+
+
+</div>
+<div class="user_bindSidebar">
+	<dl class="user_sideBarmenu" id="user_sideBarmenu">
+		<dt>
+			<h3>帐号设置</h3>
+		</dt>
+		<dd>
+			<a href="{:url('index/user/userInfo')}" class="hover">完善/修改企业信息</a>
+		</dd>
+		
+	</dl>
+</div>
+
+<div class="user_userinfo_content">
+	<dl class="c_section">
+		<dt id="autofiletitle">
+			<h1>
+				<em></em>
+				企业信息
+			</h1>
+		</dt>
+		<dd>
+			<div class="userinfo_tips">
+				上传公司logo
+			</div>
+			<div class="userinfo_edit" id="userinfoEdit">
+				<form action="{:url('index/company/update_info')}" enctype="multipart/form-data" method="post">
+					<div class="avatar">
+						{if $info['logo']}
+						<img class="avatar_img" src="{$info['logo']}">
+						{else /}
+						<img class="avatar_img" src="__STATIC__/images/default_headpic.png">
+						{/if}
+					</div>
+					<input type="file" name="logo" style="margin-left:200px;">
+					<div class="username input_box">
+						<label class="label_input_box" for="userinfoEditUserName">公司全称</label>
+						<input id="userinfoEditUserName" name="c_realname" placeholder="昵称" value="{$info['c_realname']}" maxlength="15" data-maxlength="15" type="text">
+					</div>
+					
+					<div class="userinfo_job input_box">
+						<label class="label_input_box" for="userinfoEditPhoneNumber">手机</label>
+						<input id="userinfoEditPhoneNumber" name="call_num" placeholder="手机号" value="{$info['call_num']}" maxlength="70" data-maxlength="70" type="text" class="phone"><span style="margin-left:100px;"></span>
+					</div>
+					<div class="userinfo_job input_box">
+						<label class="label_input_box" for="userinfoEditEmail">邮箱</label>
+						<input id="userinfoEditEmail" name="cemail" placeholder="联系邮箱" value="{$info['cemail']}" maxlength="70" data-maxlength="70" type="text" class="email"><span style="margin-left:100px;"></span>
+					</div>
+					
+					<div class="userinfo_intro input_box">
+						<label class="label_input_box" for="userinfoEditIntroduce">公司简介</label>
+						<textarea id="userinfoEditIntroduce" name="c_introduce" placeholder="公司简介">{$info['c_introduce']}</textarea>
+					</div>
+					<div class="toolbar">
+						<input class="btn userinfo_save" type="submit" value="保存" id="btn"/>
+					</div>
+				</form>
+			</div>
+		</dd>
+	</dl>
+</div>
+</div>
+<!-- 页面主体END -->
+
+<!-- footer -->
+<a id="backtop" title="回到顶部" rel="nofollow" style="display: inline;"></a>
+<!-- feedback -->
+<!--
+    @require "common/widgets/footer_c/modules/feedback/feedback.less"
+-->
+
+<div id="product-fk">
+	<div id="feedback-icon">
+		<div class="fb-icon"></div>
+		<span>我要反馈</span>
+	</div>
+</div>
+<div id="footer">
+	<div class="wrapper">
+		<i class="footer_lagou_icon"></i>
+		<div class="inner_wrapper">
+			<a class="footer_app" href="http://www.lagou.com/app/download.html" rel="nofollow">拉勾APP<span>new</span><img data-delay-src="__SITE__/static/picture/cgqlkvaldtwakvc3aaeepk9-koc598.jpg" width="256" height="256"></a>
+			<a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">拉勾微博</a>
+			<a class="footer_qr" href="javascript:void(0)" rel="nofollow">拉勾微信<img data-delay-src="__SITE__/static/picture/cgpzwlznl0qazitpaabxepaojx0071.jpg" width="242" height="242"></a>
+			<a href="http://activity.lagou.com/topic/whatisnew.html" target="_blank" rel="nofollow">版本更新</a>
+			<a href="//www.lagou.com/qa.html?t=1" target="_blank" rel="nofollow">帮助中心</a>
+			<a href="//www.lagou.com/about.html" target="_blank" rel="nofollow">联系我们</a>
+			<a id="onlineService" href="javascript:void(0);" rel="nofollow">在线交流</a>
+			<span class="tel">服务热线：<em>4006-2828-35 (9:00 -18:00)</em></span>
+		</div>
+		<div class="copyright  has_logo">
+			<a rel="nofollow" href="http://v.pinpaibao.com.cn/authenticate/cert/?site=www.lagou.com&at=official"><img class="secu-img" src="__SITE__/static/picture/security_association_da335dd.png" alt="安全联盟"></a>&nbsp; <span><em>&copy;</em>2016 Lagou </span>
+			<a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" rel="nofollow">京ICP备14023790号-2</a>
+			<span>京公网安备11010802017116号</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>
