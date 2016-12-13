@@ -55,7 +55,7 @@
 					<em id="noticeDot_delivery" class="noticeDot dn"></em>
 				</li>
 				<li>
-					<a class="bl" href="" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">公司主页</a>
+					<a class="bl" href="{:url('index/company/companyHomePage')}" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">公司主页</a>
 				</li>
 				<li class="user_dropdown" data-lg-tj-track-code="index_user">
 					<span class="unick bl">{:session('username')}</span>
@@ -63,13 +63,10 @@
 					<i></i>
 					<ul>
 						<li>
-							<a href="http://www.lagou.com/hr/info.html" data-lg-tj-id="5p00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">招聘设置</a>
+							<a href="{:url('index/company/companyInfo')}" rel="nofollow" data-lg-tj-id="5q00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">帐号设置</a>
 						</li>
 						<li>
-							<a href="http://account.lagou.com/account/accountBind.html" rel="nofollow" data-lg-tj-id="5q00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">帐号设置</a>
-						</li>
-						<li>
-							<a href="http://www.lagou.com/" data-lg-tj-id="5r00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">拉勾首页</a>
+							<a href="__SITE__" data-lg-tj-id="5r00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">网站首页</a>
 						</li>
 						<li>
 							<a href="{:url('index/auth/logout')}" data-lg-tj-id="5s00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
@@ -96,7 +93,7 @@
 			</div>
 			<ul class="lg_tnav_wrap">
 				<li>
-					<a href="//www.lagou.com/" class="current" data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
+					<a href="__SITE__" class="current" data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
 				</li>
 				<li>
 					<a href="//www.lagou.com/gongsi/"  data-lg-tj-id="5j00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
@@ -124,9 +121,8 @@
 			<h3>帐号设置</h3>
 		</dt>
 		<dd>
-			<a href="{:url('index/user/userInfo')}" class="hover">完善/修改企业信息</a>
+			<a href="{:url('index/company/companyInfo')}" class="hover">完善/修改企业信息</a>
 		</dd>
-		
 	</dl>
 </div>
 
@@ -165,10 +161,21 @@
 						<label class="label_input_box" for="userinfoEditEmail">邮箱</label>
 						<input id="userinfoEditEmail" name="cemail" placeholder="联系邮箱" value="{$info['cemail']}" maxlength="70" data-maxlength="70" type="text" class="email"><span style="margin-left:100px;"></span>
 					</div>
-					
+					<div class="userinfo_job input_box">
+						<label class="label_input_box" for="userinfoEditEmail">所在城市</label>
+						<input id="userinfoEditEmail" name="city" placeholder="公司所在城市,如:北京" value="{$info['city']}" maxlength="70" data-maxlength="70" type="text"><span style="margin-left:100px;"></span>
+					</div>
+					<div class="userinfo_job input_box">
+						<label class="label_input_box" for="userinfoEditEmail">公司规模</label>
+						<input id="userinfoEditEmail" name="scale" placeholder="如：20-50人" value="{$info['scale']}" maxlength="70" data-maxlength="70" type="text"><span style="margin-left:100px;"></span>
+					</div>
 					<div class="userinfo_intro input_box">
 						<label class="label_input_box" for="userinfoEditIntroduce">公司简介</label>
 						<textarea id="userinfoEditIntroduce" name="c_introduce" placeholder="公司简介">{$info['c_introduce']}</textarea>
+					</div>
+					<div class="userinfo_job input_box">
+						<label class="label_input_box" for="userinfoEditEmail">公司宣传语</label>
+						<input id="userinfoEditEmail" name="slogan" placeholder="20字以内" value="{$info['slogan']}" maxlength="70" data-maxlength="70" type="text"><span style="margin-left:100px;"></span>
 					</div>
 					<div class="toolbar">
 						<input class="btn userinfo_save" type="submit" value="保存" id="btn"/>

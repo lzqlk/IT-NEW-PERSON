@@ -57,6 +57,7 @@ class Auth extends Controller
 					session('username',$sel1['cname']);
 					session('cid',$sel1['cid']);
 					session('logo', $sel1['logo']);
+					session('c_realname',$sel1['c_realname']);
 					if(session('logo')) {
 						$this->redirect('index/company/release');
 					} else {
