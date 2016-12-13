@@ -113,6 +113,10 @@
 			</ul>
 			{else /}
 			<ul class="lg_tbar_r">
+			{if session('cid')}
+				<a class="bl" href="{:url('index/company/release')}" >发布职位</a>
+
+			{else /}
 				<li>
 				{if session('resume')}
 					<a class="bl" href="{:url('index/user/myResume')}" >我的简历</a>
@@ -120,12 +124,21 @@
 					<a class="bl" href="{:url('index/user/resume')}" >我的简历</a>
 				{/if}
 				</li>
+			{/if}
 				<li>
+				{if session('logo')}
+					<a href=""  data-lg-tj-id="5w00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">职位管理</a>
+				{else /}
 					<a id="deliveryLink" class="bl" href="" data-lg-tj-id="5800" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_deliver" data-lg-tj-track-type="1">投递箱</a>
 					<em id="noticeDot_delivery" class="noticeDot dn"></em>
+				{/if}
 				</li>
 				<li>
+				{if session('logo')}
+					<a href="javascript;" class="bl">公司主页</a>
+				{else /}
 					<a class="bl" href="" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹</a>
+				{/if}
 				</li>
 				<li class="user_dropdown" data-lg-tj-track-code="index_user">
 					<span class="unick bl">{:session('username')}</span>
@@ -140,11 +153,9 @@
 							<em id="noticeDot_invitation" class="noticeDot dn"></em>
 						</li>
 						<li>
-							<a href="{:url('index/user/userInfo')}">帐号设置</a>
+							<a href="{:url('index/company/companyInfo')}">帐号设置</a>
 						</li>
-						<li>
-							<a href="" data-lg-tj-id="5d00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">去企业版</a>
-						</li>
+						
 						<li>
 						<a href="{:url('index/auth/logout')}" data-lg-tj-id="5e00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
 						</li>
