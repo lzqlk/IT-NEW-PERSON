@@ -5,6 +5,7 @@ use app\index\model\Position;
 use app\index\model\Industry;
 use app\index\model\Link;
 use app\index\model\Office;
+use app\index\model\Company;
 
 class Index extends Controller
 {
@@ -22,6 +23,8 @@ class Index extends Controller
 		$office = Office::where('is_hot',1)->limit(15)->select();
 		$new = Office::limit(15)->order('create_time', 'desc')->select();
 
+		$company = Company::limit(5)->select();
+
 		$this->assign([
 			'link' => $link,
 			'office' => $office,
@@ -29,7 +32,8 @@ class Index extends Controller
 			'big' => $big,
 			'small' => $small,
 			'hot' =>$hot,
-			'position' => $position
+			'position' => $position,
+			'company' => $company
 			]);
         return $this->fetch();
     }

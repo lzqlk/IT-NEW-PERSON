@@ -13,10 +13,12 @@
                             <dd>
                             	<input type="text" value="{$pval.p_name}">
                                 {if condition="$pval['is_hot'] eq 1"}
-                            	<button value="{$pval.pid}">取消热门</button>
+                            	<button value="{$pval.pid}" id="hot">取消热门</button>
                                 {else /}
-                                <button value="{$pval.pid}">设为热门</button>
+                                <button value="{$pval.pid}" id="hot">设为热门</button>
                                 {/if}
+                                <button id="editPosition" value="{$pval.pid}">修改</button>
+                                <button id="deletePosition" value="{$pval.pid}">删除</button>
                             </dd>
                             {/if}
                         {/volist}
@@ -65,7 +67,7 @@
 </div>
 </div>
 <script type="text/javascript">
-    $('#countries button').each(function(){
+    $('#countries #hot').each(function(){
         var btn;
         $(this).click(function(){
            
@@ -84,5 +86,26 @@
             }
         );
 
+    });
+</script>
+<script type="text/javascript">
+    $('#countries #deletePosition').each(function(){
+
+        $(this).click(function(){
+
+            $.post('__SITE__/admin/position/deletePosition', {id:$(this).val()});
+            $(this).parent().css('display','none');
+        });
+        
+    });
+
+    $('#countries #editPosition').each(function(){
+
+        $(this).click(function(){
+            var value = $(this).prev().prev().val();
+            $.post('__SITE__/admin/position/editPosition', {id:$(this).val(), value:value});
+            $(this).prev().prev().val(value);
+        });
+        
     });
 </script>

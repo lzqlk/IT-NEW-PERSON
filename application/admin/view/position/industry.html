@@ -1,62 +1,86 @@
 <div class="container-fluid">          
    <div class="main_content">
     <div class="row-fluid">
-         <div class="span6">
-            <h3 class="heading">行业分类</h3>
-            <br />
-            <div id="countries">
-                {volist name='big' id='bigval'}
-                <dl>
-                    <dt>{$bigval.name}</dt>
-                    {volist name='small' id='smallval'}
-                    {if condition="$smallval['parentid'] eq $bigval['iid']"}
-                    <dd>
-                        <input type="text" value="{$smallval.name}">
-                    </dd>
-                    {/if}
-                    {/volist}
-                </dl>
+     <div class="span6">
+        <h3 class="heading">行业分类</h3>
+        <br />
+        <div id="countries">
+            {volist name='big' id='bigval'}
+            <dl>
+                <dt>{$bigval.name}</dt>
+                {volist name='small' id='smallval'}
+                {if condition="$smallval['parentid'] eq $bigval['iid']"}
+                <dd>
+                    <input type="text" value="{$smallval.name}">
+                    <button value="{$smallval.iid}" id="edit">修改</button>
+                    <button value="{$smallval.iid}" id="delete">删除</button>
+                    
+                </dd>
+                {/if}
                 {/volist}
-            </div>
+            </dl>
+            {/volist}
         </div>
-        <div class="span6">
-            <div class="box">
-                <div class="box-head">
-                    <h3>添加版块</h3>
-                </div>
-                <br />
-                <div><h4>提示:不选择版块时默认为添加大版块</h4></div>
-                 <br />
-                <div class="box-content">
-                    <form action="{:url('admin/position/addcate')}" class="form-horizontal">
-                        <fieldset>
-                            <div class="control-group success">
-                                <label for="success" class="control-label">版块名称</label>
-                                <div class="controls">
-                                    <input type="text" name="cate" id="success" class='input-square'>
-                                    <span class="help-inline"></span>
-                                </div>
+    </div>
+    <div class="span6">
+        <div class="box">
+            <div class="box-head">
+                <h3>添加版块</h3>
+            </div>
+            <br />
+            <div><h4>提示:不选择版块时默认为添加大版块</h4></div>
+            <br />
+            <div class="box-content">
+                <form action="{:url('admin/position/addcate')}" class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group success">
+                            <label for="success" class="control-label">版块名称</label>
+                            <div class="controls">
+                                <input type="text" name="cate" id="success" class='input-square'>
+                                <span class="help-inline"></span>
                             </div>
-                            <div class="control-group">
-                                <label for="select" class="control-label">选择版块</label>
-                                <div class="controls">
-                                    <select name="select" id="select">
-                                        <option value="0">--不选择--</option>
-                                        {volist name='big' id='val'}
-                                        <option value="{$val.iid}">{$val.name}</option>
-                                        {/volist}
-                                    </select>
-                                </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="select" class="control-label">选择版块</label>
+                            <div class="controls">
+                                <select name="select" id="select">
+                                    <option value="0">--不选择--</option>
+                                    {volist name='big' id='val'}
+                                    <option value="{$val.iid}">{$val.name}</option>
+                                    {/volist}
+                                </select>
                             </div>
-                            <div class="form-actions">
-                                <button class="btn btn-primary" type="submit">添加</button>
-                                <input type="reset" class='btn btn-danger' value="重置">
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn btn-primary" type="submit">添加</button>
+                            <input type="reset" class='btn btn-danger' value="重置">
+                        </div>
+                    </fieldset>
+                </form>
             </div>
         </div>
     </div>
 </div>
 </div>
+</div>
+<script type="text/javascript">
+    $('#countries #delete').each(function(){
+
+        $(this).click(function(){
+
+            $.post('__SITE__/admin/position/deleteIndustry', {id:$(this).val()});
+            $(this).parent().css('display','none');
+        });
+        
+    });
+
+    $('#countries #edit').each(function(){
+
+        $(this).click(function(){
+            var value = $(this).prev().val();
+            $.post('__SITE__/admin/position/edit', {id:$(this).val(), value:value});
+            $(this).prev().val(value);
+        });
+        
+    });
+</script>

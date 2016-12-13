@@ -14,7 +14,6 @@ class User extends Auth
 	public function renew()
 	{
 		Db::name('user')->where('uid', 'in', input('param.uid'))->update(['delete_time' => NULL]);
-		$this->redirect('admin/index/index');
 	}
 
 	public function reldelete()
@@ -31,5 +30,10 @@ class User extends Auth
 			Db::name('user')->where('uid', 'in', input('param.uid/a'))->update(['delete_time' => NULL]);
 		}
 		$this->redirect('admin/index/index');
+	}
+
+	public function admin()
+	{
+		return $this->fetch();
 	}
 }

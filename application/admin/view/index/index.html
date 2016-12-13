@@ -37,6 +37,7 @@
 											<th>创建简历</th>
 											<th>操作</th>
 										</tr>
+										{notempty name='list'}
 										{volist name='list' id='val'}
 										<tr class='table-unread'>
 											<td class='table-checkbox'>
@@ -63,6 +64,7 @@
 											</td>
 										</tr>
 										{/volist}
+										{/notempty}
 									</table>
 									<div class="force-padding">
 										<div class="btn-toolbar">
@@ -94,30 +96,33 @@
 										<th>操作</th>
 									</tr>
 									{volist name='resume' id='rval'}
-									<tr>
+									<tr id="resume">
 										<td class='table-checkbox'>
-											<input type="checkbox" class='selectable-checkbox'>
+											<input type="checkbox" class='selectable-checkbox' value="{$rval.rid}">
 										</td>
 										<td>{$rval.realname}</td>
 										<td>{$rval.email}</td>
 										<td>{$rval.phone_num}</td>
-										{if condition="$rval['is_disabled'] eq 1"}
-										<td>通过</td>
-										{else /}
-										<td>未通过</td>
+										<td>
+											{if condition="$rval['is_disabled'] eq 1"}
+											通过
+											{else /}
+											未通过
+										</td>
 										{/if}
-										{if condition="$rval['is_public'] eq 1"}
-										<td>公开</td>
-										{else /}
-										<td>不公开</td>
-										{/if}
+										<td>
+											{if condition="$rval['is_public'] eq 1"}
+											公开
+											{else /}
+											不公开
+											{/if}
+										</td>
 										<td></td>
 										<td>{$rval.create_time|date="Y-m-d",###}</td>
 										<td>{$rval.update_time|date="Y-m-d",###}</td>
 										<td class='actions'>
 											<div class="btn-group">
-												<a href="#" title="Delete" class="btn btn-mini tip deleteRow">删除
-												</a>
+												<button value="{$rval.rid}">删除</button>
 											</div>
 										</td>
 									</tr>
@@ -126,8 +131,8 @@
 								<div class="force-padding">
 									<div class="btn-toolbar">
 										<div class="btn-group">
-											<button class="btn">审核通过</button>
-											<button class="btn">删除</button>
+											<button class="btn" id="review">审核通过</button>
+											<button class="btn" id="delete">删除</button>
 										</div>
 									</div>
 								</div>
@@ -147,10 +152,9 @@
 											<th>手机</th>
 											<th>注册时间</th>
 											<th>删除时间</th>
-											<th>操作</th>
 										</tr>
 										{volist name='soft' id='value'}
-										<tr class='table-unread'>
+										<tr class='table-unread' id="user">
 											<td class='table-checkbox'>
 												<input type="checkbox" class='selectable-checkbox' name="uid[]" value="{$value.uid}">
 											</td>
@@ -161,16 +165,6 @@
 											<td>{$value.phone_num}</td>
 											<td>{$value.create_time|date="Y-m-d",###}</td>
 											<td>{$value.delete_time|date="Y-m-d",###}</td>
-											<td class='actions'>
-												<div class="btn-group">
-													<a href="{:url('admin/user/renew?uid='.$value['uid'])}" title="Renew" class="btn btn-mini tip">
-														恢复
-													</a>
-													<a href="{:url('admin/user/reldelete?uid='.$value['uid'])}" title="Delete" class="btn btn-mini tip">
-														删除
-													</a>
-												</div>
-											</td>
 										</tr>
 										{/volist}
 									</table>
@@ -189,40 +183,48 @@
 								<div class="alert alert-info" style="border-top:1px solid #a6a6a6">
 									<strong>简历回收站</strong>
 								</div>
-								<form action="{:url('admin/user/action')}" method="post">
+								<form action="{:url('admin/resume/action')}" method="post">
 									<table class='table table-striped table-bordered dataTable dataTable-nosort' data-nosort="0">
 										<tr>
 											<th class='table-unread'>
 												<input type="checkbox" class='sel_all'>
 											</th>
-											<th>用户名</th>
+											<th>真实姓名</th>
 											<th>email</th>
 											<th>手机</th>
-											<th>注册时间</th>
-											<th>删除时间</th>
-											<th>操作</th>
+											<th>审核状态</th>
+											<th>公开</th>
+											<th>照片</th>
+											<th>创建时间</th>
+											<th>更新时间</th>
 										</tr>
+										{volist name='soft_resume' id='srval'}
 										<tr class='table-unread'>
 											<td class='table-checkbox'>
-												<input type="checkbox" class='selectable-checkbox' name="uid[]" value="{$value.uid}">
+												<input type="checkbox" class='selectable-checkbox' name="uid[]" value="{$srval.rid}">
+											</td>
+											<td>{$srval.realname}</td>
+											<td>{$srval.email}</td>
+											<td>{$srval.phone_num}</td>
+											<td>
+												{if condition="$srval['is_disabled'] eq 1"}
+												通过
+												{else /}
+												未通过
+												{/if}
 											</td>
 											<td>
+												{if condition="$srval['is_public'] eq 1"}
+												公开
+												{else /}
+												不公开
+												{/if}
 											</td>
 											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td class='actions'>
-												<div class="btn-group">
-													<a href="{:url('admin/user/renew?uid='.$value['uid'])}" title="Renew" class="btn btn-mini tip">
-														恢复
-													</a>
-													<a href="{:url('admin/user/reldelete?uid='.$value['uid'])}" title="Delete" class="btn btn-mini tip">
-														删除
-													</a>
-												</div>
-											</td>
+											<td>{$srval.create_time|date="Y-m-d",###}</td>
+											<td>{$srval.update_time|date="Y-m-d",###}</td>
 										</tr>
+										{/volist}
 									</table>
 									<div class="force-padding">
 										<div class="btn-toolbar">
@@ -243,3 +245,42 @@
 			</div>
 		</div>	
 	</div>
+	<script type="text/javascript">
+
+		$('#review').click(function(){
+			$("input:checked").each(function(){
+				
+				$(this).parent().next().next().next().next().html('通过');
+				
+				$.post('__SITE__/admin/index/review', {select : $(this).val()});
+				
+			});
+
+		});
+
+		$('#delete').click(function(){
+			$("input:checked").each(function(){
+				$.post('__SITE__/admin/index/deleteResume', {select : $(this).val()});
+
+			});
+
+		});
+
+		$('#resume button').each(function(){
+			$(this).click(function(){
+				$.post('__SITE__/admin/index/delete',{rid:$(this).val()});
+				$(this).parent().parent().parent().css('display','none');
+			});
+		});
+
+		$('#user button').each(function(){
+			$(this).click(function(){
+				if($(this).html() == '恢复'){
+					$.post('__SITE__/admin/user/renew',{uid:$(this).val()});
+				} else {
+					$.post('__SITE__/admin/user/delete',{uid:$(this).val()});
+				}
+				$(this).parent().parent().parent().css('display','none');
+			});
+		});
+	</script>
