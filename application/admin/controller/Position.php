@@ -45,4 +45,24 @@ class Position extends Auth
 		Industry::create(['name' => input('param.cate'), 'parentid' => input('param.select')]);
 		$this->redirect('admin/position/industry');
 	}
+
+	public function deleteIndustry()
+	{
+		Industry::destroy(input('param.id'));
+	}
+
+	public function edit()
+	{
+		Industry::where('iid',input('param.id'))->update(['name' => input('param.value')]);
+	}
+
+	public function deletePosition()
+	{
+		Position::destroy(input('param.id'));
+	}
+
+	public function editPosition()
+	{
+		Position::where('pid',input('param.id'))->update(['p_name' => input('param.value')]);
+	}
 }

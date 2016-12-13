@@ -16,7 +16,7 @@
 						{if condition="$sval['parentid'] eq $bval['iid']"}
 							{volist name='hot' id='hval'}
 								{if condition="$hval['iid'] eq $sval['iid']"}
-									<a href="{:url('index/job/php')}" data-lg-tj-id="4A00" data-lg-tj-no="0001" data-lg-tj-cid="idnull">{$hval.p_name}</a>
+									<a href="{:url('index/job/php')}">{$hval.p_name}</a>
 								{/if}
 							{/volist}
 						{/if}
@@ -82,7 +82,7 @@
 
 					
 					
-					<a class="tj_exposure" rel="nofollow" href="https://www.lagou.com/app/download.html" target="_blank" data-lg-tj-id="4k00" data-lg-tj-no="0001" data-lg-tj-cid="2893">
+					<a class="tj_exposure" rel="nofollow" href="javascript:;" target="_blank" data-lg-tj-id="4k00" data-lg-tj-no="0001" data-lg-tj-cid="2893">
 						<img src="__SITE__/static/picture/cgqkkvg1staauacraaddqpzxeus844.jpg" width="612" height="160" alt="拉勾APP" />
 					</a>
 				</li>
@@ -90,7 +90,7 @@
 
 					
 					
-					<a class="tj_exposure" rel="nofollow" href="https://activity.lagou.com/topic/Intelligenthardware.html" target="_blank" data-lg-tj-id="4k00" data-lg-tj-no="0002" data-lg-tj-cid="2900">
+					<a class="tj_exposure" rel="nofollow" href="javascript:;" target="_blank" data-lg-tj-id="4k00" data-lg-tj-no="0002" data-lg-tj-cid="2900">
 						<img src="__SITE__/static/picture/cgp3o1g7-fmaz_f0aaeqkjkklqe019.png" width="612" height="160" alt="智能硬件专场抓取" />
 					</a>
 				</li>
@@ -98,7 +98,7 @@
 
 					
 					
-					<a class="tj_exposure" rel="nofollow" href="https://activity.lagou.com/topic/smallbeautiful2.html" target="_blank" data-lg-tj-id="4k00" data-lg-tj-no="0003" data-lg-tj-cid="2903">
+					<a class="tj_exposure" rel="nofollow" href="javascript:;" target="_blank" data-lg-tj-id="4k00" data-lg-tj-no="0003" data-lg-tj-cid="2903">
 						<img src="__SITE__/static/picture/cgqkkvg1vq-ax6qnaadnspb8uji303.jpg" width="612" height="160" alt="小而美公司抓取" />
 					</a>
 				</li>
@@ -123,96 +123,20 @@
 		</div>
 
 		<ul id="da-thumbs" class="da-thumbs" data-lg-tj-track-code="index_logoad" data-lg-tj-track-type="1">
+			{volist name='company' id='cval'}
 			<li >
-
-				
-				
-				<a class="tj_exposure" href="http://www.lagou.com/gongsi/90537.html" target="_blank" data-lg-tj-id="4l00" data-lg-tj-no="0001" data-lg-tj-cid="6202">
-					<img src="__SITE__/static/picture/cgyxblxut0-acf-laaai7kpfek8711.png" width="113" height="113" alt="Voyageone" />
+				<a class="tj_exposure" href="javascript:;" data-lg-tj-id="4l00" data-lg-tj-no="0001" data-lg-tj-cid="6202">
+					<img src="{$cval.logo}" width="113" height="113" alt="{$cval.cname}" />
 					<div class="hot_info">
-						<h2 title="Voyageone">Voyageone</h2>
+						<h2 title="{$cval.cname}">{$cval.cname}</h2>
 						<em></em>
-						<p title="跨境电商领导者，有12年美国电商经验">
-							跨境电商领导者，有12年美国电商经验
+						<p title="{$cval.slogan}">
+							{$cval.slogan}
 						</p>
 					</div>
 				</a>
 			</li>
-			<li >
-
-				
-				
-				<a class="tj_exposure" href="http://www.lagou.com/gongsi/143255.html" target="_blank" data-lg-tj-id="4l00" data-lg-tj-no="0002" data-lg-tj-cid="6148">
-					<img src="__SITE__/static/picture/cgp3o1ghi0caxsa6aadiotjxwag709.jpg" width="113" height="113" alt="找牛网" />
-					<div class="hot_info">
-						<h2 title="找牛网">找牛网</h2>
-						<em></em>
-						<p title="和一个牛X团队成长为伟大的团队">
-							和一个牛X团队成长为伟大的团队
-						</p>
-					</div>
-				</a>
-			</li>
-			<li >
-
-				
-				
-				<a class="tj_exposure" href="http://www.lagou.com/gongsi/97882.html" target="_blank" data-lg-tj-id="4l00" data-lg-tj-no="0003" data-lg-tj-cid="6201">
-					<img src="__SITE__/static/picture/cgp3o1fjp-wacx40aaakackx2tc415.png" width="113" height="113" alt="达观数据" />
-					<div class="hot_info">
-						<h2 title="达观数据">达观数据</h2>
-						<em></em>
-						<p title="达观数据是一家专注于大数据信息技术的公司。">
-							达观数据是一家专注于大数据信息技术的公司。
-						</p>
-					</div>
-				</a>
-			</li>
-			<li >
-
-				
-				
-				<a class="tj_exposure" href="http://www.lagou.com/gongsi/149926.html" target="_blank" data-lg-tj-id="4l00" data-lg-tj-no="0004" data-lg-tj-cid="6267">
-					<img src="__SITE__/static/picture/cgp3o1frw0catywiaabpktzjvgo090.jpg" width="113" height="113" alt="美承集团" />
-					<div class="hot_info">
-						<h2 title="美承集团">美承集团</h2>
-						<em></em>
-						<p title="中国知名的IT零售标杆企业。">
-							中国知名的IT零售标杆企业。
-						</p>
-					</div>
-				</a>
-			</li>
-			<li >
-
-				
-				
-				<a class="tj_exposure" href="http://www.lagou.com/gongsi/2316.html" target="_blank" data-lg-tj-id="4l00" data-lg-tj-no="0005" data-lg-tj-cid="6200">
-					<img src="__SITE__/static/picture/cgp3o1ynx1iabqolaaabo9vpzfg056.png" width="113" height="113" alt="OFashion" />
-					<div class="hot_info">
-						<h2 title="OFashion">OFashion</h2>
-						<em></em>
-						<p title="全球首家时尚买手制社交购物平台">
-							全球首家时尚买手制社交购物平台
-						</p>
-					</div>
-				</a>
-			</li>
-			<li  class="last" >
-
-				
-				
-				<a class="tj_exposure" href="http://www.lagou.com/gongsi/150874.html" target="_blank" data-lg-tj-id="4l00" data-lg-tj-no="0006" data-lg-tj-cid="6266">
-					<img src="__SITE__/static/picture/cgp3o1gfuikadjzeaaakhhx0cmq588.png" width="113" height="113" alt="宝康电子" />
-					<div class="hot_info">
-						<h2 title="宝康电子">宝康电子</h2>
-						<em></em>
-						<p title="上海宝信软件股份有限公司全资所有的高科技公司。">
-							上海宝信软件股份有限公司全资所有的高科技公司。
-						</p>
-					</div>
-				</a>
-			</li>
+			{/volist}
 		</ul>
 
 
@@ -230,9 +154,9 @@
 							<div class="fl pli_top_l">
 								<div class="position_name">
 									
-									<h2 class="fl"><a href="//www.lagou.com/jobs/1976814.html" target="_blank" class="position_link fl wordCut" data-index="0" data-lg-tj-id="rx00" data-lg-tj-no="0001" data-lg-tj-cid="1976814">{$oval.offer_name}<span>[{$oval.city}]</span></a></h2>
+									<h2 class="fl"><a href="//www.lagou.com/jobs/1976814.html" target="_blank" class="position_link fl wordCut" data-index="0" data-lg-tj-id="rx00" data-lg-tj-no="0001" data-lg-tj-cid="1976814">{$oval.offer_name}<span>[{$oval.positionAddress}]</span></a></h2>
 									<!-- 此处需要和后台确认 -->
-									<span class="fl">{$oval.create_time}</span>
+									<span class="fl">{$oval.create_time|date="Y-m-d H:i:s",###}</span>
 								</div>
 								<div class="position_main_info">
 									<span class="salary fl">{$oval.money}</span>
@@ -270,9 +194,9 @@
 							<div class="fl pli_top_l">
 								<div class="position_name">
 									
-									<h2 class="fl"><a href="//www.lagou.com/jobs/2407486.html" target="_blank" class="position_link fl wordCut" data-index="0" data-lg-tj-id="4q00" data-lg-tj-no="0001" data-lg-tj-cid="2407486">{$nval.offer_name}<span>[{$nval.city}]</span></a></h2>
+									<h2 class="fl"><a href="//www.lagou.com/jobs/2407486.html" target="_blank" class="position_link fl wordCut" data-index="0" data-lg-tj-id="4q00" data-lg-tj-no="0001" data-lg-tj-cid="2407486">{$nval.offer_name}<span>[{$nval.positionAddress}]</span></a></h2>
 									<!-- 此处需要和后台确认 -->
-									<span class="fl">{$nval.create_time}</span>
+									<span class="fl">{$nval.create_time|date="Y-m-d H:i:s",###}</span>
 								</div>
 								<div class="position_main_info">
 									<span class="salary fl">{$nval.money}</span>
