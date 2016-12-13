@@ -257,7 +257,7 @@ return [
         // 验证成功后是否重置
         'reset' => true
         ],
-<<<<<<< HEAD
+
 
     'http_exception_template' => [
         // 定义404错误的重定向页面地址
@@ -265,7 +265,7 @@ return [
         // 还可以定义其它的HTTP status
         401 => APP_PATH.'401.html',
         ],
-=======
+
     //邮箱配置
     'MAIL_HOST' => 'smtp.exmail.qq.com', //发送的服务器
     'MAIL_USER' => 'liu123@loveforyoung.cn', //发送的账号
@@ -273,5 +273,5 @@ return [
     'MAIL_PORT' => '25', //发送的端口
     'MAIL_FROM' => 'liu123@loveforyoung.cn' //设置发件人
 
->>>>>>> 19dead8416760a64b45cea0c2a9a8f2f880f15b3
+
 ];

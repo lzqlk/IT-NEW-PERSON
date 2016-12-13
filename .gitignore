@@ -4,4 +4,4 @@ database.php
 *.log
 runtime/
 uploads/
-database.php
+config.php

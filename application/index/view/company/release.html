@@ -93,7 +93,7 @@
 							</h1>
 						</dt>
 						<dd>
-							<div class="ccc_tr">今日已发布 <span>0</span> 个职位   还可发布 <span>5</span> 个职位</div>
+							
 							<form action="{:url('index/company/doRelease')}" method="post" id="jobForm">
 								<table class="btm">
 									<tbody><tr>
@@ -819,32 +819,7 @@
 								</tbody></table>
 
 								<table class="btm">
-									<tbody><tr>
-										<td width="25"><span class="redstar">*</span></td>
-										<td width="85">工作性质</td>
-										<td>
-											<ul class="profile_radio clearfix reset">
-
-												<li>
-													全职<em></em>
-													<input name="jobNature" value="全职" type="radio"> 
-												</li>
-
-
-												<li>
-													兼职<em></em>
-													<input name="jobNature" value="兼职" type="radio"> 
-												</li>
-
-
-												<li>
-													实习<em></em>
-													<input name="jobNature" value="实习" type="radio"> 
-												</li>
-
-											</ul>
-										</td>
-									</tr>
+									
 									<tr>
 										<td><span class="redstar">*</span></td>
 										<td>月薪范围</td>
@@ -859,7 +834,7 @@
 										</td>
 									</tr>
 									
-								</tbody></table>
+								</table>
 
 								<table class="btm">
 									<tbody><tr>
@@ -1048,9 +1023,7 @@
 		} 
 	});
 	
-	$('#workAddress').focus(function(){
-		$('#beError').hide();
-	});
+	
 });
 </script>
 <!-- end old -->

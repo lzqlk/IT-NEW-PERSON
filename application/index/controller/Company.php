@@ -6,6 +6,7 @@ use think\Request;
 use app\index\model\User;
 use app\index\model\Company;
 use app\index\model\Resume;
+use app\index\model\Office;
 class Company extends Auth
 {
 	public function verify()
@@ -103,6 +104,9 @@ class Company extends Auth
 			'cemail'=>$cemail,
 			'c_introduce'=>$request->param('c_introduce'),
 			'logo'=>$logo1,
+			'city'=>$request->param('city'),
+			'scale'=>$request->param('scale'),
+			'slogan'=>$request->param('slogan'),
 			'update_time'=>time()
 			],['cid'=>session('cid')]);
 		session('logo',$logo1);
@@ -120,7 +124,52 @@ class Company extends Auth
 
 	public function doRelease(Request $request)
 	{
-		dump($request);
+		//dump($request);
+		$data = [
+			'positionType'=>$request->param('positionType'),
+			'offer_name'=>$request->param('positionName'),
+			'company'=>session('c_realname'),
+			'money'=>$request->param('salaryMin').'k',
+			'experience'=>$request->param('workYear'),
+			'education'=>$request->param('education'),
+			'financing'=>$request->param('financing'),
+			'industry'=>$request->param('industry'),
+			'positionAdvantage'=>$request->param('positionAdvantage'),
+			'description'=>$request->param('positionDetail'),
+			'positionAddress'=>$request->param('positionAddress')
+		];
+
+		$insert = Office::create($data);
+		if($insert) {
+			$this->success('发布成功');
+		} else {
+			$this->error('发布失败');
+		}
+	}
+
+	public function companyHomePage()
+	{
+		$info = Company::get(session('cid'))->toArray();
+		$this->assign('info',$info);
+		$info1 = Office::get(['company'=>session('c_realname')])->toArray();
+		$this->assign('info1',$info1);
+		$position = Office::where(['company'=>session('c_realname')])->select();
+		$count = count($position);
+		$this->assign('count',$count);
+		return $this->fetch();
+	}
+
+	public function requirePosition()
+	{
+		$info = Company::get(session('cid'))->toArray();
+		$this->assign('info',$info);
+		$info1 = Office::get(['company'=>session('c_realname')])->toArray();
+		$this->assign('info1',$info1);
+		$position = Office::where(['company'=>session('c_realname')])->select();
+		$count = count($position);
+		$this->assign('count',$count);
+		$this->assign('position',$position);
+		return $this->fetch();
 	}
 
 }
