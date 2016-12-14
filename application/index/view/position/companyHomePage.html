@@ -84,21 +84,55 @@
                 </li>
             </ul>
             {else /}
+            
             <ul class="lg_tbar_r">
-                
+                {if session('photo')}
+                <li>
+                    {if session('resume')}
+                    <a class="bl" href="{:url('index/user/myResume')}" >我的简历</a>
+                    {else /}
+                    <a class="bl" href="{:url('index/user/resume')}" >我的简历</a>
+                    {/if}
+                </li>
+                {else /}
+                <li>
                     <a id="deliveryLink" class="bl" href="{:url('index/company/release')}">发布新职位</a>
                     <em id="noticeDot_delivery" class="noticeDot dn"></em>
                 </li>
                 <li>
                     <a class="bl" href="{:url('index/company/companyHomePage')}" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">公司主页</a>
                 </li>
+                {/if}
+                {if session('photo')}
+                    <li class="user_dropdown" data-lg-tj-track-code="index_user">
+                    <span class="unick bl">{:session('username')}</span>
+                    <em id="noticeDot_name" class="noticeDot dn"></em>
+                    <i></i>
+                    <ul>
+                        <li>
+                            <a href="" data-lg-tj-id="5a00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的订阅</a>
+                        </li>
+                        <li>
+                            <a id="invitationLink" href="" data-lg-tj-id="5b00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-gatj-msg="header_c,职位邀请,number">职位邀请</a>
+                            <em id="noticeDot_invitation" class="noticeDot dn"></em>
+                        </li>
+                        <li>
+                            <a href="{:url('index/company/companyInfo')}">帐号设置</a>
+                        </li>
+                        
+                        <li>
+                        <a href="{:url('index/auth/logout')}" data-lg-tj-id="5e00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
+                        </li>
+                    </ul>
+                </li>
+                {else /}
                 <li class="user_dropdown" data-lg-tj-track-code="index_user">
                     <span class="unick bl">{:session('username')}</span>
                     <em id="noticeDot_name" class="noticeDot dn"></em>
                     <i></i>
                     <ul>
                         <li>
-                            <a href="{:url('index/company/companyInfo')}" rel="nofollow" data-lg-tj-id="5q00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">帐号设置</a>
+                            <a href="__SITE__/index/company/companyInfo/cid/{$info['cid']}" rel="nofollow" data-lg-tj-id="5q00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">帐号设置</a>
                         </li>
                         <li>
                             <a href="__SITE__" data-lg-tj-id="5r00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">网站首页</a>
@@ -108,7 +142,9 @@
                         </li>
                     </ul>
                 </li>
+                {/if}
             </ul>
+
             {/if}
             
         </div>
@@ -244,10 +280,10 @@
     <div class="company_navs_wrap">
         <ul data-pjax>
             <li  class="current" >
-                <a href="//www.lagou.com/gongsi/108012.html" data-lg-tj-id="9100" data-lg-tj-no="0001" data-lg-tj-cid="idnull">公司主页</a>
+                <a href="javascript:;" data-lg-tj-id="9100" data-lg-tj-no="0001" data-lg-tj-cid="idnull">公司主页</a>
             </li>
             <li >
-                <a href="{:url('index/company/requirePosition')}" data-lg-tj-id="9100" data-lg-tj-no="0002" data-lg-tj-cid="idnull">招聘职位（{$count}）</a>
+                <a href="__SITE__/index/position/requirePosition/cid/{$info.cid}" data-lg-tj-id="9100" data-lg-tj-no="0002" data-lg-tj-cid="idnull">招聘职位（{$count}）</a>
             </li>
             
         </ul>
