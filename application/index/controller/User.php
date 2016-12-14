@@ -43,12 +43,9 @@ class User extends Auth
 		//验证手机号
 		
 		$phone = $request->param('phone_num');
-		//dump($phone);die();
+		
 		$pattern = "/^1(3|4|5|7|8)\d{9}$/";
-		/*$sel = User::get(['phone_num'=> $phone]);
-		if($sel) {
-			$this->error('该号码已被注册');
-		}*/
+		
 		if($phone != '') {
 			if (!preg_match($pattern, $phone,$match)) {
 				$this->error('手机号错误');
@@ -57,30 +54,43 @@ class User extends Auth
 		
 		//验证邮箱
 		$email = $request->param('email');
+
 		$pattern1 = "/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/";
-		/*$sel1 = User::get(['email'=> $email]);
-		if($sel1) {
-			$this->error('该邮箱已被注册');
-		}*/
+		
 		if($email != '') {
+
 			if (!preg_match($pattern1, $email,$match1)) {
+
 				$this->error('邮箱格式错误');
+
 			}
 		}
 		
 		//链接数据库 更新数据库
 		$user->save([
+
 			'username'=>$request->param('username'),
+
 			'sex'=>$request->param('sex'),
+
 			'phone_num'=>$phone,
+
 			'email'=>$email,
+
 			'profession'=>$request->param('profession'),
+
 			'self'=>$request->param('self'),
+
 			'photo'=>$photo1,
+
 			'update_time'=>time()
+
 			],['uid'=>session('uid')]);
+
 		session('photo',$photo1);
+
 		session('username',$request->param('username'));
+
 		$this->success('保存成功');
 	}
 
@@ -88,8 +98,9 @@ class User extends Auth
 	public function updatePwd()
 	{
 		$info = User::get(session('uid'))->toArray();
-		//dump($info);die();
+		
 		$this->assign('info',$info);
+
 		return $this->fetch();
 	}
 
@@ -97,92 +108,115 @@ class User extends Auth
 	public function update_pwd(Request $request)
 	{
 		$user = new User;
-		//dump($request->param());die();
+		
 		$sel = User::get(['uid'=>session('uid')])->toArray();
-		//dump($sel);die();
+		
 		$oldPwd = md5($request->param('oldpassword'));
+
 		$newPwd = $request->param('newpassword');
+
 		$comfirmPwd = $request->param('comfirmpassword');
+
 		if ($oldPwd != $sel['password']) {
+
 			$this->error('密码错误');
+
 		}
 		if($newPwd != $comfirmPwd) {
+
 			$this->error('两次密码不相等');
+
 		}
 
 		$user->save([
+
 			'password'=>md5($newPwd)
+
 			],['uid'=>session('uid')]);
+
 		$this->success('修改成功,请重新登录','index/auth/login', '', 1);
 	}
+
 	//处理ajax请求，实现局部刷新
 	public function checkPwd(Request $request)
 	{
 
 		$sel = User::get(['uid'=>session('uid')])->toArray();
+
 		$pwd = md5($request->param('password'));
+
 		if($sel['password'] == $pwd) {
+
 			echo json_encode(array('status' => 1, 'msg' => '正确'));
+
 		} else {
+
 			echo json_encode(array('status' => 0));
+
 		}
 	}
 
-		/**
-	 * 检验手机号是否被注册
-	 * @param  Request $request [description]
-	 * @return [type]           [description]
-	 */
-	/*public function checkPhoneNum(Request $request)
-	{
-
-		//$sel = User::get(['phone_num'=> $request->param('phone_num')]);
-		if($sel) {
-			echo json_encode(array('status' => 1, 'msg' => '该号码已被注册'));
-		} else {
-			echo json_encode(array('status' => 0));
-		}
-		//echo json_encode($sel);
-	}*/
 
 	//创建简历第一步
 	public function resume()
 	{
 		$info = User::get(session('uid'))->toArray();
-		//dump($info);die();
+		
 		$this->assign('info',$info);
+
 		return $this->fetch();
 	}
 
 	//获取输入数据，插入数据库
 	public function doresume(Request $request)
 	{
-		//dump($request->param());die();
+		
 		$uid = session('uid');
+
 		$realname = $request->param('realname');
+
 		$edu = $request->param('topDegree');
+
 		$worklife = $request->param('wokrYear');
+
 		$phone = $request->param('phone_num');
+
 		$email = $request->param('email');
+
 		$city = $request->param('workCity');
+
 		if(!$realname) {
+
 			$this->error('姓名不能为空');
+
 		}
 		$data = [
+
 			'uid'=>$uid,
+
 			'realname'=>$realname,
+
 			'education'=>$edu,
+
 			'worklife'=>$worklife,
+
 			'phone_num'=>$phone,
+
 			'email'=>$email,
+
 			'city'=>$city,
+
 			'create_time'=>time()
 		];
 
 		$insert = Resume::create($data);
+
 		$sel = Resume::get(['uid'=> $uid]);
+
 		if($insert) {
+
 			session('rid',$sel['rid']);
+
 			$this->redirect('index/user/experience');
 		}
 	}
@@ -191,8 +225,9 @@ class User extends Auth
 	public function experience()
 	{
 		$info = User::get(session('uid'))->toArray();
-		//dump($info);die();
+		
 		$this->assign('info',$info);
+
 		return $this->fetch();
 	}
 
@@ -200,15 +235,21 @@ class User extends Auth
 	public function doExperience(Request $request)
 	{
 		$resume = new Resume;
-		//dump($request->param());die();
+		
 		$resume->save([
+
 			'c_name'=>$request->param('companyName'),
+
 			'position'=>$request->param('yourPosition'),
+
 			'start_time'=>$request->param('startTime'),
+
 			'end_time'=>$request->param('endTime')
+
 			],['rid'=>session('rid')]);
 
 		if($resume) {
+
 			$this->redirect('index/user/education');
 		}
 
@@ -218,8 +259,9 @@ class User extends Auth
 	public function education()
 	{
 		$info = User::get(session('uid'))->toArray();
-		//dump($info);die();
+		
 		$this->assign('info',$info);
+
 		return $this->fetch();
 	}
 
@@ -227,16 +269,23 @@ class User extends Auth
 	public function doEducation(Request $request)
 	{
 		$resume = new Resume;
-		//dump($request->param());die();
+		
 		$resume->save([
+
 			'school'=>$request->param('schoolName'),
+
 			'major'=>$request->param('yourMajor'),
+
 			'education'=>$request->param('degree'),
+
 			'school_end'=>$request->param('schoolEnd')
+
 			],['rid'=>session('rid')]);
 
 		if($resume) {
+
 			$this->redirect('index/user/introduce');
+
 		}
 	}
 
@@ -245,10 +294,13 @@ class User extends Auth
 	{
 
 		$info = User::get(session('uid'))->toArray();
+
 		$info1 = Resume::get(session('rid'))->toArray();
-		//dump($info1);die();
+		
 		$this->assign('info',$info);
+
 		$this->assign('info1',$info1);
+
 		return $this->fetch();
 	}
 
@@ -256,20 +308,32 @@ class User extends Auth
 	public function doIntroduce(Request $request)
 	{
 		$resume = new Resume;
+
 		$user = new User;
+
 		$self = $request->param('self');
+
 		if($self == '') {
+
 			$this->error('先介绍你自己');
+
 		}
 		$resume->save([
+
 			'introduce'=>$self
+
 			],['rid'=>session('rid')]);
+
 		$user->save([
+
 			'resume'=>1
-			],['uid'=>session('uid')]
-			);
+
+			],['uid'=>session('uid')]);
+
 		session('resume',1);
+
 		if($resume) {
+
 			$this->redirect('index/user/myResume');
 		}
 	}
@@ -279,12 +343,17 @@ class User extends Auth
 	{
 
 		$info = User::get(session('uid'))->toArray();
+
 		$info1 = Resume::where('uid',session('uid'))->find();
+
 		$update_time = date('Y-m-d H:m',$info1['update_time']);
-		//dump($info1);die();
+		
 		$this->assign('info',$info);
+
 		$this->assign('info1',$info1);
+
 		$this->assign('update_time',$update_time);
+		
 		return $this->fetch();
 	}
 }

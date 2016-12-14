@@ -3,5 +3,4 @@ composer.lock
 database.php
 *.log
 runtime/
-uploads/
 config.php

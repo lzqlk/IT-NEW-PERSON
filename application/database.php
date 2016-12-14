@@ -13,13 +13,9 @@ return [
     // 数据库类型
     'type'           => 'mysql',
     // 服务器地址
-<<<<<<< HEAD
+
     'hostname'       => '127.0.0.1',
-=======
 
-    'hostname'       => '10.0.169.64',
-
->>>>>>> 26228f5997f15f5a8f6deb7baa159ac8d19152a2
     // 数据库名
     'database'       => 'job',
     // 用户名

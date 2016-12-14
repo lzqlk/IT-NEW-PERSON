@@ -39,7 +39,7 @@
 				<a rel="nofollow" href="{:url('index/auth/login')}" class="lg_os">进入企业版</a>
 			</div>
 
-			{if condition="$Think.session.username eq ''"}
+			{if condition="$info.cname eq ''"}
 			<ul class="lg_tbar_r">
 				<li>
 					<a href="{:url('index/auth/login')}" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
@@ -51,19 +51,17 @@
 			{else /}
 			<ul class="lg_tbar_r">
 				
-					<a id="deliveryLink" class="bl" href="{:url('index/company/release')}">发布新职位</a>
+					<a id="deliveryLink" class="bl" href="__SITE__/index/company/release/cid/{$info['cid']}">发布新职位</a>
 					<em id="noticeDot_delivery" class="noticeDot dn"></em>
 				</li>
-				<li>
-					<a class="bl" href="{:url('index/company/companyHomePage')}" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">公司主页</a>
-				</li>
+				
 				<li class="user_dropdown" data-lg-tj-track-code="index_user">
-					<span class="unick bl">{:session('username')}</span>
+					<span class="unick bl">{$info['cname']}</span>
 					<em id="noticeDot_name" class="noticeDot dn"></em>
 					<i></i>
 					<ul>
 						<li>
-							<a href="{:url('index/company/companyInfo')}" rel="nofollow" data-lg-tj-id="5q00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">帐号设置</a>
+							<a href="__SITE__/index/company/companyInfo/cid/{$info['cid']}" rel="nofollow" data-lg-tj-id="5q00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">帐号设置</a>
 						</li>
 						<li>
 							<a href="__SITE__" data-lg-tj-id="5r00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">网站首页</a>
@@ -139,7 +137,7 @@
 				上传公司logo
 			</div>
 			<div class="userinfo_edit" id="userinfoEdit">
-				<form action="{:url('index/company/update_info')}" enctype="multipart/form-data" method="post">
+				<form action="__SITE__/index/company/update_info" enctype="multipart/form-data" method="post">
 					<div class="avatar">
 						{if $info['logo']}
 						<img class="avatar_img" src="{$info['logo']}">
@@ -147,6 +145,7 @@
 						<img class="avatar_img" src="__STATIC__/images/default_headpic.png">
 						{/if}
 					</div>
+					<input type="hidden" name="cid" value="{$info['cid']}" />
 					<input type="file" name="logo" style="margin-left:200px;">
 					<div class="username input_box">
 						<label class="label_input_box" for="userinfoEditUserName">公司全称</label>

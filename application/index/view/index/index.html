@@ -16,7 +16,7 @@
 						{if condition="$sval['parentid'] eq $bval['iid']"}
 							{volist name='hot' id='hval'}
 								{if condition="$hval['iid'] eq $sval['iid']"}
-									<a href="{:url('index/job/php')}">{$hval.p_name}</a>
+									<a href="__SITE__/index/position/php/offer_name/{$hval.p_name}">{$hval.p_name}</a>
 								{/if}
 							{/volist}
 						{/if}
@@ -31,7 +31,7 @@
 								<dd>
 									{volist name='position' id='pval'}
 										{if condition="$pval['iid'] eq $sval['iid']"}
-											<a href="{:url('index/company/php')}" data-lg-tj-id="4O00" data-lg-tj-no="0101" data-lg-tj-cid="idnull">{$pval.p_name}</a>
+											<a href="__SITE__/index/position/php/offer_name/{$pval.p_name}">{$pval.p_name}</a>
 										{/if}
 									{/volist}
 								</dd>
@@ -58,13 +58,13 @@
 		
 
 		<div id="search_box" class="search_box" data-lg-tj-track-code="index_search" data-lg-tj-track-type="1">
-			<form id="searchForm" class="searchForm" name="searchForm" action="//www.lagou.com/jobs/list_" method="get">
-				<input type="text" id="search_input" class="search_input" tabindex="1" maxlength="64" autocomplete="off" value="" placeholder="搜索职位、公司或地点" />
+			<form id="searchForm" class="searchForm" name="searchForm" action="__SITE__/index/position/php" method="post">
+				<input type="text" name="offer_name" placeholder="搜索职位" style="width:586px;height:33px;border:2px solid #00B38A;"/>
 				<input type="hidden" name="labelWords" id="labelWords" value="" />
 				<input type="hidden" name="fromSearch" id="fromSearch" value="true" />
 				<input type="hidden" name="suginput" id="suginput" />
 
-				<input type="submit" id="search_button" class="search_button" value="搜索" data-lg-tj-id="4V00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"/>
+				<input type="submit" id="search_button" class="search_button" value="搜索"/>
 			</form>
 			<input type="hidden" id="search_py" value=""/>
 			<input type="hidden" id="isIndex" value="true"/>
@@ -98,7 +98,7 @@
 
 					
 					
-					<a class="tj_exposure" rel="nofollow" href="javascript:;" target="_blank" data-lg-tj-id="4k00" data-lg-tj-no="0003" data-lg-tj-cid="2903">
+					<a class="tj_exposure" rel="nofollow" href="javascript:;" data-lg-tj-id="4k00" data-lg-tj-no="0003" data-lg-tj-cid="2903">
 						<img src="__SITE__/static/picture/cgqkkvg1vq-ax6qnaadnspb8uji303.jpg" width="612" height="160" alt="小而美公司抓取" />
 					</a>
 				</li>
@@ -125,7 +125,7 @@
 		<ul id="da-thumbs" class="da-thumbs" data-lg-tj-track-code="index_logoad" data-lg-tj-track-type="1">
 			{volist name='company' id='cval'}
 			<li >
-				<a class="tj_exposure" href="javascript:;" data-lg-tj-id="4l00" data-lg-tj-no="0001" data-lg-tj-cid="6202">
+				<a class="tj_exposure" href="__SITE__/index/position/companyHomePage/cid/{$cval.cid}" data-lg-tj-id="4l00" data-lg-tj-no="0001" data-lg-tj-cid="6202">
 					<img src="{$cval.logo}" width="113" height="113" alt="{$cval.cname}" />
 					<div class="hot_info">
 						<h2 title="{$cval.cname}">{$cval.cname}</h2>
@@ -183,7 +183,7 @@
 					</li>
 					{/volist}
 				</ul>
-				<a href="//www.lagou.com/zhaopin/" class="list_more fr" target="_blank" data-lg-tj-id="4p00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_checkmore" data-lg-tj-track-type="1">查看更多</a>
+				{$office->render()}
 			</div>
 			<div class="new_posHotPosition position_list" style="display:none;" data-lg-tj-track-code="index_lastjob" data-lg-tj-track-type="1">
 				<ul class="clearfix">
@@ -221,8 +221,9 @@
 						</div>
 					</li>
 					{/volist}
+					<li>{$new->render()}</li>
 				</ul>
-				<a href="//www.lagou.com/zhaopin/" class="list_more fr" target="_blank" data-lg-tj-id="4s00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_checkmore" data-lg-tj-track-type="1">查看更多</a>
+				
 			</div>
 		</div>
 
