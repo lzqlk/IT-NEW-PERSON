@@ -1,0 +1,530 @@
+{__NOLAYOUT__}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta property="qc:admins" content="23635710066417756375" />
+    <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+    <meta charset="UTF-8">
+
+    <meta content="星发布招聘,星发布招聘信息,星发布求职,星发布求职信息" name="keywords">
+
+    <meta content="为您提供星发布最新招聘信息，星发布招聘信息，星发布求职，星发布求职信息，让您更直观的了解星发布。更多星发布招聘信息请关注拉勾网。" name="description">
+
+    <title>招聘职位</title>
+
+    <link rel="Shortcut Icon" href="//www.lgstatic.com/www/static/common/static/favicon_faed927.ico">
+
+
+    
+    <script type="text/javascript">
+
+        (function() {
+            var protocol = window.location.protocol;
+            var host = window.location.host;
+            var baseUrl = protocol + '//' + host;
+
+            window.GLOBAL_DOMAIN = window.GLOBAL_DOMAIN || {
+                ctx: protocol + '//www.lagou.com',
+                rctx: protocol + '//hr.lagou.com',
+                crctx: protocol + '//hr.lagou.com/company',
+                pctx: protocol + '//passport.lagou.com',
+                actx: protocol + '//account.lagou.com',
+                paictx: protocol + '//pai.lagou.com',
+                sctx: protocol + '//suggest.lagou.com',
+                zctx: protocol + '//yanzhi.lagou.com',
+                proctx: 'https://pro.lagou.com',
+                lgsctx: protocol + '//www.lgstatic.com',
+                FE_frontLogin: baseUrl + '/frontLogin.do',
+                FE_frontLogout: baseUrl + '/frontLogout.do',
+                FE_frontRegister: baseUrl + '/frontRegister.do'
+            };
+
+            window.GLOBAL_CDN_DOMAIN = 'www.lgstatic.com';
+        })();
+    </script>    
+    <!-- 动态token，防御伪造请求，重复提交 -->
+    <script type="text/javascript">
+        window.X_Anti_Forge_Token = '6685182c-2369-46d1-acac-7fa7810c6712';
+        window.X_Anti_Forge_Code = '46898871';
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/companyHomePage/mcustomscrollbar_ac2fb8b.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/companyHomePage/layout_19d0413.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/companyHomePage/widgets_72ff0d6.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/companyHomePage/main.html_aio_f797349.css" />
+</head>
+<body>
+
+<div id="lg_header">
+
+    <!--C端头部黑色导航-->
+    <div id="lg_tbar">
+
+        <div class="inner">
+
+            <div class="lg_tbar_l">
+                <a rel="nofollow" href="//www.lagou.com/app/download.html" class="lg_app" data-lg-tj-id="5500" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
+                <a rel="nofollow" href="{:url('index/auth/login')}" class="lg_os">进入企业版</a>
+            </div>
+
+            {if condition="$Think.session.username eq ''"}
+            <ul class="lg_tbar_r">
+                <li>
+                    <a href="{:url('index/auth/login')}" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
+                </li>
+                <li>
+                    <a href="{:url('index/auth/register')}" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">注册</a>
+                </li>
+            </ul>
+            {else /}
+            <ul class="lg_tbar_r">
+                
+                    <a id="deliveryLink" class="bl" href="{:url('index/company/release')}">发布新职位</a>
+                    <em id="noticeDot_delivery" class="noticeDot dn"></em>
+                </li>
+                <li>
+                    <a class="bl" href="{:url('index/company/companyHomePage')}" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">公司主页</a>
+                </li>
+                <li class="user_dropdown" data-lg-tj-track-code="index_user">
+                    <span class="unick bl">{:session('username')}</span>
+                    <em id="noticeDot_name" class="noticeDot dn"></em>
+                    <i></i>
+                    <ul>
+                        <li>
+                            <a href="{:url('index/company/companyInfo')}" rel="nofollow" data-lg-tj-id="5q00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">帐号设置</a>
+                        </li>
+                        <li>
+                            <a href="__SITE__" data-lg-tj-id="5r00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">网站首页</a>
+                        </li>
+                        <li>
+                            <a href="{:url('index/auth/logout')}" data-lg-tj-id="5s00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            {/if}
+            
+        </div>
+
+    </div><!--end #lg_tbar-->
+
+
+    <!--C端头部白色导航-->
+    <div id="lg_tnav">
+
+        <div class="inner">
+            <div class="lg_tnav_l">
+                <a href="__SITE__" class="lg_logo" data-lg-tj-id="5h00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
+                    <h1>拉勾网</h1>
+                </a>
+                <div class="suggestCity"><strong>全国站</strong><em id="changeCity_btn">[切换城市]</em></div>
+            </div>
+            <ul class="lg_tnav_wrap">
+                <li>
+                    <a href="__SITE__" class="current" data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
+                </li>
+                <li>
+                    <a href="//www.lagou.com/gongsi/"  data-lg-tj-id="5j00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="//pai.lagou.com/index.html"  data-lg-tj-id="5k00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank" data-lg-tj-track-code="index_yipai">一拍</a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="//yanzhi.lagou.com/"  data-lg-tj-id="ic00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_yanzhi">言职</a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="https://pro.lagou.com"  target="_blank" data-lg-tj-id="1NI0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">大鲲</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div><!--end #lg_tnav-->
+
+
+</div>
+
+<input type="hidden" id="serverTime" value="1481620533437" />
+
+    <!--
+    @require "company-c/modules/common/main.less"
+    @require "company-c/modules/top-info/main.less"
+-->
+<!--
+    @require "company-c/modules/event/activity1207/main.less"
+-->
+<div id="activityErmaBody">
+    <div id="activityErma">
+    </div>
+</div>
+<input type="hidden" value="108012" id='companyId'>
+<div class="top_info">
+    <div class="top_info_wrap">
+        <img src="{$info['logo']}" width="164" heihgt="164" />
+        <div class="company_info">
+            <div class="company_main">
+                <h1>
+                    <a  href="javascript:;" class="hovertips" rel="nofollow" title="{$info['c_realname']}">
+                        {$info['cname']}
+                    </a>
+                </h1>
+                <a href="http://www.xingfabu.cn" class="icon-wrap" target="_blank" rel="nofollow" title="http://www.xingfabu.cn">
+                    <i></i>
+                </a>
+                <a class="identification" title="拉勾认证企业">
+                    <i></i>
+                    <span>拉勾认证</span>
+                </a>
+                <div class="company_word">
+                    {$info['slogan']}
+                </div>
+            </div>
+            <div class="company_data">
+                <ul>
+                    <li>
+                        <strong>
+                            {$count}个
+                        </strong>
+                        <br />
+                        <span class="tipsys" original-title="该公司的在招职位数量">
+                            <span>招聘职位</span><span class="tip"></span>
+                        </span>
+                    </li>
+                    <li>
+                        <strong>
+                            90%
+                        </strong>
+                        <span class="tipsys" original-title="该公司所有职位收到的简历中，在投递后7天内处理完成的简历所占比例">
+                            <span>简历及时处理率</span><span class="tip"></span>
+                        </span>
+                    </li>
+                    <li>
+                        <strong>
+                            3天
+                        </strong>
+                        <br />
+                        <span class="tipsys" original-title="该公司的所有职位管理者完成简历处理的平均用时">
+                            <span>简历处理用时</span><span class="tip"></span>
+                        </span>
+                    </li>
+                    <li id="mspj" style="cursor:pointer;">
+                        <strong>
+                            46个
+                        </strong>
+                        <br />
+                        <span class="tipsys" original-title="该公司收到的面试评价数量">
+                            <span>面试评价</span><span class="tip"></span>
+                        </span>
+                    </li>
+                    <li>
+                        <strong>今天</strong><br />
+                        <span class="tipsys" original-title="该公司职位管理者最近一次登录时间">
+                            <span>企业最近登录</span><span class="tip"></span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--
+    @require "company-c/modules/common/main.less"
+    @require "company-c/modules/tabs/main.less"
+-->
+
+<div id="company_navs" class="company_navs">
+    <div class="company_navs_wrap">
+        <ul data-pjax>
+            <li >
+                <a href="__SITE__/index/position/companyHomePage/cid/{$info.cid}" data-lg-tj-id="9100" data-lg-tj-no="0001" data-lg-tj-cid="idnull">公司主页</a>
+            </li>
+            <li  class="current" >
+                <a href="javascript:;" data-lg-tj-id="9100" data-lg-tj-no="0002" data-lg-tj-cid="idnull">招聘职位（{$count}）</a>
+            </li>
+            
+        </ul>
+        <div class="company_share">
+            <span>分享</span>
+            <a href="javascript:;" class="share_weibo" rel="nofollow" title="分享到微博"></a>
+            <a href="javascript:;" class="share_weixin" rel="nofollow" title="分享到微信"></a>
+            <div class="share_weixin_success">
+                <img alt="移动端公司主页二维码" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="company_navs_shadow"></div>
+
+<div id="main_container">
+    <div id="container_left">
+        <div id="containerCompanyDetails">
+                <!--
+    @require "company-c/modules/common/main.less"
+    @require "company-c/modules/positions/main.less"
+-->
+
+<div class="posfilterlist_container item_container" data-lg-tj-track-code="hpage_indexlist">
+    <div class="item_ltitle">
+        近两月共有 <span class="list_total">{$count}</span> 个在招职位
+    </div>
+    <div style="">
+        {volist name='position' id='pval'}
+        <div style="border:1px solid #EDEDED;float:left;border-left:3px solid #00B38A;margin-top:20px;">
+            <div style="width:510px;float:left;margin-top:20px;color:#00B38A;font-size:16px;padding:10px;">
+                {$pval.offer_name}[{$info['city']}]<br /><br />
+                <span style="color:#FD5F5A;">{$pval.money}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="color:#333333;font-size:14px;">{$pval.experience}/{$pval.education}</span>
+            </div>
+            <div style="float:right;margin-top:20px;">
+             {$pval.create_time|date="Y-m-d H:i:s",###}&nbsp;发布
+         </div>
+     </div>
+     {/volist}
+    </div>
+
+</div>
+</div>
+</div>
+
+<div id="container_right">
+                        <!--
+    @require "company-c/modules/common/main.less"
+    @require "company-c/modules/basic-info/main.less"
+-->
+
+<div class="item_container" id="basic_container">
+    <div class="item_ltitle">公司基本信息</div>
+    <div class="item_content">
+        <ul>
+            <li>
+                <i class="type"></i>
+                <span>{$info1['industry']}</span>
+            </li>
+            <li>
+                <i class="process"></i>
+                <span>{$info1['financing']}</span>
+            </li>
+            <li>
+                <i class="number"></i>
+                <span>{$info['scale']}</span>
+            </li>
+            <li>
+                <i class="address"></i>
+                <span>{$info['city']}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+            <!--
+    @require "company-c/modules/common/main.less"
+    @require "company-c/modules/managers/main.less"
+-->
+
+
+            <!--
+    @require "company-c/modules/common/main.less"
+    @require "company-c/modules/tags/main.less"
+-->
+
+<div class="tags_container item_container">
+    <div class="item_ltitle">公司标签</div>
+    <div class="tags_warp">
+        <div class="item_content">
+            <ul class="item_con_ul clearfix">
+                <li class="con_ul_li">
+                    绩效奖金
+                </li>
+                <li class="con_ul_li">
+                    带薪年假
+                </li>
+                <li class="con_ul_li">
+                    午餐补助
+                </li>
+                <li class="con_ul_li">
+                    节日礼物
+                </li>
+                <li class="con_ul_li">
+                    领导好
+                </li>
+                <li class="con_ul_li">
+                    扁平管理
+                </li>
+                <li class="con_ul_li">
+                    岗位晋升
+                </li>
+                <li class="con_ul_li">
+                    五险一金
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+<a id="backtop" title="回到顶部" rel="nofollow"></a>
+<!-- feedback -->
+<!--
+    @require "common/widgets/footer_c/modules/feedback/feedback.less"
+-->
+
+<div id="product-fk">
+    <div id="feedback-icon">
+        <div class="fb-icon"></div>
+        <span>我要反馈</span>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="wrapper">
+        <i class="footer_lagou_icon"></i>
+        <div class="inner_wrapper">
+            <a class="footer_app" href="http://www.lagou.com/app/download.html" rel="nofollow">拉勾APP<span>new</span><img data-delay-src="picture/cgqlkvaldtwakvc3aaeepk9-koc598.jpg" width="256" height="256"></a>
+            <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">拉勾微博</a>
+            <a class="footer_qr" href="javascript:void(0)" rel="nofollow">拉勾微信<img data-delay-src="picture/cgpzwlznl0qazitpaabxepaojx0071.jpg" width="242" height="242"></a>
+            <a href="http://activity.lagou.com/topic/whatisnew.html" target="_blank" rel="nofollow">版本更新</a>
+            <a href="//www.lagou.com/qa.html?t=1" target="_blank" rel="nofollow">帮助中心</a>
+            <a href="//www.lagou.com/about.html" target="_blank" rel="nofollow">联系我们</a>
+            <a href="https://activity.lagou.com/activity/dist/business/index.html" target="_blank" rel="nofollow">招聘解决方案</a>
+            <span class="tel">服务热线：<em>4006-2828-35 (9:00 -18:00)</em></span>
+        </div>
+        <div class="copyright ">
+            <span><em>&copy;</em>2016 Lagou </span>
+            <a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" rel="nofollow">京ICP备14023790号-2</a>
+            <span>京公网安备11010802017116号</span>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__STATIC__/js/companyHomePage/vendor_a673406.js"></script>
+<script type="text/javascript">/*resourcemap*/
+    require.config({paths:{
+      "common/components/template-helper/main": "//www.lgstatic.com/www/static/common/components/template-helper/main_e08c2f2",
+      "common/widgets/common/msgPopup": "//www.lgstatic.com/www/static/common/widgets/common/msgPopup_ec89803"
+  }});</script>
+  <script type="text/javascript" src="__STATIC__/js/companyHomePage/main.html_aio_4787e07.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/companyHomePage/widgets_e58a3ef.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/companyHomePage/userinfo_7f282e9.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/companyHomePage/layout_89bb557.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/companyHomePage/main.html_aio_2_1983052.js"></script>
+  <script type="text/javascript">
+    window.global = window.global || {};
+    global.companyInfo = JSON.parse(document.getElementById('companyInfoData').innerHTML);
+    
+
+    require(['common/widgets/header_c/modules/emailvalid/main']);
+
+
+    require(['common/widgets/passport/passport'], function() {
+
+        
+        /* 设置自动登录监听器 */
+        PASSPORT.on('autologin:succ', function() {
+            PASSPORT.util.tinfo('autologin:succ');
+            window.location.reload();
+        });
+        PASSPORT.on('autologin:fail', function() {
+            PASSPORT.util.tinfo('autologin:fail');
+        });
+        // 触发自动登录
+        PASSPORT.auto();
+
+        /* 设置弹窗登录监听器 */
+        PASSPORT.on('popuplogin:succ', function() {
+            PASSPORT.util.tinfo('popuplogin:succ');
+            window.location.reload();
+        });
+        PASSPORT.on('popuplogin:fail', function() {
+            PASSPORT.util.tinfo('popuplogin:fail');
+        });
+        // 触发弹窗登录
+        //PASSPORT.popup();
+        jQuery('.passport_login_pop').each(function() {
+            jQuery(this).click(function() {
+                PASSPORT.popup();
+            });
+        });
+
+        
+    });
+
+
+    require(['common/widgets/header_c/layout/main']);
+    
+
+    require(['company-c/modules/event/activity1207/main']);
+
+
+    require(['company-c/modules/top-info/main']);
+
+
+    require(['company-c/modules/tabs/main']);
+
+
+    require(['company-c/modules/positions/main']);
+
+
+    require(['company-c/modules/managers/main']);
+
+
+    require(['common/widgets/footer_c/modules/feedback/feedback']);
+
+
+    require(['common/widgets/footer_c/layout/main']);
+    
+    $(document).ready(function () {
+        var selector = '#webchat7moor';
+        if ($(selector).length) { 
+            return;
+        }
+
+        var jqIframe = $('<iframe>', {
+            id: selector.slice(1),
+            src: '//www.lgstatic.com/third-parties/webchat7moor/main_00d91c6.html',
+            style: 'margin:0;'
+            + 'padding:0;'
+            + 'width:320px;'
+            + 'height:500px;'
+            + 'border-width:0;'
+            + 'border-radius: 3px;'
+            + 'transition: height 0.5s ease-out;'
+            + 'z-index:-99999;'
+            + 'display: none;'
+            + 'bottom:0;'
+            + 'right:0;'
+            + 'position:fixed;'
+        });
+        $(document.body).append(jqIframe);
+
+        var child = jqIframe[0].contentWindow;
+        var target = window.location.protocol + '//' + (window.GLOBAL_CDN_DOMAIN || 'www.lgstatic.com');
+
+        $('#onlineService, #feedback-icon').on('click', function (e) {
+            jqIframe.css('z-index', 99999).show();
+            child.postMessage('{"code":1,"message":"open webchat plugin"}', target);
+        });
+
+        $(window).on('message', function (e) {
+            var origin = e.origin || e.originalEvent.origin;
+            if (origin.indexOf(target) !== 0) { 
+                return;
+            }
+
+            var data = e.data || e.originalEvent.data;
+            if (data.code === 2 && typeof data.css !== 'undefined') { 
+                jqIframe.css(data.css);
+            } else { 
+                jqIframe.css('z-index', -99999).hide();
+            }
+        });
+    });
+</script>
+</body>
+</html>
