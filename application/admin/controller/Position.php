@@ -25,10 +25,12 @@ class Position extends Auth
 	{
 		if (input('param.btn')) {
 			$hot = 1;
+			$style = '#00B38A';
 		} else {
 			$hot = 0;
+			$style = NULL;
 		}
-		Position::where('pid', input('param.id'))->update(['is_hot' => $hot]);
+		Position::where('pid', input('param.id'))->update(['is_hot' => $hot,'style' => $style]);
 	}
 
 	public function industry()

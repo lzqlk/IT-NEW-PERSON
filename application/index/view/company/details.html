@@ -1,0 +1,652 @@
+{__NOLAYOUT__}
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!-- meta -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="23635710066417756375">
+<meta name="baidu-site-verification" content="QIQ6KC1oZ6">
+<meta charset="UTF-8">
+
+<meta content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招" name="keywords">
+
+<meta content="拉勾网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在拉勾网" name="description">
+
+<title>我的简历-拉勾网-最专业的互联网招聘平台</title>
+
+<link rel="Shortcut Icon" href="https://www.lgstatic.com/www/static/common/static/favicon_faed927.ico">
+
+
+
+<!-- global_domain FE_base... -->
+
+<script async="" src="__SITE__/static/js/analytics.js"></script>
+<script src="__SITE__/static/js/hm.js"></script>
+<script async="" src="__SITE__/static/js/a.js"></script>
+<script type="text/javascript">
+
+	(function() {
+		var protocol = window.location.protocol;
+		var host = window.location.host;
+		var baseUrl = protocol + '//' + host;
+
+		window.GLOBAL_DOMAIN = window.GLOBAL_DOMAIN || {
+			ctx: protocol + '//www.lagou.com',
+			rctx: protocol + '//hr.lagou.com',
+			crctx: protocol + '//hr.lagou.com/company',
+			pctx: protocol + '//passport.lagou.com',
+			actx: protocol + '//account.lagou.com',
+			paictx: protocol + '//pai.lagou.com',
+			sctx: protocol + '//suggest.lagou.com',
+			zctx: protocol + '//yanzhi.lagou.com',
+			proctx: 'https://pro.lagou.com',
+			lgsctx: protocol + '//www.lgstatic.com',
+			FE_frontLogin: baseUrl + '/frontLogin.do',
+			FE_frontLogout: baseUrl + '/frontLogout.do',
+			FE_frontRegister: baseUrl + '/frontRegister.do'
+		};
+
+		window.GLOBAL_CDN_DOMAIN = 'www.lgstatic.com';
+	})();
+</script>
+
+
+
+
+<!-- 公共样式 -->
+<!-- header样式 -->	<!-- footer样式 -->
+<!-- 页面样式 -->    
+<!-- 动态token，防御伪造请求，重复提交 -->
+<script type="text/javascript">
+	window.X_Anti_Forge_Token = '1984b250-6dfd-4801-9ec1-0ca1db32080c';
+	window.X_Anti_Forge_Code = '72323602';
+</script>
+
+
+
+<link rel="stylesheet" type="text/css" href="__SITE__/static/css/mCustomScrollbar_ac2fb8b.css">
+<link rel="stylesheet" type="text/css" href="__SITE__/static/css/layout_39e7f733.css">
+<link rel="stylesheet" type="text/css" href="__SITE__/static/css/main_5257539.css">
+<link rel="stylesheet" type="text/css" href="__SITE__/static/css/widgets_72ff0d6.css">
+<link rel="stylesheet" type="text/css" href="__SITE__/static/css/main2.css">
+<script src="__SITE__/static/js/lagou_5427c0e.js" class="lazyload" charset="utf-8"></script><style class="lazyload" charset="utf-8">@import "__SITE__/static/css/loginpop_f86913d.css";</style>
+<script data-require-id="common/widgets/common/msgPopup" src="__SITE__/static/js/msgPopup_ec89803.js" async=""></script>
+<script data-require-id="common/components/template-helper/main" src="__SITE__/static/js/main_e08c2f2.js" async=""></script>
+</head>
+<body>
+
+	<!-- header -->
+	<!--C端头部通栏广告位-->
+	
+
+
+	<!--验证注册邮箱-->
+	<!--
+    @require "common/widgets/header_c/modules/emailvalid/main.less"
+-->
+
+
+
+<input id="serverTime" value="1481197705684" type="hidden">
+
+
+<!-- 页面主体START -->
+<div class="container clearfix" id="container">
+	<div>
+		<input id="isShowDefault" value="1" type="hidden">
+		<div class="clearfixs mr_created">
+			<div class="mr_myresume_l">
+				<div id="mr_mr_head">
+					<div class="mr_top_bg" id="baseinfo">
+						<img src="{$detail->user->photo}" alt="头像" class="mr_headimg" width="117" height="117" style="border-radius:50%;">
+						<img src="__SITE__/static/images/tou_42952f6.png" class="opa" width="702" height="170">
+						
+					</div>
+					<div class="mr_baseinfo">
+						<i class="mr_left_bg"></i>
+						<i class="mr_right_bg"></i>
+						
+						<div class="mr_p_name mr_w604 clearfixs">
+							<span class="mr_name">{$detail.realname}</span>
+						</div>
+						<div class="mr_p_introduce mr_w604 clearfixs">
+							<span class="mr_intro mr_intro_normal" title="{$detail.introduce}"><span>自我介绍：</span>{$detail.introduce}</span>
+						</div>
+						<div class="mr_p_introduce mr_w604 clearfixs">
+							<span class="mr_intro mr_intro_normal" title="{$detail.c_name} · {$detail.position}"><span>工作经历：</span>{$detail.c_name} · {$detail.position}</span>
+						</div>
+						<div class="mr_p_introduce mr_w604 clearfixs">
+							<span class="mr_intro mr_intro_normal"><span>学历：</span>{$detail.education}</span>
+						</div>
+						<div class="mr_p_introduce mr_w604 clearfixs">
+							<span class="mr_intro mr_intro_normal"><span>工作经验：</span>{$detail.worklife}</span>
+						</div>  
+						<div class="mr_p_introduce mr_w604 clearfixs">
+							<span class="mr_intro mr_intro_normal"><span>所在城市：</span>{$detail.city}</span>
+						</div>
+						<div class="mr_p_introduce mr_w604 clearfixs">
+							<span class="mr_intro mr_intro_normal"><span>电话：</span>{$detail.phone_num}</span>
+						</div>
+						<div class="mr_p_introduce mr_w604 clearfixs">
+							<span class="mr_intro mr_intro_normal"><span>Email：</span>{$detail.email}</span>
+						</div>     
+					</div>
+				</div>  
+				<div class="mr_content">
+					<div id="workExperience" class="item_container_target">
+						<div class="mr_moudle_head clearfixs mr_w604">
+							<div class="mr_head_l">
+								<div class="mr_title">
+									<span class="mr_title_l"></span><span class="mr_title_c"> 工作经历  </span><span class="mr_title_r"></span>
+								</div>
+							</div>
+						</div>
+						<div class="mr_moudle_content mr_w604">   
+							<div class="list_show">
+								<div class="updatejob_wrap">
+									<div class="mr_jobe_list">
+										<div class="clearfixs">
+											<div class="mr_content_l clearfixs">
+												<div class="l2">
+													<h4>{$detail.c_name}</h4>
+													<span>{$detail.position}</span>
+												</div>
+											</div>
+											<div class="mr_content_r">
+												<span>{$detail.start_time}</span><span> — </span><span>{$detail.end_time}</span>
+											</div>                          
+										</div> 
+									</div>
+								</div>
+							</div>                                                  
+						</div>                      
+					</div>
+
+					<div id="educationalBackground" class="item_container_target">                  
+						<div class="mr_moudle_head clearfixs mr_w604">
+							<div class="mr_head_l">
+								<div class="mr_title">
+									<span class="mr_title_l"></span><span class="mr_title_c">教育经历</span><span class="mr_title_r"></span>
+								</div>
+							</div>
+						</div>
+						<div class="mr_moudle_content mr_w604">
+							<div class="list_show"> 
+								<div class="clearfixs mb46 mr_jobe_list">
+									<div class="mr_content_l">
+										<div class="l2">
+											<h4>{$detail.school}</h4>
+											<span>{$detail.education} · {$detail.major}</span>
+										</div>
+									</div>
+									<div class="mr_content_r">
+										<span>{$detail.school_end}年毕业</span>
+									</div>                          
+								</div>
+							</div>
+						</div>                      
+					</div>  
+					<div id="projectExperience" class="dn item_container_target"> 
+						<div class="mr_moudle_content mr_w604">
+							<div class="temp_hide dn">
+								<div class="dn new_addpro_hide">
+									<div class="mr_jobe_list" data-id="">               
+										<div class="clearfixs">
+											<div class="mr_content_l">
+												<div class="l2">
+													<a class="projectTitle"></a>
+													<p></p>
+												</div>
+											</div>
+											<div class="mr_content_r">
+												<div class="mr_edit mr_c_r_t">
+													<i></i>
+												</div>
+												<span></span><span> - </span><span></span>
+											</div>                          
+										</div>
+										<div class="mr_content_m ueditor_parse">
+										</div>  
+									</div>
+								</div>
+								<div class="updatepro_wrap"></div>
+							</div>
+
+							<div class="list_show">
+								<div class="dn new_addpro_hide">
+									<div class="mr_jobe_list" data-id="">               
+										<div class="clearfixs">
+											<div class="mr_content_l">
+												<div class="l2">
+													<a class="projectTitle"></a>
+													<p></p>
+												</div>
+											</div>
+											<div class="mr_content_r">
+												<div class="mr_edit mr_c_r_t">
+													<i></i>
+												</div>
+												<span></span><span> - </span><span></span>
+											</div>                          
+										</div>
+										<div class="mr_content_m ueditor_parse">
+										</div>  
+									</div>
+								</div>
+							</div>                              
+						</div>                      
+					</div>  
+
+					<div id="worksShow" class="dn item_container_target">
+						<div class="mr_moudle_head clearfixs mr_w604">
+							<div class="mr_head_l">
+								<div class="mr_title">
+									<span class="mr_title_l"></span><span class="mr_title_c">作品展示</span><span class="mr_title_r"></span>
+								</div>
+							</div>
+							<div class="mr_head_r">
+								<i></i>
+							</div>
+						</div>
+					</div>  
+
+					<div id="selfDescription" class="dn item_container_target">
+						<div>
+							<div class="mr_moudle_head clearfixs mr_w604">
+								<div class="mr_head_l">
+									<div class="mr_title">
+										<span class="mr_title_l"></span><span class="mr_title_c">自我描述</span><span class="mr_title_r"></span>
+									</div>
+								</div>
+								<div class="mr_head_r">
+									<i></i>
+								</div>
+							</div>
+							<div class="mr_moudle_content clearfixs mr_w604">
+								<div class="mr_empty_add">
+									<i></i><span>更新自我描述</span>
+								</div>
+
+								<div class="self_des_list clearfixs  dn">
+									<div class="mr_self_l">
+										<i></i>
+										<img class="mr_headimg" src="" alt="头像">
+									</div>  
+									<div class="mr_self_r ueditor_parse">
+
+									</div>  
+								</div>
+							</div>                      
+						</div>
+					</div>                  
+
+					<div id="expectJob" class="dn item_container_target">
+
+						<div>
+							<div class="mr_moudle_head clearfixs mr_w604">
+								<div class="mr_head_l">
+									<div class="mr_title">
+										<span class="mr_title_l"></span><span class="mr_title_c">期望工作</span><span class="mr_title_r"></span>
+									</div>
+								</div>
+								<div class="mr_head_r" data-city="">
+									<i></i>
+								</div>
+							</div>
+							<div class="mr_moudle_content clearfixs mr_w604">
+
+								<form class="expJobForm dn" id="upExpJobForm" novalidate="novalidate"><!--addProForm js赋值  -->
+									<div class="mr_add_work">
+										<label>期望职位</label>
+										<div class="clearfixs exp_job_mb">
+											<div class="mr_expinput_div mr_click_flag">
+												<input class="mr_btn autoPosition" id="expjobName" name="expjobName" type="text">
+											</div>
+										</div>
+										<label><span>期望城市</span><span class="label_yx">期望月薪</span></label>
+										<div class="clearfixs exp_job_mb">
+											<div class="city_s mr_job_city fl">
+												<i class="mr_sj"></i>
+												<input class="mr_btn" name="jobCity" type="button">
+												<div class="xl_list dn" style="display: none;">
+												</div>                                                                                              
+											</div>                                  
+											<div class="mr_pay_div normal_s fl">
+												<i class="mr_sj"></i>
+												<input name="monthpay" class="mr_btn" type="button">                                          
+											</div>                                                                  
+										</div>
+										<label>补充说明（若有）</label>
+										<div class="mr_time_area wrap_editor">
+											<script id="ueditor_expJobDes" type="text/plain"></script>
+										</div>                             
+									</div>  
+								</form>
+								<div class="mr_empty_add">
+									<i></i><span>添加期望工作</span>
+								</div>
+								<div class="expectjob_list dn">
+									<input id="expHideId" value="" type="hidden">
+
+									<div class="mr_job_info" data-id="">
+										<ul class="clearfixs">
+											<li class="mr_name_li"><i></i><span class="mr_job_name" title=""></span></li>
+											<li class="mr_jobtype_li"><i></i><span class="mr_job_type" title=""></span></li>
+											<li class="mr_city_li"><i></i><span class="mr_job_adr" title=""></span></li>
+											<li class="mr_jobrange_li"><i></i><span class="mr_job_range" title=""></span></li>
+										</ul>
+									</div>  
+									<div class="mr_job_des dn">
+										<i class="mr_job_t"></i>
+										<i class="mr_job_b"></i>
+										<div class="mr_expjob_content ueditor_parse">
+
+										</div>  
+									</div>
+								</div>                                      
+							</div>                      
+						</div>
+					</div>
+
+					<div id="skillsAssess" class="dn item_container_target">
+						<div>
+							<div class="mr_moudle_head clearfixs mr_w604">
+								<div class="mr_head_l">
+									<div class="mr_title">
+										<span class="mr_title_l"></span><span class="mr_title_c">技能评价</span><span class="mr_title_r"></span>
+									</div>
+								</div>
+								<div class="mr_head_r">
+									<i></i>
+								</div>
+							</div>
+							<div class="mr_moudle_content mr_w604">
+
+								<div class="mr_empty_add">
+									<i></i><span>展示我的技能</span>
+								</div>
+
+								<div class="me_skill_list">
+								</div>
+                     
+							</div>                      
+						</div>
+					</div>
+
+				</div>  
+
+			</div>
+			<div class="mr_myresume_r">
+            <!--
+    @require "mycenter/modules/common/sidebar_mr/main.less"
+--> 
+
+<div class="scroll_fix">
+	<div class="mr_integrity">
+		<div class="mr_top clearfixs">
+			<span class="mr_tip_l"><em class="mr_tip">简历完整度：</em><em class="mr_bfb">34%</em></span>
+		</div>
+		<div class="mr_integrity_m">
+			<div class="mr_solid" style="width: 85px;"></div>
+			<div class="mr_dashed" style="width: 85px;"></div>
+		</div>
+	</div>
+	<div class="mr_module">
+		<ul>
+			<li class="active md_flag" data-md="baseinfo">
+				<a class="clearfixs">
+					<i class="mr_base_i"></i>
+					<span class="mr_m_name">基本信息</span>
+				</a>
+			</li>
+			<li data-md="workExperience" class="md_flag">
+				<a class="clearfixs">
+					<span class="mr_require flag_work dn">必填</span>
+					<i class="mr_works_i"></i>
+					<span class="mr_m_name"> 工作经历  </span>
+				</a>
+			</li>
+			<li data-md="educationalBackground" class="md_flag">
+				<a class="clearfixs">
+					
+					<span class="mr_require flag_edu dn">必填</span>
+					
+					<i class="mr_edu_i"></i>
+					<span class="mr_m_name">教育经历</span>
+				</a>
+			</li>
+			<li data-md="projectExperience" class="dn m_hide">
+				<a class="clearfixs">
+					<span class="mr_hide_del"></span>
+					<i class="mr_project_i"></i>
+					<span class="mr_m_name">项目经验</span>
+				</a>
+			</li>
+			<li data-md="worksShow" class="dn m_hide">
+				<a class="clearfixs">
+					<span class="mr_hide_del"></span>
+					<i class="mr_production_i"></i>
+					<span class="mr_m_name">作品展示</span>
+				</a>
+			</li>
+			<li data-md="selfDescription" class="dn m_hide">
+				<a class="clearfixs">
+					<span class="mr_hide_del"></span>                       
+					<i class="mr_self_i"></i>
+					<span class="mr_m_name">自我描述</span>
+				</a>
+			</li>
+			<li data-md="expectJob" class="dn m_hide">
+				<a class="clearfixs">
+					<!-- <span class="mr_hide_del"></span>                       -->
+					<i class="mr_hopework_i"></i>
+					<span class="mr_m_name">期望工作</span>
+				</a>
+			</li>
+			<li data-md="skillsAssess" class="dn m_hide">
+				<a class="clearfixs">
+					<span class="mr_hide_del"></span>                       
+					<i class="mr_skill_i"></i>
+					<span class="mr_m_name">技能评价</span>
+				</a>
+			</li>                  
+			<li class="mr_module_add">
+				<a>
+					<span class="mr_hide_addic"></span>
+					<i class="mr_addmd_i"></i>
+					<span class="mr_m_name">添加板块</span>
+				</a>
+			</li>
+			<li data-md="projectExperience" class="hide_md dn">
+				<a class="clearfixs">
+					<span class="mr_hide_addic"></span>
+					<i class="mr_project_i"></i>
+					<span class="mr_m_name">项目经验</span>
+				</a>
+			</li>
+			<li data-md="worksShow" class="hide_md dn">
+				<a class="clearfixs">
+					<span class="mr_hide_addic"></span>
+					<i class="mr_production_i"></i>
+					<span class="mr_m_name">作品展示</span>
+				</a>
+			</li>
+			<li data-md="selfDescription" class="hide_md dn">
+				<a class="clearfixs">
+					<span class="mr_hide_addic"></span>                     
+					<i class="mr_self_i"></i>
+					<span class="mr_m_name">自我描述</span>
+				</a>
+			</li>
+			<li data-md="expectJob" class="hide_md dn">
+				<a class="clearfixs">
+					<span class="mr_hide_addic"></span>                     
+					<i class="mr_hopework_i"></i>
+					<span class="mr_m_name">期望工作</span>
+				</a>
+			</li>
+			<li data-md="skillsAssess" class="hide_md dn">
+				<a class="clearfixs">
+					<span class="mr_hide_addic"></span>                     
+					<i class="mr_skill_i"></i>
+					<span class="mr_m_name">技能评价</span>
+				</a>
+			</li>   
+		</ul>
+	</div>
+</div>
+</div>
+<!-- 页面主体END -->
+
+<!--
+    @require "common/widgets/footer_c/modules/feedback/feedback.less"
+-->
+
+
+
+<div id="footer">
+	<div class="wrapper">
+		<i class="footer_lagou_icon"></i>
+		<div class="inner_wrapper">
+			<a class="footer_app" href="http://www.lagou.com/app/download.html" rel="nofollow">拉勾APP<span>new</span><img data-delay-src="http://www.lagou.com/image2/M00/24/1D/CgqLKVaLdtWAKVC3AAEEpK9-Koc598.JPG" src="%E6%88%91%E7%9A%84%E7%AE%80%E5%8E%86-%E6%8B%89%E5%8B%BE%E7%BD%91-%E6%9C%80%E4%B8%93%E4%B8%9A%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E6%8B%9B%E8%81%98%E5%B9%B3%E5%8F%B0_files/CgqLKVaLdtWAKVC3AAEEpK9-Koc598.JPG" width="256" height="256"></a>
+			<a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">拉勾微博</a>
+			<a class="footer_qr" href="javascript:void(0)" rel="nofollow">拉勾微信<img data-delay-src="http://www.lagou.com/image2/M00/18/45/CgpzWlZNl0qAZitPAABXEpAOJx0071.JPG" src="%E6%88%91%E7%9A%84%E7%AE%80%E5%8E%86-%E6%8B%89%E5%8B%BE%E7%BD%91-%E6%9C%80%E4%B8%93%E4%B8%9A%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E6%8B%9B%E8%81%98%E5%B9%B3%E5%8F%B0_files/CgpzWlZNl0qAZitPAABXEpAOJx0071.JPG" width="242" height="242"></a>
+			<a href="http://activity.lagou.com/topic/whatisnew.html" target="_blank" rel="nofollow">版本更新</a>
+			<a href="https://www.lagou.com/qa.html?t=1" target="_blank" rel="nofollow">帮助中心</a>
+			<a href="https://www.lagou.com/about.html" target="_blank" rel="nofollow">联系我们</a>
+			<a id="onlineService" href="javascript:void(0);" rel="nofollow">在线交流</a>
+			<span class="tel">服务热线：<em>4006-2828-35 (9:00 -18:00)</em></span>
+		</div>
+		<div class="copyright ">
+			<span><em>©</em>2016 Lagou </span>
+			<a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" rel="nofollow">京ICP备14023790号-2</a>
+			<span>京公网安备11010802017116号</span>
+		</div>
+	</div>
+</div>
+
+<!-- jquery lib -->
+<!-- ueditor -->
+
+<script type="text/javascript" src="__SITE__/static/js/ueditor_002.js"></script>
+<script type="text/javascript" src="__SITE__/static/js/ueditor.js"></script>
+<script type="text/javascript" src="__SITE__/static/js/zh-cn_324d921.js"></script>
+
+<script type="text/javascript">
+	// 设置全局变量
+	window.globals =  {
+		resumeId: '5335411',
+		initRatio: '34',
+		token: '',
+		refreshTime: '2016-12-05 23:40',
+		skillScore: '18',
+		projectExperienceScore: '18',
+		workShowScore: '14',
+		expectJobsScore: '10',
+		myRemarkScore: '9',
+		hasProjectExperiences: "false",
+		hasWorkShows: "false",
+		hasSelf: "false",
+		hasExpectJobs: "false",
+		hasSkillEvaluates: "false",
+		hasUserDefines: "false",
+		personIdFlag:'',
+		qrImgSrc:'${base}/qr/qrcode.jpg?qrSource=myResume',
+		isOpenResume:'0',
+		isFirstOpen:"false"
+	};
+</script>
+
+<!-- analytics js file -->	<!-- plat analytics js file -->
+
+<script type="text/javascript" src="__SITE__/static/js/vendor_a673406.js"></script>
+<script type="text/javascript">/*resourcemap*/
+	require.config({paths:{
+		"common/components/template-helper/main": "//www.lgstatic.com/www/static/common/components/template-helper/main_e08c2f2",
+		"common/widgets/common/msgPopup": "//www.lgstatic.com/www/static/common/widgets/common/msgPopup_ec89803"
+	}});</script>
+	<script type="text/javascript" src="__SITE__/static/js/main.js"></script>
+	<script type="text/javascript" src="__SITE__/static/js/widgets_a1e07bb.js"></script>
+	<script type="text/javascript" src="__SITE__/static/js/userinfo_7f282e9.js"></script>
+	<script type="text/javascript" src="__SITE__/static/js/layout_89bb557.js"></script>
+	<script type="text/javascript" src="__SITE__/static/js/main_0022.js"></script>
+	<script type="text/javascript">
+		require(['common/widgets/header_c/modules/emailvalid/main']);
+
+
+		require(['common/widgets/passport/passport'], function() {
+
+			
+			require(['common/widgets/common/msgPopup']);
+        // require('notice');
+
+        
+    });
+
+
+		require(['common/widgets/header_c/layout/main']);
+		
+
+		require['main']
+
+
+		require(['common/widgets/footer_c/modules/feedback/feedback']);
+
+
+		require(['common/widgets/footer_c/layout/main']);
+		
+		$(document).ready(function () {
+			var selector = '#webchat7moor';
+			if ($(selector).length) { 
+				return;
+			}
+
+			var jqIframe = $('<iframe>', {
+				id: selector.slice(1),
+				src: '//www.lgstatic.com/third-parties/webchat7moor/main_0c9d761.html',
+				style: 'margin:0;'
+				+ 'padding:0;'
+				+ 'width:320px;'
+				+ 'height:500px;'
+				+ 'border-width:0;'
+				+ 'border-radius: 3px;'
+				+ 'transition: height 0.5s ease-out;'
+				+ 'z-index:-99999;'
+				+ 'display: none;'
+				+ 'bottom:0;'
+				+ 'right:0;'
+				+ 'position:fixed;'
+			});
+			$(document.body).append(jqIframe);
+
+			var child = jqIframe[0].contentWindow;
+			var target = window.location.protocol + '//' + (window.GLOBAL_CDN_DOMAIN || 'www.lgstatic.com');
+
+			$('#onlineService, #feedback-icon').on('click', function (e) {
+				jqIframe.css('z-index', 99999).show();
+				child.postMessage('{"code":1,"message":"open webchat plugin"}', target);
+			});
+
+			$(window).on('message', function (e) {
+				var origin = e.origin || e.originalEvent.origin;
+				if (origin.indexOf(target) !== 0) { 
+					return;
+				}
+
+				var data = e.data || e.originalEvent.data;
+				if (data.code === 2 && typeof data.css !== 'undefined') { 
+					jqIframe.css(data.css);
+				} else { 
+					jqIframe.css('z-index', -99999).hide();
+				}
+			});
+		});
+
+
+	    //业务主模块
+	    require(['mycenter/page/myresume/main']);
+	</script><div id="cboxOverlay" style="opacity: 1; cursor: auto; visibility: visible; display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none; visibility: visible; top: 181px; left: 411px; position: absolute; width: 528px; height: 296px; opacity: 1; cursor: auto;"><div id="cboxWrapper" style="height: 296px; width: 528px;"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left; width: 502px;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left; height: 270px;"></div><div id="cboxContent" style="float: left; width: 502px; height: 270px;"><div id="cboxTitle" style="float: left; display: block;">上传附件简历</div><div id="cboxCurrent" style="float: left; display: none;"></div><button type="button" id="cboxPrevious" style="display: none;"></button><button type="button" id="cboxNext" style="display: none;"></button><button id="cboxSlideshow" style="display: none;"></button><div id="cboxLoadingOverlay" style="float: left; display: none;"></div><div id="cboxLoadingGraphic" style="float: left; display: none;"></div><button type="button" id="cboxClose">close</button></div><div id="cboxMiddleRight" style="float: left; height: 270px;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left; width: 502px;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div>
+
+
+	<iframe id="webchat7moor" src="%E6%88%91%E7%9A%84%E7%AE%80%E5%8E%86-%E6%8B%89%E5%8B%BE%E7%BD%91-%E6%9C%80%E4%B8%93%E4%B8%9A%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E6%8B%9B%E8%81%98%E5%B9%B3%E5%8F%B0_files/main_0c9d761.htm" style="margin:0;padding:0;width:320px;height:500px;border-width:0;border-radius: 3px;transition: height 0.5s ease-out;z-index:-99999;display: none;bottom:0;right:0;position:fixed;"></iframe></body></html>

@@ -7,6 +7,7 @@ use app\index\model\User;
 use app\index\model\Company;
 use app\index\model\Resume;
 use app\index\model\Office;
+use think\Db;
 class Company extends Auth
 {
 	public function verify()
@@ -172,4 +173,17 @@ class Company extends Auth
 		return $this->fetch();
 	}
 
+	public function resume()
+	{
+		$company = Db::query('select * from it_company as c join it_office as o on c.c_realname=o.company join it_send as s on o.offer_id=s.offer_id join it_resume as r on s.user_id=r.uid where cid='.session('cid'));
+		$this->assign('company', $company);
+		return $this->fetch();
+	}
+
+	public function details()
+	{
+		$detail = Resume::find(input('param.rid'));
+		$this->assign('detail', $detail);
+		return $this->fetch();
+	}
 }

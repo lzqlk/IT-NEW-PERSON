@@ -257,10 +257,7 @@ return [
         // 验证成功后是否重置
         'reset' => true
         ],
-<<<<<<< HEAD
 
-=======
->>>>>>> 26228f5997f15f5a8f6deb7baa159ac8d19152a2
 
     'http_exception_template' => [
         // 定义404错误的重定向页面地址
@@ -276,8 +273,5 @@ return [
     'MAIL_PORT' => '25', //发送的端口
     'MAIL_FROM' => 'liu123@loveforyoung.cn' //设置发件人
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 26228f5997f15f5a8f6deb7baa159ac8d19152a2
 ];
