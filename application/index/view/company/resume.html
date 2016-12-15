@@ -53,7 +53,7 @@
 				<dl class="company_center_aside">
 					<dt>我收到的简历</dt>
 					<dd>
-						<a href="javascript:;" style="color:#00B38A">待处理简历</a> 
+						<a href="javascript:;" style="color:#00B38A">待处理简历<i style="color:red">({$count.count_send})</i></a> 
 					</dd>
 					<dd>
 						<a href="javascript:;">待定简历</a>
@@ -100,11 +100,11 @@
 							<form action="{:url('index/company/doRelease')}" method="post" id="jobForm">
 								<table class="btm">
 									<tr>
-										<td>姓名</td>
-										<td>最高学历</td>
-										<td>工作经验</td>
-										<td>所投职位</td>
-										<td></td>
+										<th>姓名</th>
+										<th>最高学历</th>
+										<th>工作经验</th>
+										<th>所投职位</th>
+										<th></th>
 									</tr>
 									{volist name='company' id='val'}
 									<tr>

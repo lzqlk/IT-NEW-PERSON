@@ -13,7 +13,7 @@
 
     <meta content="Java 北京 大专 3-5年 全职 后端开发 大型OTA 行业大咖 同程旅游 同程网络科技股份有限公司 同程旅游，快乐每一程！ 拉勾网-最专业的互联网招聘平台" name="description">
 
-    <title>Java招聘-同程旅游招聘-拉勾网</title>
+    <title>{$offer.offer_name}招聘-{$offer.cname}招聘-拉勾网</title>
 
     <link rel="Shortcut Icon" href="//www.lgstatic.com/www/static/common/static/favicon_faed927.ico">
 
@@ -85,105 +85,105 @@
 
 <div id="lg_tbar">
 
-        <div class="inner">
+    <div class="inner">
 
-            <div class="lg_tbar_l">
-                <a rel="nofollow" href="//www.lagou.com/app/download.html" class="lg_app" data-lg-tj-id="5500" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
-                <a rel="nofollow" href="{:url('index/auth/login')}" class="lg_os">进入企业版</a>
-            </div>
-
-            {if condition="$Think.session.username eq ''"}
-            <ul class="lg_tbar_r">
-                <li>
-                    <a href="{:url('index/auth/login')}" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
-                </li>
-                <li>
-                    <a href="{:url('index/auth/register')}" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">注册</a>
-                </li>
-            </ul>
-            {else /}
-            <ul class="lg_tbar_r">
-            {if session('cid')}
-                <a class="bl" href="{:url('index/company/release')}" >发布职位</a>
-
-            {else /}
-                <li>
-                {if session('resume')}
-                    <a class="bl" href="{:url('index/user/myResume')}" >我的简历</a>
-                {else /}
-                    <a class="bl" href="{:url('index/user/resume')}" >我的简历</a>
-                {/if}
-                </li>
-            {/if}
-                <li>
-                {if session('logo')}
-                    <a href=""  data-lg-tj-id="5w00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">职位管理</a>
-                {else /}
-                    <a id="deliveryLink" class="bl" href="" data-lg-tj-id="5800" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_deliver" data-lg-tj-track-type="1">投递箱</a>
-                    <em id="noticeDot_delivery" class="noticeDot dn"></em>
-                {/if}
-                </li>
-                <li>
-                {if session('logo')}
-                    <a href="javascript;" class="bl">公司主页</a>
-                {else /}
-                    <a class="bl" href="" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹</a>
-                {/if}
-                </li>
-                <li class="user_dropdown" data-lg-tj-track-code="index_user">
-                    <span class="unick bl">{:session('username')}</span>
-                    <em id="noticeDot_name" class="noticeDot dn"></em>
-                    <i></i>
-                    <ul>
-                        <li>
-                            <a href="" data-lg-tj-id="5a00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的订阅</a>
-                        </li>
-                        <li>
-                            <a id="invitationLink" href="" data-lg-tj-id="5b00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-gatj-msg="header_c,职位邀请,number">职位邀请</a>
-                            <em id="noticeDot_invitation" class="noticeDot dn"></em>
-                        </li>
-                        <li>
-                            <a href="{:url('index/company/companyInfo')}">帐号设置</a>
-                        </li>
-                        
-                        <li>
-                        <a href="{:url('index/auth/logout')}" data-lg-tj-id="5e00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            {/if}
-            
+        <div class="lg_tbar_l">
+            <a rel="nofollow" href="//www.lagou.com/app/download.html" class="lg_app" data-lg-tj-id="5500" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
+            <a rel="nofollow" href="{:url('index/auth/login')}" class="lg_os">进入企业版</a>
         </div>
 
-    </div><!--end #lg_tbar-->
+        {if condition="$Think.session.username eq ''"}
+        <ul class="lg_tbar_r">
+            <li>
+                <a href="{:url('index/auth/login')}" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
+            </li>
+            <li>
+                <a href="{:url('index/auth/register')}" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">注册</a>
+            </li>
+        </ul>
+        {else /}
+        <ul class="lg_tbar_r">
+            {if session('cid')}
+            <a class="bl" href="{:url('index/company/release')}" >发布职位</a>
+
+            {else /}
+            <li>
+                {if session('resume')}
+                <a class="bl" href="{:url('index/user/myResume')}" >我的简历</a>
+                {else /}
+                <a class="bl" href="{:url('index/user/resume')}" >我的简历</a>
+                {/if}
+            </li>
+            {/if}
+            <li>
+                {if session('logo')}
+                <a href=""  data-lg-tj-id="5w00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">职位管理</a>
+                {else /}
+                <a id="deliveryLink" class="bl" href="" data-lg-tj-id="5800" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_deliver" data-lg-tj-track-type="1">投递箱</a>
+                <em id="noticeDot_delivery" class="noticeDot dn"></em>
+                {/if}
+            </li>
+            <li>
+                {if session('logo')}
+                <a href="javascript;" class="bl">公司主页</a>
+                {else /}
+                <a class="bl" href="" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹</a>
+                {/if}
+            </li>
+            <li class="user_dropdown" data-lg-tj-track-code="index_user">
+                <span class="unick bl">{:session('username')}</span>
+                <em id="noticeDot_name" class="noticeDot dn"></em>
+                <i></i>
+                <ul>
+                    <li>
+                        <a href="" data-lg-tj-id="5a00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的订阅</a>
+                    </li>
+                    <li>
+                        <a id="invitationLink" href="" data-lg-tj-id="5b00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-gatj-msg="header_c,职位邀请,number">职位邀请</a>
+                        <em id="noticeDot_invitation" class="noticeDot dn"></em>
+                    </li>
+                    <li>
+                        <a href="{:url('index/company/companyInfo')}">帐号设置</a>
+                    </li>
+
+                    <li>
+                        <a href="{:url('index/auth/logout')}" data-lg-tj-id="5e00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        {/if}
+
+    </div>
+
+</div><!--end #lg_tbar-->
 
 
 <!--C端头部白色导航-->
 <div id="lg_tnav">
 
   <div class="inner">
-   <div class="lg_tnav_l">
-    <a href="{:url('index/index/index')}" class="lg_logo" data-lg-tj-id="5h00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
-     <h1>拉勾网</h1>
- </a>
-</div>
-<ul class="lg_tnav_wrap">
+     <div class="lg_tnav_l">
+        <a href="{:url('index/index/index')}" class="lg_logo" data-lg-tj-id="5h00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
+           <h1>拉勾网</h1>
+       </a>
+   </div>
+   <ul class="lg_tnav_wrap">
     <li>
-     <a href="{:url('index/index/index')}"  data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
- </li>
- <li>
-     <a href="javascript:;"  data-lg-tj-id="5j00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
- </li>
- <li>
-     <a rel="nofollow" href="javascript:;"  data-lg-tj-id="5k00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank" data-lg-tj-track-code="index_yipai">一拍</a>
- </li>
- <li>
-     <a rel="nofollow" href="javascript:;"  data-lg-tj-id="ic00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_yanzhi">言职</a>
- </li>
- <li>
-     <a href="javascript:;"  target="_blank" data-lg-tj-id="1NI0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">大鲲</a>
- </li>
+       <a href="{:url('index/index/index')}"  data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
+   </li>
+   <li>
+       <a href="javascript:;"  data-lg-tj-id="5j00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
+   </li>
+   <li>
+       <a rel="nofollow" href="javascript:;"  data-lg-tj-id="5k00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank" data-lg-tj-track-code="index_yipai">一拍</a>
+   </li>
+   <li>
+       <a rel="nofollow" href="javascript:;"  data-lg-tj-id="ic00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_yanzhi">言职</a>
+   </li>
+   <li>
+       <a href="javascript:;"  target="_blank" data-lg-tj-id="1NI0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">大鲲</a>
+   </li>
 </ul>
 
 </div>
@@ -226,14 +226,18 @@
                 <p class="publish_time">{$offer.create_time|date="Y-m-d",###}&nbsp; 发布于拉勾网</p>
             </dd>
         </div>
+        
 
-
-
+       
         <div class="position-content-r clearfix">
             <div class="position-deal clearfix">
                 <div class="resume-deliver">
                   <!-- 未登录 -->
+                  {if session('cid')}
+                   <a rel="nofollow" href="javascript:;" title="默认选择在线简历" class="btn fr btn_apply" id="unforbidden">投个简历</a>
+                  {else /}
                   <a rel="nofollow" href="__SITE__/index/user/send?id={$offer.offer_id}" title="默认选择在线简历" class="btn fr btn_apply">投个简历</a>
+                  {/if}
                   <!-- 是否登录end -->
                   <!-- 职位是否过期end -->
 
@@ -244,13 +248,13 @@
               <!-- 收藏按钮 -->
               <a class="jd_collection passport_login_pop " id="login_position" rel="nofollow" href="javascript:;">
 
-               收藏
+                 收藏
 
-            </a>
-        </div>
+             </a>
+         </div>
 
-        <!-- 简历状态 -->
-        <ul class="resume-select clearfix">
+         <!-- 简历状态 -->
+         <ul class="resume-select clearfix">
             <li class="resume no-resume-attachment"><span><a class="passport_login_pop"  rel="nofollow" href="javascript:;">上传附件简历</a></span></li>
             <li class="resume no-resume-online"><span><a href="javascript:;" target="_blank" title="完善在线简历" rel="nofollow">完善在线简历</a></span></li>
         </ul>
@@ -292,7 +296,7 @@
 <div class="container clearfix" id="container">
   <div class="content_l fl">
 
-   <dl class="job_detail" id="job_detail">
+     <dl class="job_detail" id="job_detail">
 
 
         <!--         <a class="jd_collection passport_login_pop" id="login_position" rel="nofollow" href="javascript:;">
@@ -376,10 +380,10 @@
                         <span class="tip_text">2个月内职位发布者简历处理的效率</span>
                         <span class="data">很慢</span>
                         <span class="tip">
-                         处理率<i class="light_tip">12% </i>&nbsp;用时<i class='light_tip'>7</i>天                        </span>
-                     </div>
-                     <em></em>
-                     <div>
+                           处理率<i class="light_tip">12% </i>&nbsp;用时<i class='light_tip'>7</i>天                        </span>
+                       </div>
+                       <em></em>
+                       <div>
                         <span class="data_title">活跃时段<i></i></span>
                         <span class="tip_text">1个月内职位发布者最活跃时段统计</span>
                         <span class="data">下午</span>
@@ -403,7 +407,7 @@
          <div class="list-loading"></div>
      </div>
          </dl>
-      -->
+     -->
    <!--  <dl class="view_again module-container" data-lg-tj-track-code="jobs_again" data-lg-tj-track-type="1">
        <div class="module-title">看了此职位的人还会看</div>
        <a rel="nofollow" href="//www.lagou.com/recommend/reView/1699989.html" target="_blank" class="checkAll">查看更多</a>
@@ -411,16 +415,16 @@
    
    </dl> -->
 
-    <div id="activityBannerWrapper_pai" class="activityBannerWrappers dn">
-        <div class="banner">
-            <h3 class="title">你比你想象的更有价值</h3>
-            <p class="description">上拉勾<span class="em">“一拍”</span>，无需主动投递简历。</p>
-            <a rel="nofollow" data-lg-tj-id="hU00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" class="link" href="javascript:;">去试试</a>
-            <button class="btn-close"></button>
-        </div>
+   <div id="activityBannerWrapper_pai" class="activityBannerWrappers dn">
+    <div class="banner">
+        <h3 class="title">你比你想象的更有价值</h3>
+        <p class="description">上拉勾<span class="em">“一拍”</span>，无需主动投递简历。</p>
+        <a rel="nofollow" data-lg-tj-id="hU00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" class="link" href="javascript:;">去试试</a>
+        <button class="btn-close"></button>
     </div>
+</div>
 
-    <!-- 推荐 -->
+<!-- 推荐 -->
             <!--
     @require "common/widgets/recommend/main.less"
 -->
@@ -474,10 +478,10 @@
 <!-- 公司详情页、职位详情页 推荐-->
 </div>
 <div class="content_r">
-   <dl class="job_company" id="job_company">
+ <dl class="job_company" id="job_company">
     <dt>
         <a href="javascript:;" target="_blank" data-lg-tj-track-code="jobs_logo">
-            <img class="b2" src="__STATIC__/images/details/cgqkkvhghq-ausyuaaa6hqmcl7y541.png" width="96" height="96" alt="{$offer.c_realname}" />
+            <img class="b2" src="{$offer.logo}" width="96" height="96" alt="{$offer.c_realname}" />
             <div>
                 <h2 class="fl">
                     {$offer.cname}
@@ -495,21 +499,21 @@
 
             </li>
             <li>
-             <span>发展阶段：&nbsp;</span>
-             {$offer.financing}
+               <span>发展阶段：&nbsp;</span>
+               {$offer.financing}
 
-         </li>
-         <li>
-          <span>规模：&nbsp;</span>
-          {$offer.scale}
+           </li>
+           <li>
+              <span>规模：&nbsp;</span>
+              {$offer.scale}
 
-      </li>
-      <li>
-        <span>公司主页：&nbsp;</span>
-        <a href="http://www.LY.com" target="_blank" title="http://www.LY.com" rel="nofollow">http://www.LY.com</a>
-        
-    </li>
-</ul>
+          </li>
+          <li>
+            <span>公司主页：&nbsp;</span>
+            <a href="__SITE__/index/position/companyHomePage?cid={$offer.cid}" target="_blank" title="http://www.homepage.com" rel="nofollow">http://www.homepage.com</a>
+
+        </li>
+    </ul>
 </dd>
 </dl>
 
@@ -687,7 +691,7 @@
 
 <div id="footer">
     <div class="wrapper">
-        
+
         <div class="inner_wrapper">
             <a><img src="__STATIC__/images/details/footer_lagou_icon_75f0ebc.png" /></a>
             <a class="footer_app" href="http://www.lagou.com/app/download.html" rel="nofollow">拉勾APP<span>new</span></a>
@@ -713,8 +717,8 @@
 <input type="hidden" value="" name="type" id="resend_type" />
 <input type="hidden" value="" id="resubmitToken"/> -->
 <!-- <input type="hidden" value="1699989" id="jobid" />
-<input type="hidden" value="3564" id="companyid" /> -->
-<!-- 底部登录条 -->
+    <input type="hidden" value="3564" id="companyid" /> -->
+    <!-- 底部登录条 -->
 	<!--
     @require "common/widgets/login_toolbar/main.less"
 -->
@@ -1391,5 +1395,11 @@
 	    require(['job-detail/page/index/main']);
 	</script>
     <script type="text/javascript" src="__STATIC__/js/plat_tj_resume_log_1097b01.js"></script>
+    <script type="text/javascript">
+        var oSend = document.getElementById('unforbidden');
+        oSend.onclick = function(){
+            alert('你不需要这么做');
+        }
+    </script>
 </body>
 </html>

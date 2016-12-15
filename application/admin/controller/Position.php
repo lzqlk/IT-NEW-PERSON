@@ -5,6 +5,7 @@ use app\admin\model\Position;
 use app\admin\model\Industry;
 class Position extends Auth
 {
+	//管理职位分类页面
 	public function position()
 	{
 		$option = Industry::where('parentid', '<>', 0)->select();
@@ -14,13 +15,13 @@ class Position extends Auth
 		$this->assign('job', $job);
 		return $this->fetch();
 	}
-
+	//添加职位分类
 	public function add()
 	{
 		Position::create(['p_name' => input('param.job_name'), 'iid' => input('param.select')]);
 		$this->redirect('admin/position/position');
 	}
-
+	//设为热门分类或取消热门分类
 	public function setHot()
 	{
 		if (input('param.btn')) {
@@ -32,7 +33,7 @@ class Position extends Auth
 		}
 		Position::where('pid', input('param.id'))->update(['is_hot' => $hot,'style' => $style]);
 	}
-
+	//行业分类页面
 	public function industry()
 	{
 		$big = Industry::where('parentid', '=', 0)->select();
@@ -41,28 +42,28 @@ class Position extends Auth
 		$this->assign('small',$small);
 		return $this->fetch();
 	}
-
+	//添加行业分类
 	public function addcate()
 	{
 		Industry::create(['name' => input('param.cate'), 'parentid' => input('param.select')]);
 		$this->redirect('admin/position/industry');
 	}
-
+	//删除行业类别
 	public function deleteIndustry()
 	{
 		Industry::destroy(input('param.id'));
 	}
-
+	//修改行业类别名称
 	public function edit()
 	{
 		Industry::where('iid',input('param.id'))->update(['name' => input('param.value')]);
 	}
-
+	//删除职位类别
 	public function deletePosition()
 	{
 		Position::destroy(input('param.id'));
 	}
-
+	//修改职位类别名称
 	public function editPosition()
 	{
 		Position::where('pid',input('param.id'))->update(['p_name' => input('param.value')]);

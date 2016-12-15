@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * 职位管理模型
+ */
 namespace app\admin\model;
 use think\Model;
 use traits\model\SoftDelete;

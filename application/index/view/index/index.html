@@ -31,11 +31,7 @@
 								<dd>
 									{volist name='position' id='pval'}
 										{if condition="$pval['iid'] eq $sval['iid']"}
-<<<<<<< HEAD
-											<a href="{:url('index/company/php')}" data-lg-tj-id="4O00" data-lg-tj-no="0101" data-lg-tj-cid="idnull" style="color:{$pval.style}">{$pval.p_name}</a>
-=======
-											<a href="__SITE__/index/position/php/offer_name/{$pval.p_name}">{$pval.p_name}</a>
->>>>>>> f49e4ce7dcc47c0d39e159912e462c27af195124
+											<a href="__SITE__/index/position/php/offer_name/{$pval.p_name}" style="color:{$pval.style}">{$pval.p_name}</a>
 										{/if}
 									{/volist}
 								</dd>
@@ -128,13 +124,8 @@
 
 		<ul id="da-thumbs" class="da-thumbs" data-lg-tj-track-code="index_logoad" data-lg-tj-track-type="1">
 			{volist name='company' id='cval'}
-<<<<<<< HEAD
-			<li>
-				<a class="tj_exposure" href="javascript:;" data-lg-tj-id="4l00" data-lg-tj-no="0001" data-lg-tj-cid="6202">
-=======
 			<li >
 				<a class="tj_exposure" href="__SITE__/index/position/companyHomePage/cid/{$cval.cid}" data-lg-tj-id="4l00" data-lg-tj-no="0001" data-lg-tj-cid="6202">
->>>>>>> f49e4ce7dcc47c0d39e159912e462c27af195124
 					<img src="{$cval.logo}" width="113" height="113" alt="{$cval.cname}" />
 					<div class="hot_info">
 						<h2 title="{$cval.cname}">{$cval.cname}</h2>

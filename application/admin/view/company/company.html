@@ -112,7 +112,7 @@
 											<div class="btn-group">
 												<a href="{:url('admin/office/delete?offer_id='.$sval['offer_id'])}" title="Delete" class="btn btn-mini tip">删除
 												</a>
-												<a href="{:url('admin/company/details?offer_id='.$sval['offer_id'])}" title="Delete" class="btn btn-mini tip">详情
+												<a href="{:url('admin/company/details?offer_id='.$sval['offer_id'])}" title="Delete" class="btn btn-mini tip" target="_blank">详情
 												</a>
 												{if condition="$sval['is_hot'] eq 1"}
 												<button value="{$sval.offer_id}" id="hot">取消热门</button>

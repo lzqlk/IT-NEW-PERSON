@@ -1,10 +1,14 @@
 <?php
+/**
+ * 这是一个认证控制器
+ */
 namespace app\admin\controller;
 use think\Controller;
 use think\Request;
-use app\admin\model\User;
+use app\admin\model\Admin;
 class Auth extends Controller
 {
+	//初始化 验证用户是否登录
 	public function __construct(Request $request)
 	{
 		parent::__construct();
@@ -13,17 +17,12 @@ class Auth extends Controller
 			$this->error('请登录');
 		}
 	}
-
-	public function login()
-	{
-		return $this->fetch();
-	}
-
+	//登录验证
 	public function doLogin(Request $request)
 	{
 		$username = $request->param('username');
 		$password = md5($request->param('password'));
-		$select = User::get(['username' => $username]);
+		$select = Admin::get(['username' => $username]);
 	
 		if ($select) {
 			if ($select['password'] == $password) {
@@ -36,13 +35,13 @@ class Auth extends Controller
 			$this->error('你不是管理员');
 		}
 	}
-
+	//退出后台，返回登录页面
 	public function logout()
 	{
 		session(null);
-		$this->redirect('admin/index/login');
+		$this->redirect('admin/login/login');
 	}
-
+	//防止用户在没有登录的情况下访问信息页面
 	public function checkLogin()
 	{
 		return session('username');

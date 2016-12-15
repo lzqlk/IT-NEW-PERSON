@@ -1,0 +1,79 @@
+
+
+<input id="serverTime" value="1481801197734" type="hidden">
+
+
+<!-- 页面主体START -->
+<div id="container1">
+	<div class="clearfix">
+		<div class="new_section fl">
+			<dl class="c_delivery">
+				<dt>
+					<h1><em></em>已投递简历状态</h1>
+
+					<div class="select_input">
+						<span>2个月内投递</span>
+						<i></i>
+					</div>
+					<div class="select_options dn">
+						<span>2个月前投递</span>
+					</div>
+
+					<a href="javascript:;" class="d_refresh">刷新</a>
+				</dt>
+				<dd>
+					<div class="delivery_tabs">
+						<ul class="reset">
+							<li class="current">
+								<a href="javascript:;" class="all_border">全部</a>
+							</li>
+							<li>
+								<a href="javascript:;">投递成功</a>
+							</li>
+							<li>
+								<a href="javascript:;">被查看</a>
+							</li>
+							<li>
+								<a href="javascript:;">待沟通</a>
+							</li>
+							<li>
+								<a href="javascript:;">邀请面试</a>
+							</li>
+							<li class="last">
+								<a href="javascript:;">不合适</a>
+							</li>
+						</ul>
+					</div>
+					{empty name='offer'}
+						<div class="no_delivery">当前没有符合条件的投递记录</div>
+					{else /}
+					<div class="delivery" style="padding:15px">
+						<table>
+							<tr>
+								<th width="85">职位名称</th>
+								<th width="120">职位类别</th>
+								<th width="200">所属公司</th>
+								<th width="100">薪资</th>
+								<th>工作地点</th>
+							</tr>
+							{volist name='offer' id='oval'}
+							<tr height="50" align="center">
+								<td><a href="__SITE__/index/position/details/offer_id/{$oval.offer_id}" title="点击查看详情">{$oval.offer_name}</a></td>
+								<td>{$oval.positionType}</td>
+								<td>{$oval.company}</td>
+								<td>{$oval.money}</td>
+								<td>{$oval.positionAddress}</td>
+							</tr>
+							{/volist}
+						</table>
+					</div>
+					{/empty}
+					
+				</dd>
+			</dl>
+		</div>
+		</div>
+	</div>
+	<!-- 页面主体END -->
+
+

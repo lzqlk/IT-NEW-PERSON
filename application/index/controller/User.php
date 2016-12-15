@@ -6,6 +6,8 @@ use app\index\model\User;
 use app\index\model\Company;
 use app\index\model\Resume;
 use app\index\model\Send;
+use app\index\model\Office;
+use think\Db;
 class User extends Auth
 {
 	//用户信息页
@@ -361,6 +363,8 @@ class User extends Auth
 	//简历投递
 	public function send()
 	{
+		$company = Office::get(input('param.id'))->company;
+		$cid = Company::get(['c_realname'=>$company])->cid;
 		$sel = Send::where(['offer_id' => input('param.id'), 'user_id' => session('uid')])->select();
 		if (session('resume')) {
 			if($sel) {
@@ -370,11 +374,22 @@ class User extends Auth
 					'offer_id' => input('param.id'),
 					'user_id' => session('uid')
 				]);
+				$a = Db::table('it_company')->where('cid',$cid)->setInc('count_send');
 				$this->success('简历已经成功投递出去了，请静候佳音！');
 			}
 			
 		} else {
 			$this->error('您还没有简历,先去完善一下简历吧','__SITE__/index/user/resume');
 		}
+	}
+
+	public function sendBox()
+	{
+		$id = session('uid');
+		$offer = Db::query('select * from it_office as o join it_send as s on o.offer_id=s.offer_id where s.user_id='.$id);
+		$this->assign([
+			'offer'=> $offer
+			]);
+		return $this->fetch();
 	}
 }

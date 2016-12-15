@@ -5,6 +5,7 @@ use app\admin\model\User;
 use app\admin\model\Resume;
 class Index extends Auth
 {
+	//求职者信息页面
 	public function index()
 	{
 		$list = User::paginate(10);
@@ -20,18 +21,18 @@ class Index extends Auth
 			]);
 		return $this->fetch();
 	}
-
+	//验证简历是否可用
 	public function review()
 	{
 		$val = input('param.select');
 		Resume::where('rid',$val)->update(['is_disabled' => 1]);
 	}
-
+	//软删除求职者信息
 	public function delete()
 	{
 		Resume::destroy(input('param.rid'));
 	}
-
+	//软删除简历
 	public function deleteResume()
 	{
 		$val = input('param.select');
