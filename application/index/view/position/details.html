@@ -86,11 +86,12 @@
 <div id="lg_tbar">
 
     <div class="inner">
+            <div class="lg_tbar_l">
 
-        <div class="lg_tbar_l">
-            <a rel="nofollow" href="//www.lagou.com/app/download.html" class="lg_app" data-lg-tj-id="5500" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
-            <a rel="nofollow" href="{:url('index/auth/login')}" class="lg_os">进入企业版</a>
-        </div>
+                <a rel="nofollow" href="javascript:;" class="lg_app" data-lg-tj-id="5500" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
+
+                <a rel="nofollow" href="{:url('index/auth/login')}" class="lg_os">进入企业版</a>
+            </div>
 
         {if condition="$Think.session.username eq ''"}
         <ul class="lg_tbar_r">
@@ -117,36 +118,39 @@
             {/if}
             <li>
                 {if session('logo')}
-                <a href=""  data-lg-tj-id="5w00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">职位管理</a>
+                    <a href="javascript:;"  data-lg-tj-id="5w00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">职位管理</a>
                 {else /}
-                <a id="deliveryLink" class="bl" href="" data-lg-tj-id="5800" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_deliver" data-lg-tj-track-type="1">投递箱</a>
-                <em id="noticeDot_delivery" class="noticeDot dn"></em>
+                    <a id="deliveryLink" class="bl" href="javascript:;" data-lg-tj-id="5800" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_deliver" data-lg-tj-track-type="1">投递箱</a>
+                    <em id="noticeDot_delivery" class="noticeDot dn"></em>
                 {/if}
             </li>
             <li>
                 {if session('logo')}
                 <a href="javascript;" class="bl">公司主页</a>
                 {else /}
-                <a class="bl" href="" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹</a>
+                    <a class="bl" href="javascript:;" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹</a>
                 {/if}
-            </li>
-            <li class="user_dropdown" data-lg-tj-track-code="index_user">
-                <span class="unick bl">{:session('username')}</span>
-                <em id="noticeDot_name" class="noticeDot dn"></em>
-                <i></i>
-                <ul>
-                    <li>
-                        <a href="" data-lg-tj-id="5a00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的订阅</a>
-                    </li>
-                    <li>
-                        <a id="invitationLink" href="" data-lg-tj-id="5b00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-gatj-msg="header_c,职位邀请,number">职位邀请</a>
-                        <em id="noticeDot_invitation" class="noticeDot dn"></em>
-                    </li>
-                    <li>
-                        <a href="{:url('index/company/companyInfo')}">帐号设置</a>
-                    </li>
-
-                    <li>
+                </li>
+                <li class="user_dropdown" data-lg-tj-track-code="index_user">
+                    <span class="unick bl">{:session('username')}</span>
+                    <em id="noticeDot_name" class="noticeDot dn"></em>
+                    <i></i>
+                    <ul>
+                        <li>
+                            <a href="javascript:;" data-lg-tj-id="5a00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的订阅</a>
+                        </li>
+                        <li>
+                            <a id="invitationLink" href="javascript:;" data-lg-tj-id="5b00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-gatj-msg="header_c,职位邀请,number">职位邀请</a>
+                          
+                        </li>
+                        <li>
+                            <em id="noticeDot_invitation" class="noticeDot dn"></em>
+                        </li>
+                        <li>
+                            <a href="{:url('index/company/companyInfo')}">帐号设置</a>
+                        </li>
+                        
+                        <li>
                         <a href="{:url('index/auth/logout')}" data-lg-tj-id="5e00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
                     </li>
                 </ul>
@@ -170,20 +174,20 @@
    </div>
    <ul class="lg_tnav_wrap">
     <li>
-       <a href="{:url('index/index/index')}"  data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
-   </li>
-   <li>
-       <a href="javascript:;"  data-lg-tj-id="5j00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
-   </li>
-   <li>
-       <a rel="nofollow" href="javascript:;"  data-lg-tj-id="5k00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank" data-lg-tj-track-code="index_yipai">一拍</a>
-   </li>
-   <li>
-       <a rel="nofollow" href="javascript:;"  data-lg-tj-id="ic00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_yanzhi">言职</a>
-   </li>
-   <li>
-       <a href="javascript:;"  target="_blank" data-lg-tj-id="1NI0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">大鲲</a>
-   </li>
+     <a href="{:url('index/index/index')}"  data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
+ </li>
+ <li>
+     <a href="__SITE__/index/company/company_list"  data-lg-tj-id="5j00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
+ </li>
+ <li>
+     <a rel="nofollow" href="javascript:;"  data-lg-tj-id="5k00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank" data-lg-tj-track-code="index_yipai">一拍</a>
+ </li>
+ <li>
+     <a rel="nofollow" href="javascript:;"  data-lg-tj-id="ic00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_yanzhi">言职</a>
+ </li>
+ <li>
+     <a href="javascript:;"  target="_blank" data-lg-tj-id="1NI0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">大鲲</a>
+ </li>
 </ul>
 
 </div>
@@ -434,44 +438,44 @@
     <dl class="popular_company clearfix">
         <dt>推荐公司：</dt>
         <dd>
-            <a href="https://www.lagou.com/gongsi/9251.html">美柚</a>
-            <a href="https://www.lagou.com/gongsi/1373.html">喜马拉雅fm</a>
-            <a href="https://www.lagou.com/gongsi/14229.html">微盟</a>
-            <a href="https://www.lagou.com/gongsi/49369.html">淘粉吧</a>
-            <a href="https://www.lagou.com/gongsi/107435.html">熊猫TV</a>
-            <a href="https://www.lagou.com/gongsi/2768.html">易到用车</a>
-            <a href="https://www.lagou.com/gongsi/40738.html">小红唇</a>
-            <a href="https://www.lagou.com/gongsi/97631.html">汽车超人</a>
-            <a href="https://www.lagou.com/gongsi/109.html">蚂蜂窝</a>
-            <a href="https://www.lagou.com/gongsi/36996.html">三好网</a>
-            <a href="https://www.lagou.com/gongsi/4760.html">唯品会</a>
-            <a href="https://www.lagou.com/gongsi/1686.html">爱奇艺</a>
-            <a href="https://www.lagou.com/gongsi/23014.html">快法务</a>
-            <a href="https://www.lagou.com/gongsi/1575.html">百度招聘</a>
-            <a href="https://www.lagou.com/gongsi/81491.html">蚂蚁金服</a>
-            <a href="https://www.lagou.com/gongsi/62.html">今日头条</a>
-            <a href="https://www.lagou.com/gongsi/2474.html">滴滴</a>
-            <a href="https://www.lagou.com/gongsi/20909.html">AcFun</a>
-            <a href="https://www.lagou.com/gongsi/23489.html">安居客</a>
-            <a href="https://www.lagou.com/gongsi/59251.html">映客</a>
-            <a href="https://www.lagou.com/gongsi/3712.html">京东</a>
+            <a href="javascript:;">美柚</a>
+            <a href="javascript:;">喜马拉雅fm</a>
+            <a href="javascript:;">微盟</a>
+            <a href="javascript:;">淘粉吧</a>
+            <a href="javascript:;">熊猫TV</a>
+            <a href="javascript:;">易到用车</a>
+            <a href="javascript:;">小红唇</a>
+            <a href="javascript:;">汽车超人</a>
+            <a href="javascript:;">蚂蜂窝</a>
+            <a href="javascript:;">三好网</a>
+            <a href="javascript:;">唯品会</a>
+            <a href="javascript:;">爱奇艺</a>
+            <a href="javascript:;">快法务</a>
+            <a href="javascript:;">百度招聘</a>
+            <a href="javascript:;">蚂蚁金服</a>
+            <a href="javascript:;">今日头条</a>
+            <a href="javascript:;">滴滴</a>
+            <a href="javascript:;">AcFun</a>
+            <a href="javascript:;">安居客</a>
+            <a href="javascript:;">映客</a>
+            <a href="javascript:;">京东</a>
         </dd>
     </dl>
     <dl class="popular_city clearfix">
         <dt class="title">推荐城市：</dt>
         <dd>
-            <a href="https://www.lagou.com/beijing-zhaopin/">北京找工作</a>
-            <a href="https://www.lagou.com/beijing-zhaopin/">北京招聘</a>
-            <a href="https://www.lagou.com/shanghai-zhaopin/">上海找工作</a>
-            <a href="https://www.lagou.com/shanghai-zhaopin/">上海招聘</a>
-            <a href="https://www.lagou.com/hangzhou-zhaopin/">杭州找工作</a>
-            <a href="https://www.lagou.com/hangzhou-zhaopin/">杭州招聘</a>
-            <a href="https://www.lagou.com/guangzhou-zhaopin/">广州找工作</a>
-            <a href="https://www.lagou.com/guangzhou-zhaopin/">广州招聘</a>
-            <a href="https://www.lagou.com/shenzhen-zhaopin/">深圳找工作</a>
-            <a href="https://www.lagou.com/shenzhen-zhaopin/">深圳招聘</a>
-            <a href="https://www.lagou.com/chengdu-zhaopin/">成都找工作</a>
-            <a href="https://www.lagou.com/chengdu-zhaopin/">成都招聘</a>
+            <a href="javascript:;">北京找工作</a>
+            <a href="javascript:;">北京招聘</a>
+            <a href="javascript:;">上海找工作</a>
+            <a href="javascript:;">上海招聘</a>
+            <a href="javascript:;">杭州找工作</a>
+            <a href="javascript:;">杭州招聘</a>
+            <a href="javascript:;">广州找工作</a>
+            <a href="javascript:;">广州招聘</a>
+            <a href="javascript:;">深圳找工作</a>
+            <a href="javascript:;">深圳招聘</a>
+            <a href="javascript:;">成都找工作</a>
+            <a href="javascript:;">成都招聘</a>
         </dd>
     </dl>
 </div>
@@ -480,7 +484,8 @@
 <div class="content_r">
  <dl class="job_company" id="job_company">
     <dt>
-        <a href="javascript:;" target="_blank" data-lg-tj-track-code="jobs_logo">
+
+        <a href="javascript:;" data-lg-tj-track-code="jobs_logo">
             <img class="b2" src="{$offer.logo}" width="96" height="96" alt="{$offer.c_realname}" />
             <div>
                 <h2 class="fl">
@@ -514,6 +519,22 @@
 
         </li>
     </ul>
+=======
+             <span>发展阶段：&nbsp;</span>
+             {$offer.financing}
+
+         </li>
+         <li>
+          <span>规模：&nbsp;</span>
+          {$offer.scale}
+
+      </li>
+      <li>
+        <span>公司主页：&nbsp;</span>
+
+        <a href="__SITE__/index/position/companyHomePage?cid={$offer.cid}" target="_blank" title="http://www.homepage.com" rel="nofollow">http://www.homepage.com</a> 
+    </li>
+</ul>
 </dd>
 </dl>
 
@@ -694,18 +715,18 @@
 
         <div class="inner_wrapper">
             <a><img src="__STATIC__/images/details/footer_lagou_icon_75f0ebc.png" /></a>
-            <a class="footer_app" href="http://www.lagou.com/app/download.html" rel="nofollow">拉勾APP<span>new</span></a>
-            <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">拉勾微博</a>
-            <a class="footer_qr" href="javascript:void(0)" rel="nofollow">拉勾微信<img data-delay-src="__STATIC__/images/details/cgpzwlznl0qazitpaabxepaojx0071.jpg" width="242" height="242"></a>
-            <a href="http://activity.lagou.com/topic/whatisnew.html" target="_blank" rel="nofollow">版本更新</a>
-            <a href="//www.lagou.com/qa.html?t=1" target="_blank" rel="nofollow">帮助中心</a>
-            <a href="//www.lagou.com/about.html" target="_blank" rel="nofollow">联系我们</a>
-            <a href="https://activity.lagou.com/activity/dist/business/index.html" target="_blank" rel="nofollow">招聘解决方案</a>
+            <a class="footer_app" href="javascript:;" rel="nofollow">拉勾APP<span>new</span></a>
+            <a href="javascript:;" target="_blank" rel="nofollow">拉勾微博</a>
+            <a class="footer_qr" href="javascript:;" rel="nofollow">拉勾微信<img data-delay-src="__STATIC__/images/details/cgpzwlznl0qazitpaabxepaojx0071.jpg" width="242" height="242"></a>
+            <a href="javascript:;" target="_blank" rel="nofollow">版本更新</a>
+            <a href="javascript:;" target="_blank" rel="nofollow">帮助中心</a>
+            <a href="javascript:;" target="_blank" rel="nofollow">联系我们</a>
+            <a href="javascript:;" target="_blank" rel="nofollow">招聘解决方案</a>
             <span class="tel">服务热线：<em>4006-2828-35 (9:00 -18:00)</em></span>
         </div>
         <div class="copyright ">
             <span><em>&copy;</em>2016 Lagou </span>
-            <a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" rel="nofollow">京ICP备14023790号-2</a>
+            <a target="_blank" href="javascript:;" rel="nofollow">京ICP备14023790号-2</a>
             <span>京公网安备11010802017116号</span>
         </div>
     </div>
@@ -1042,7 +1063,7 @@
                 </tr>
                 <tr>
                     <td align="center">
-                        <a class="btn inline" rel="nofollow" href="#uploadFile" title="上传附件简历">重新上传</a>
+                        <a class="btn inline" rel="nofollow" href="javascript:;" title="上传附件简历">重新上传</a>
                     </td>
                 </tr>
             </table>
@@ -1068,7 +1089,7 @@
                 </tr>
                 <tr>
                     <td align="center">
-                        <a class="btn inline" rel="nofollow" href="#uploadFile" title="上传附件简历">重新上传</a>
+                        <a class="btn inline" rel="nofollow" href="javascript:;" title="上传附件简历">重新上传</a>
                     </td>
                 </tr>
             </table>
@@ -1205,7 +1226,7 @@
             <tr>
                 <td align="center">
                     <form>
-                        <a rel="nofollow" href="javascript:void(0);" class="btn_addPic">
+                        <a rel="nofollow" href="javascript:;" class="btn_addPic">
                             <span>选择上传文件</span>
                             <input title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M" size="3" name="newResume" id="resumeUpload1" class="filePrew" type="file" />
                         </a>
@@ -1225,7 +1246,7 @@
         <p>请验证你的登录邮箱以使用拉勾网的所有功能！</p>
         <p>我们已将验证邮件发送至：<a></a>，请点击邮件内的链接完成验证。</p>
         <p>
-            <a rel="nofollow" href="javascript:void(0)" id="resend">重新发送验证邮件</a> | <a rel="nofollow" href="/frontRegister.do" target="_blank">换个邮箱？</a>
+            <a rel="nofollow" href="javascript:;" id="resend">重新发送验证邮件</a> | <a rel="nofollow" href="javascript:;" target="_blank">换个邮箱？</a>
         </p>
     </div>
     <!--/#activePop-->
