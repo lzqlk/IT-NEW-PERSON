@@ -122,7 +122,8 @@
 										<td>{$rval.update_time|date="Y-m-d",###}</td>
 										<td class='actions'>
 											<div class="btn-group">
-												<button value="{$rval.rid}">删除</button>
+												<button value="{$rval.rid}" class="btn btn-mini tip">删除</button>
+												<a href="__SITE__/admin/user/details?id={$rval.rid}" title="Detail" class="btn btn-mini tip">详情</a>
 											</div>
 										</td>
 									</tr>
@@ -136,6 +137,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="force-padding">{$resume->render()}</div>
 							</div>
 							<div class="tab-pane table-with-action" id="sent">
 								<div class="alert alert-info">
@@ -237,7 +239,7 @@
 										</div>
 									</div>
 								</form>
-								<div class="force-padding">{$soft->render()}</div>
+								<div class="force-padding">{$soft_resume->render()}</div>
 							</div>
 						</div>
 					</div>

@@ -6,6 +6,6 @@ class Position extends Model
 {
 	public function industry()
 	{
-		$this->belongsTo('industry', 'iid', 'pid');
+		$this->belongsTo('Industry', 'iid', 'pid');
 	}
 }

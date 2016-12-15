@@ -5,6 +5,7 @@ use think\Request;
 use app\index\model\User;
 use app\index\model\Company;
 use app\index\model\Resume;
+use app\index\model\Send;
 class User extends Auth
 {
 	//用户信息页
@@ -355,5 +356,25 @@ class User extends Auth
 		$this->assign('update_time',$update_time);
 		
 		return $this->fetch();
+	}
+
+	//简历投递
+	public function send()
+	{
+		$sel = Send::where(['offer_id' => input('param.id'), 'user_id' => session('uid')])->select();
+		if (session('resume')) {
+			if($sel) {
+				$this->error('您已经投递过此职位,请您耐心等待结果');
+			} else {
+				Send::create([
+					'offer_id' => input('param.id'),
+					'user_id' => session('uid')
+				]);
+				$this->success('简历已经成功投递出去了，请静候佳音！');
+			}
+			
+		} else {
+			$this->error('您还没有简历,先去完善一下简历吧','__SITE__/index/user/resume');
+		}
 	}
 }

@@ -31,7 +31,8 @@
 								<dd>
 									{volist name='position' id='pval'}
 										{if condition="$pval['iid'] eq $sval['iid']"}
-											<a href="__SITE__/index/position/php/offer_name/{$pval.p_name}">{$pval.p_name}</a>
+
+											<a href="__SITE__/index/position/php/offer_name/{$pval.p_name}" style="color:{$pval.style}">{$pval.p_name}</a>
 										{/if}
 									{/volist}
 								</dd>
@@ -124,6 +125,7 @@
 
 		<ul id="da-thumbs" class="da-thumbs" data-lg-tj-track-code="index_logoad" data-lg-tj-track-type="1">
 			{volist name='company' id='cval'}
+
 			<li >
 				<a class="tj_exposure" href="__SITE__/index/position/companyHomePage/cid/{$cval.cid}" data-lg-tj-id="4l00" data-lg-tj-no="0001" data-lg-tj-cid="6202">
 					<img src="{$cval.logo}" width="113" height="113" alt="{$cval.cname}" />
@@ -185,15 +187,15 @@
 				</ul>
 				{$office->render()}
 			</div>
-			<div class="new_posHotPosition position_list" style="display:none;" data-lg-tj-track-code="index_lastjob" data-lg-tj-track-type="1">
+			<div class="new_posHotPosition position_list" style="display:none;">
 				<ul class="clearfix">
 					{volist name='new' id='nval'}
-					<li class="position_list_item"  data-jobId = "2407486" data-positionid="2407486" data-salary="{$nval.money}" data-company="{$nval.company}" data-positionname="{$nval.offer_name}" data-companyid="64050">
+					<li class="position_list_item" data-salary="{$nval.money}" data-company="{$nval.company}" data-positionname="{$nval.offer_name}">
 						<div class="pli_top">
 							<div class="fl pli_top_l">
 								<div class="position_name">
 									
-									<h2 class="fl"><a href="//www.lagou.com/jobs/2407486.html" target="_blank" class="position_link fl wordCut" data-index="0" data-lg-tj-id="4q00" data-lg-tj-no="0001" data-lg-tj-cid="2407486">{$nval.offer_name}<span>[{$nval.positionAddress}]</span></a></h2>
+									<h2 class="fl"><a href="__SITE__/index/position/details?offer_id={$nval.offer_id}" target="_blank">{$nval.offer_name}<span>[{$nval.positionAddress}]</span></a></h2>
 									<!-- 此处需要和后台确认 -->
 									<span class="fl">{$nval.create_time|date="Y-m-d H:i:s",###}</span>
 								</div>

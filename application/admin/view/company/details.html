@@ -1,0 +1,84 @@
+<div class="content">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="box">
+				<div class="box-head">
+					<h3>职位详情</h3>
+				</div>
+				<div class="box-content">
+					<form action="#" class="form-horizontal">
+						<fieldset>
+							<div class="control-group" style="background:white;">
+								<label class="control-label">职位类别</label>
+								<div class="controls" style="margin-top:5px;">
+									<span>{$detail.positionType}</span>
+								</div>
+							</div>
+							<div class="control-group" style="background:white;">
+								<label class="control-label">职位名称</label>
+								<div class="controls" style="margin-top:5px;">
+									<span>{$detail.offer_name}</span>
+								</div>
+							</div>
+							<div class="control-group error" style="background:white;">
+								<label for="error" class="control-label">发布公司</label>
+								<div class="controls" style="margin-top:5px;">
+									<span class="help-inline">{$detail.company}</span>
+								</div>
+							</div>
+
+							<div class="control-group warning" style="background:white;">
+								<label for="warning" class="control-label">薪资</label>
+								<div class="controls" style="margin-top:5px;">
+									<span class="help-inline">{$detail.money}</span>
+								</div>
+							</div>
+							<div class="control-group success" style="background:white;">
+								<label for="success" class="control-label">工作地点</label>
+								<div class="controls" style="margin-top:5px;">
+									<span class="help-inline">{$detail.positionAddress}</span>
+								</div>
+							</div>
+							<div class="control-group" style="background:white;">
+								<label for="check" class="control-label">经验要求</label>
+								<div class="controls" style="margin-top:5px;">
+									{$detail.experience}
+								</div>
+							</div>
+							<div class="control-group" style="background:white;">
+								<label for="radio" class="control-label">学历要求</label>
+								<div class="controls" style="margin-top:5px;">
+									{$detail.education}
+								</div>
+							</div>
+							<div class="control-group" style="background:white;">
+								<label for="select" class="control-label">融资阶段</label>
+								<div class="controls" style="margin-top:5px;">
+									{$detail.financing}
+								</div>
+							</div>
+							<div class="control-group" style="background:white;">
+								<label for="file" class="control-label">行业领域</label>
+								<div class="controls" style="margin-top:5px;">
+									{$detail.industry}
+								</div>
+							</div>
+							<div class="control-group" style="background:white;">
+								<label for="basictext" class="control-label">职位诱惑</label>
+								<div class="controls" style="margin-top:5px;">
+									{$detail.positionAdvantage}
+								</div>
+							</div>
+							<div class="control-group" style="background:white;">
+								<label for="textcounter" class="control-label">职位介绍</label>
+								<div class="controls" style="margin-top:5px;">
+									<textarea name="textcounter" id="textcounter" class='input-square span9 counter' data-max="150" rows='15'>{$detail.description}</textarea>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

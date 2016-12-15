@@ -3,6 +3,7 @@ namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\Company;
 use app\admin\model\Office;
+use app\admin\model\Send;
 use think\Db;
 class Company extends Auth
 {
@@ -12,6 +13,7 @@ class Company extends Auth
 		$soft = Company::onlyTrashed()->paginate(10);
 		$office = Office::paginate(10);
 		$soft_office = Office::onlyTrashed()->paginate(10);
+		
 		$this->assign([
 				'list'=>$list,
 				'soft'=>$soft,
@@ -41,5 +43,22 @@ class Company extends Auth
 	{
 		$val = input('param.select');
 		Office::where('offer_id',$val)->update(['is_disabled' => 1]);
+	}
+
+	public function details()
+	{
+		$detail = Office::get(input('param.offer_id'));
+		$this->assign('detail', $detail);
+		return $this->fetch();
+	}
+
+	public function setHot()
+	{
+		if (input('param.btn')) {
+			$hot = 1;
+		} else {
+			$hot = 0;
+		}
+		Office::where('offer_id', input('param.id'))->update(['is_hot' => $hot]);
 	}
 }

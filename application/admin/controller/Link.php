@@ -7,8 +7,8 @@ class Link extends Auth
 {
 	public function link()
 	{
-		$list = Link::select();
-		$soft = Link::onlyTrashed()->select();
+		$list = Link::paginate(10);
+		$soft = Link::onlyTrashed()->paginate(10);
 		$this->assign('list', $list);
 		$this->assign('soft',$soft);
 		return $this->fetch();

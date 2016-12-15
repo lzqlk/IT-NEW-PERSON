@@ -92,7 +92,6 @@ class Position extends Controller
 		return $this->fetch();
 	}
 
-
 	//职位详情
 	public function details()
 	{

@@ -2,6 +2,7 @@
 namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\User;
+use app\admin\model\Resume;
 use think\Db;
 class User extends Auth
 {
@@ -34,6 +35,13 @@ class User extends Auth
 
 	public function admin()
 	{
+		return $this->fetch();
+	}
+
+	public function details()
+	{
+		$detail = Resume::get(input('param.id'));
+		$this->assign('detail', $detail);
 		return $this->fetch();
 	}
 }

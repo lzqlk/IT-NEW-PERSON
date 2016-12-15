@@ -7,4 +7,9 @@ class Office extends Model
 {
 	use SoftDelete;
 	protected $deleteTime = 'delete_time';
+
+	public function send()
+	{
+		return $this->hasMany('Send', 'offer_id');
+	}
 }
