@@ -156,7 +156,7 @@
 									
 									<h2 class="fl"><a href="__SITE__/index/position/details?offer_id={$oval.offer_id}" target="_blank" class="position_link fl wordCut" data-index="0" data-lg-tj-id="rx00" data-lg-tj-no="0001" data-lg-tj-cid="1976814">{$oval.offer_name}<span>[{$oval.positionAddress}]</span></a></h2>
 									<!-- 此处需要和后台确认 -->
-									<span class="fl">{$oval.create_time|date="Y-m-d H:i:s",###}</span>
+									<span class="fl">{$oval.create_time|date="Y-m-d",###}</span>
 								</div>
 								<div class="position_main_info">
 									<span class="salary fl">{$oval.money}</span>
@@ -195,7 +195,7 @@
 									
 									<h2 class="fl"><a href="__SITE__/index/position/details?offer_id={$nval.offer_id}" target="_blank">{$nval.offer_name}<span>[{$nval.positionAddress}]</span></a></h2>
 									<!-- 此处需要和后台确认 -->
-									<span class="fl">{$nval.create_time|date="Y-m-d H:i:s",###}</span>
+									<span class="fl">{$nval.create_time|date="Y-m-d",###}</span>
 								</div>
 								<div class="position_main_info">
 									<span class="salary fl">{$nval.money}</span>

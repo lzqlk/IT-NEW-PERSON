@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- meta -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit">
+	<meta property="qc:admins" content="23635710066417756375" />
+	<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+	<meta charset="UTF-8">
+
+	<meta content="互联网招聘,找工作,招聘网,人才网" name="keywords">
+
+	<meta content="拉勾网是最权威的互联网行业招聘网站,提供全国真实的互联网招聘信息,工资不面议当面谈,找工作,招聘网,寻人才就来拉勾网,互联网行业找工作首选拉勾网" name="description">
+
+	<title>拉勾网-最专业的互联网招聘平台_找工作_招聘_人才网_求职</title>
+
+	<link rel="Shortcut Icon" href="//www.lgstatic.com/www/static/common/static/favicon_faed927.ico">
+
+
+
+	<!-- global_domain FE_base... -->
+	
+	<script type="text/javascript">
+
+		(function() {
+			var protocol = window.location.protocol;
+			var host = window.location.host;
+			var baseUrl = protocol + '//' + host;
+
+			window.GLOBAL_DOMAIN = window.GLOBAL_DOMAIN || {
+				ctx: protocol + '//www.lagou.com',
+				rctx: protocol + '//hr.lagou.com',
+				crctx: protocol + '//hr.lagou.com/company',
+				pctx: protocol + '//passport.lagou.com',
+				actx: protocol + '//account.lagou.com',
+				paictx: protocol + '//pai.lagou.com',
+				sctx: protocol + '//suggest.lagou.com',
+				zctx: protocol + '//yanzhi.lagou.com',
+				proctx: 'https://pro.lagou.com',
+				lgsctx: protocol + '//www.lgstatic.com',
+				FE_frontLogin: baseUrl + '/frontLogin.do',
+				FE_frontLogout: baseUrl + '/frontLogout.do',
+				FE_frontRegister: baseUrl + '/frontRegister.do'
+			};
+
+			window.GLOBAL_CDN_DOMAIN = 'www.lgstatic.com';
+		})();
+	</script>
+
+
+
+	
+	<!-- SEO 需求-->
+	<link rel="canonical" href="http://www.lagou.com">
+
+	<!-- 公共样式 -->
+	<!-- header样式 -->	<!-- footer样式 -->
+	<!-- 页面样式 -->    
+	<!-- 动态token，防御伪造请求，重复提交 -->
+	<script type="text/javascript">
+		window.X_Anti_Forge_Token = '';
+		window.X_Anti_Forge_Code = '';
+	</script>
+
+	
+
+	<link rel="stylesheet" type="text/css" href="__SITE__/static/css/mcustomscrollbar_ac2fb8b.css" />
+	<link rel="stylesheet" type="text/css" href="__SITE__/static/css/layout_39e7f73.css" />
+	<link rel="stylesheet" type="text/css" href="__SITE__/static/css/main.html_aio_6084646.css" />
+	<link rel="stylesheet" type="text/css" href="__SITE__/static/css/widgets_72ff0d6.css" />
+	<link rel="stylesheet" type="text/css" href="__SITE__/static/css/main.html_aio_2_15a4a95.css" />
+	
+</head>
+<body>
+
+	
+	<!-- 公共html -->
+	<!-- 页面公用结构、velocity变量 --><input type="hidden" value="" name="userid" id="userid" />
+
+	<!-- 城市分站 -->
+
+
+	<!-- header -->
+	<!--C端头部通栏广告位-->
+	
+
+	<!--验证注册邮箱-->
+	<!--
+    @require "common/widgets/header_c/modules/emailvalid/main.less"
+-->
+
+
+<div id="lg_header">
+
+	<!--C端头部黑色导航-->
+	<div id="lg_tbar">
+
+		<div class="inner">
+
+			<div class="lg_tbar_l">
+				<a rel="nofollow" href="javascript:;" class="lg_app" data-lg-tj-id="5500" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
+				<a rel="nofollow" href="{:url('index/auth/login')}" class="lg_os">进入企业版</a>
+			</div>
+
+			{if condition="$Think.session.username eq ''"}
+			<ul class="lg_tbar_r">
+				<li>
+					<a href="{:url('index/auth/login')}" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
+				</li>
+				<li>
+					<a href="{:url('index/auth/register')}" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">注册</a>
+				</li>
+			</ul>
+			{else /}
+			<ul class="lg_tbar_r">
+			{if session('cid')}
+				<a class="bl" href="__SITE__/index/company/release/cid/{:session('cid')}" >发布职位</a>
+
+			{else /}
+				<li>
+				{if session('resume')}
+					<a class="bl" href="{:url('index/user/myResume')}" >我的简历</a>
+				{else /}
+					<a class="bl" href="{:url('index/user/resume')}" >我的简历</a>
+				{/if}
+				</li>
+			{/if}
+				<li>
+				{if session('logo')}
+					
+				{else /}
+					<a class="bl" href="{:url('index/user/sendBox')}">投递箱</a>
+					<em id="noticeDot_delivery" class="noticeDot dn"></em>
+				{/if}
+				</li>
+				<li>
+				{if session('logo')}
+					<a href="__SITE__/index/position/companyHomePage/cid/{:session('cid')}" class="bl">公司主页</a>
+				{else /}
+					<a class="bl" href="javascript:;" data-lg-tj-id="5900" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹</a>
+				{/if}
+				</li>
+				<li class="user_dropdown" data-lg-tj-track-code="index_user">
+					<span class="unick bl">{:session('username')}</span>
+					<em id="noticeDot_name" class="noticeDot dn"></em>
+					<i></i>
+					<ul>
+						<li>
+							<a href="javascript:;" data-lg-tj-id="5a00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的订阅</a>
+						</li>
+						<li>
+							<a id="invitationLink" href="javascript:;" data-lg-tj-id="5b00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow" data-lg-gatj-msg="header_c,职位邀请,number">职位邀请</a>
+							<em id="noticeDot_invitation" class="noticeDot dn"></em>
+						</li>
+						{if session('cid')}
+						<li>
+							<a href="__SITE__/index/company/companyInfo/cid/{:session('cid')}">帐号设置</a>
+						</li>
+						{else /}
+						<li>
+							<a href="{:url('index/user/userInfo')}">帐号设置</a>
+						</li>
+						{/if}
+						<li>
+						<a href="{:url('index/auth/logout')}" data-lg-tj-id="5e00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">退出</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			{/if}
+			
+		</div>
+
+	</div>
+
+
+	<!--C端头部白色导航-->
+	<div id="lg_tnav">
+
+		<div class="inner">
+			<div class="lg_tnav_l">
+				<a href="__SITE__" class="lg_logo" data-lg-tj-id="5h00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
+					<h1>拉勾网</h1>
+				</a>
+				<div class="suggestCity"><strong>全国站</strong><em id="changeCity_btn">[切换城市]</em></div>
+			</div>
+			<ul class="lg_tnav_wrap">
+				<li>
+					<a href="__SITE__" class="current" data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
+				</li>
+				<li>
+					<a href="__SITE__/index/company/company_list"  data-lg-tj-id="5j00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
+				</li>
+				<li>
+					<a rel="nofollow" href="javascript:;"  data-lg-tj-id="5k00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank" data-lg-tj-track-code="index_yipai">一拍</a>
+				</li>
+				<li>
+					<a rel="nofollow" href="javascript:;"  data-lg-tj-id="ic00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_yanzhi">言职</a>
+				</li>
+				<li>
+					<a rel="nofollow" href="javascript:;"  target="_blank" data-lg-tj-id="1NI0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">大鲲</a>
+				</li>
+			</ul>
+
+		</div>
+
+	</div><!--end #lg_tnav-->
+
+
+</div>

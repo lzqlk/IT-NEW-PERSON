@@ -10,7 +10,6 @@ class Office extends Auth
 	public function delete()
 	{
 		Office::destroy(input('param.offer_id/a'));
-		$this->redirect('admin/company/company');
 	}
 	//对职位回收站里的数据进行操作
 	public function action()

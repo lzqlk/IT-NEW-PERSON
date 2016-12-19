@@ -29,7 +29,7 @@ class Link extends Auth
 	//软删除友情链接
 	public function delete()
 	{
-		Link::destroy(input('param.lid'));
+		Link::destroy(input('param.lid/a'));
 		$this->redirect('admin/link/link');
 	}
 	//恢复回收站里的数据
@@ -42,6 +42,19 @@ class Link extends Auth
 	public function reldelete()
 	{
 		Db::name('link')->where('lid', input('param.lid'))->delete();
+		$this->redirect('admin/link/link');
+	}
+
+	//对回收站里的数据进行操作
+	public function action()
+	{
+		if (input('param.btn')) {
+			//彻底删除简历回收站里的数据
+			Db::name('link')->where('lid', 'in', input('param.lid/a'))->delete();
+		} else {
+			//恢复简历回收站里的数据
+			Db::name('link')->where('lid', 'in', input('param.lid/a'))->update(['delete_time' => NULL]);
+		}
 		$this->redirect('admin/link/link');
 	}
 }
