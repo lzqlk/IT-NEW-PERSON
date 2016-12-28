@@ -9,7 +9,9 @@ class Office extends Auth
 	//软删除企业发布的职位
 	public function delete()
 	{
+
 		Of::destroy(input('param.offer_id/a'));
+
 	}
 	//对职位回收站里的数据进行操作
 	public function action()

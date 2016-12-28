@@ -29,7 +29,9 @@ class Link extends Auth
 	//软删除友情链接
 	public function delete()
 	{
+
 		Li::destroy(input('param.lid/a'));
+
 		$this->redirect('admin/link/link');
 	}
 	//恢复回收站里的数据

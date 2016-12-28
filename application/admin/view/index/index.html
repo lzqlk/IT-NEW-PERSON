@@ -263,15 +263,16 @@
 		$('#delete').click(function(){
 			$("input:checked").each(function(){
 				$.post('__SITE__/admin/index/deleteResume', {select : $(this).val()});
-
+				$(this).parent().parent().css('display','none');
 			});
 
 		});
 
 		$('#resume button').each(function(){
 			$(this).click(function(){
-				$.post('__SITE__/admin/index/delete',{rid:$(this).val()});
 				$(this).parent().parent().parent().css('display','none');
+				$.post('__SITE__/admin/index/delete',{rid:$(this).val()});
+				
 			});
 		});
 
