@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 use think\Controller;
-use app\admin\model\Resume;
+use app\admin\model\Resume as Re;
 use think\Db;
 
 class Resume extends Auth

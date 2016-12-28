@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 use think\Controller;
-use app\admin\model\Company;
+use app\admin\model\Company as Com;
 use app\admin\model\Office;
 use app\admin\model\Send;
 use think\Db;
@@ -10,8 +10,8 @@ class Company extends Auth
 	//企业管理页面
 	public function company()
 	{
-		$list = Company::paginate(10);
-		$soft = Company::onlyTrashed()->paginate(10);
+		$list = Com::paginate(10);
+		$soft = Com::onlyTrashed()->paginate(10);
 		$office = Office::paginate(10);
 		$soft_office = Office::onlyTrashed()->paginate(10);
 		
@@ -26,7 +26,7 @@ class Company extends Auth
 	//软删除企业用户
 	public function delete()
 	{
-		Company::destroy(input('param.cid/a'));
+		Com::destroy(input('param.cid/a'));
 		$this->redirect('admin/company/company');
 	}
 	//管理企业回收站里的数据

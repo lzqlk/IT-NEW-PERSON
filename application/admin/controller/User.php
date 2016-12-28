@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 use think\Controller;
-use app\admin\model\User;
+use app\admin\model\User as U;
 use app\admin\model\Resume;
 use app\admin\model\Admin;
 use think\Db;
@@ -10,7 +10,7 @@ class User extends Auth
 	//删除求职用户
 	public function delete()
 	{
-		User::destroy(input('param.uid/a'));
+		U::destroy(input('param.uid/a'));
 		$this->redirect('admin/index/index');
 	}
 	//恢复求职用户回收站里的数据

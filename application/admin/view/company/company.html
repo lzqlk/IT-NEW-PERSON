@@ -279,7 +279,7 @@
 	$('#delete').click(function(){
 		$("input:checked").each(function(){
 			$.post('__SITE__/admin/office/delete', {offer_id : $(this).val()});
-
+			$(this).parent().parent().css('display','none');
 		});
 
 	});

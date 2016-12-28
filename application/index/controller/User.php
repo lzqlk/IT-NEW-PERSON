@@ -2,7 +2,7 @@
 namespace app\index\controller;
 use app\index\controller\Auth;
 use think\Request;
-use app\index\model\User;
+use app\index\model\User as U;
 use app\index\model\Company;
 use app\index\model\Resume;
 use app\index\model\Send;
@@ -13,7 +13,7 @@ class User extends Auth
 	//用户信息页
 	public function userInfo()
 	{
-		$info = User::get(session('uid'))->toArray();
+		$info = U::get(session('uid'))->toArray();
 		//dump($info);die();
 		$this->assign('info',$info);
 		return $this->fetch();
@@ -25,7 +25,7 @@ class User extends Auth
 	 */
 	public function update_info(Request $request)
 	{
-		$user = new User;
+		$user = new U;
 		//dump($request);die();
 		
 		//获取头像路径并验证
@@ -100,7 +100,7 @@ class User extends Auth
 	//修改密码页
 	public function updatePwd()
 	{
-		$info = User::get(session('uid'))->toArray();
+		$info = U::get(session('uid'))->toArray();
 		
 		$this->assign('info',$info);
 
@@ -110,9 +110,9 @@ class User extends Auth
 	//修改密码
 	public function update_pwd(Request $request)
 	{
-		$user = new User;
+		$user = new U;
 		
-		$sel = User::get(['uid'=>session('uid')])->toArray();
+		$sel = U::get(['uid'=>session('uid')])->toArray();
 		
 		$oldPwd = md5($request->param('oldpassword'));
 
@@ -144,7 +144,7 @@ class User extends Auth
 	public function checkPwd(Request $request)
 	{
 
-		$sel = User::get(['uid'=>session('uid')])->toArray();
+		$sel = U::get(['uid'=>session('uid')])->toArray();
 
 		$pwd = md5($request->param('password'));
 
@@ -163,7 +163,7 @@ class User extends Auth
 	//创建简历第一步
 	public function resume()
 	{
-		$info = User::get(session('uid'))->toArray();
+		$info = U::get(session('uid'))->toArray();
 		
 		$this->assign('info',$info);
 
@@ -227,7 +227,7 @@ class User extends Auth
 	//创建简历第二步，填写工作经验
 	public function experience()
 	{
-		$info = User::get(session('uid'))->toArray();
+		$info = U::get(session('uid'))->toArray();
 		
 		$this->assign('info',$info);
 
@@ -261,7 +261,7 @@ class User extends Auth
 	//创建简历第三步，填写教育经历
 	public function education()
 	{
-		$info = User::get(session('uid'))->toArray();
+		$info = U::get(session('uid'))->toArray();
 		
 		$this->assign('info',$info);
 
@@ -296,7 +296,7 @@ class User extends Auth
 	public function introduce()
 	{
 
-		$info = User::get(session('uid'))->toArray();
+		$info = U::get(session('uid'))->toArray();
 
 		$info1 = Resume::get(session('rid'))->toArray();
 		
@@ -312,7 +312,7 @@ class User extends Auth
 	{
 		$resume = new Resume;
 
-		$user = new User;
+		$user = new U;
 
 		$self = $request->param('self');
 
@@ -345,7 +345,7 @@ class User extends Auth
 	public function myResume()
 	{
 
-		$info = User::get(session('uid'))->toArray();
+		$info = U::get(session('uid'))->toArray();
 
 		$info1 = Resume::where('uid',session('uid'))->find();
 

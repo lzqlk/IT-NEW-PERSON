@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 use think\Controller;
-use app\admin\model\Position;
+use app\admin\model\Position as Po;
 use app\admin\model\Industry;
 class Position extends Auth
 {
@@ -11,14 +11,14 @@ class Position extends Auth
 		$option = Industry::where('parentid', '<>', 0)->select();
 		$this->assign('option',$option);
 
-		$job = Position::select();
+		$job = Po::select();
 		$this->assign('job', $job);
 		return $this->fetch();
 	}
 	//添加职位分类
 	public function add()
 	{
-		Position::create(['p_name' => input('param.job_name'), 'iid' => input('param.select')]);
+		Po::create(['p_name' => input('param.job_name'), 'iid' => input('param.select')]);
 		$this->redirect('admin/position/position');
 	}
 	//设为热门分类或取消热门分类
@@ -31,7 +31,7 @@ class Position extends Auth
 			$hot = 0;
 			$style = NULL;
 		}
-		Position::where('pid', input('param.id'))->update(['is_hot' => $hot,'style' => $style]);
+		Po::where('pid', input('param.id'))->update(['is_hot' => $hot,'style' => $style]);
 	}
 	//行业分类页面
 	public function industry()
@@ -61,11 +61,11 @@ class Position extends Auth
 	//删除职位类别
 	public function deletePosition()
 	{
-		Position::destroy(input('param.id'));
+		Po::destroy(input('param.id'));
 	}
 	//修改职位类别名称
 	public function editPosition()
 	{
-		Position::where('pid',input('param.id'))->update(['p_name' => input('param.value')]);
+		Po::where('pid',input('param.id'))->update(['p_name' => input('param.value')]);
 	}
 }

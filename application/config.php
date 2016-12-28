@@ -17,9 +17,9 @@ return [
     // 应用命名空间
     'app_namespace'          => 'app',
     // 应用调试模式
-    'app_debug'              => true,
+    'app_debug'              => false,
     // 应用Trace
-    'app_trace'              => true,
+    'app_trace'              => false,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -140,9 +140,9 @@ return [
 
     // 视图输出字符串内容替换
     'view_replace_str'       => [
-        '__SITE__' => 'http://www.itnewperson.com',
-        '__STATIC__' => 'http://www.itnewperson.com/static',
-        '__ADMIN_STATIC__' => 'http://www.itnewperson.com/static/admin'
+        '__SITE__' => 'http://yu.gydsgh.cn',
+        '__STATIC__' => 'http://yu.gydsgh.cn/static',
+        '__ADMIN_STATIC__' => 'http://yu.gydsgh.cn/static/admin'
     ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',

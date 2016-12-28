@@ -2,15 +2,14 @@
 namespace app\admin\controller;
 use think\Controller;
 use think\Db;
-use app\admin\model\Office;
+use app\admin\model\Office as Of;
 
 class Office extends Auth
 {
 	//软删除企业发布的职位
 	public function delete()
 	{
-		Office::destroy(input('param.offer_id/a'));
-		$this->redirect('admin/company/company');
+		Of::destroy(input('param.offer_id/a'));
 	}
 	//对职位回收站里的数据进行操作
 	public function action()

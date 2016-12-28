@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 use think\Controller;
-use app\admin\model\City;
+use app\admin\model\City as C;
 use think\Db;
 class City extends Auth
 {
